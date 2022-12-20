@@ -1,5 +1,113 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4167347395267523593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4233387939771575474}
+  m_Layer: 5
+  m_Name: -----------------------------------------------------------------------------------------------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4233387939771575474
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4167347395267523593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7912351317544460085}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &6682337799361216853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2543263261112836245}
+  m_Layer: 5
+  m_Name: -----------------------------------------------------------------------------------------------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2543263261112836245
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682337799361216853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7912351317544460085}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &7720566194127682355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2967665504516603476}
+  m_Layer: 5
+  m_Name: -----------------------------------------------------------------------------------------------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2967665504516603476
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720566194127682355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7912351317544460085}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7912351317544460082
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,14 +151,17 @@ RectTransform:
   - {fileID: 7518904286416090464}
   - {fileID: 7029533293891359748}
   - {fileID: 8086324035873493429}
+  - {fileID: 4233387939771575474}
   - {fileID: 3332815345586092131}
   - {fileID: 656625440781570405}
   - {fileID: 1521649815839041451}
   - {fileID: 6736230735514391011}
+  - {fileID: 2967665504516603476}
   - {fileID: 3647500431845021231}
   - {fileID: 9187732115643335885}
   - {fileID: 5280888210741924424}
   - {fileID: 7230477858195444447}
+  - {fileID: 2543263261112836245}
   - {fileID: 2304006511916753771}
   - {fileID: 5117804966388508268}
   - {fileID: 345798263453143552}
@@ -71,8 +182,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 8395732774293331735}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 636387449550931281}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -81,11 +200,35 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 8321051196662822117}
+      objectReference: {fileID: 636387449550931281}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
       objectReference: {fileID: 636387449550931281}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 636387449550931281}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 8395732774293331735}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -309,7 +452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5984723160405532746, guid: b4702132af254624ebf1c204153ecfe6, type: 3}
       propertyPath: m_Name
-      value: Line_2
+      value: ________Line_2_________________________________________________________________________________________________
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4702132af254624ebf1c204153ecfe6, type: 3}
@@ -326,8 +469,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 7542683964895568631}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 4254497714518838912}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 5356601425388074969}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 1907069719183660024}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -336,15 +495,15 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 6801813595482895474}
+      objectReference: {fileID: 1907069719183660024}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 1907069719183660024}
+      objectReference: {fileID: 5356601425388074969}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 5356601425388074969}
+      objectReference: {fileID: 4254497714518838912}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
       value: 
@@ -357,6 +516,42 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[6]
       value: 
       objectReference: {fileID: 4254497714518838912}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 5356601425388074969}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 1907069719183660024}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 7542683964895568631}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[3]
+      value: 
+      objectReference: {fileID: 4254497714518838912}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -367,7 +562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchorMax.x
@@ -483,17 +678,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 1907069719183660024}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 4254497714518838912}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 4959210751859623585}
+      objectReference: {fileID: 4254497714518838912}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 4254497714518838912}
+      objectReference: {fileID: 1907069719183660024}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
@@ -502,6 +705,30 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
       objectReference: {fileID: 1432455860909405242}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 4254497714518838912}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 1907069719183660024}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -616,13 +843,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: isOccupied
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 823088007}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 2175612352449820511}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 5302358668705002114}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 8321051196662822117}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: ownerOfTheSpotPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 8855149090695260160}
+      objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
@@ -634,7 +885,7 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 157734590866506129}
+      objectReference: {fileID: 8321051196662822117}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
       value: 
@@ -643,6 +894,42 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[5]
       value: 
       objectReference: {fileID: 636387449550931281}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 8321051196662822117}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 2175612352449820511}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 823088007}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[3]
+      value: 
+      objectReference: {fileID: 5302358668705002114}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -653,7 +940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchorMax.x
@@ -769,8 +1056,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 2716542372577603605}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 4959210751859623585}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 4439108928641685377}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -788,6 +1087,34 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
       objectReference: {fileID: 7542683964895568631}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 4959210751859623585}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 4439108928641685377}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 2716542372577603605}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -902,8 +1229,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 5776858505796190294}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 8321051196662822117}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 3179533668744304904}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -912,15 +1255,15 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1432455860909405242}
+      objectReference: {fileID: 8321051196662822117}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 8321051196662822117}
+      objectReference: {fileID: 3179533668744304904}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 4137989274909613657}
+      objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
       value: 
@@ -928,7 +1271,43 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[5]
       value: 
-      objectReference: {fileID: 8855149090695260160}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[3]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 8321051196662822117}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 3179533668744304904}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 5776858505796190294}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[3]
+      value: 
+      objectReference: {fileID: 823088007}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -939,7 +1318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1011,7 +1390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1028,6 +1407,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888143963110100121, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -1055,8 +1438,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 2175612352449820511}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 5356601425388074969}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 6191603353960803469}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 7542683964895568631}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -1069,11 +1468,11 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 1432455860909405242}
+      objectReference: {fileID: 2175612352449820511}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 2175612352449820511}
+      objectReference: {fileID: 6191603353960803469}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
       value: 
@@ -1082,6 +1481,42 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[5]
       value: 
       objectReference: {fileID: 4959210751859623585}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 6191603353960803469}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 7542683964895568631}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 2175612352449820511}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[3]
+      value: 
+      objectReference: {fileID: 5356601425388074969}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1092,7 +1527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1164,7 +1599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000015258789
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1208,8 +1643,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 4137989274909613657}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 157734590866506129}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 1463905280894527837}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 6801813595482895474}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -1218,15 +1669,15 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 8855149090695260160}
+      objectReference: {fileID: 1463905280894527837}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 1463905280894527837}
+      objectReference: {fileID: 157734590866506129}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 157734590866506129}
+      objectReference: {fileID: 6801813595482895474}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
       value: 
@@ -1239,6 +1690,42 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[6]
       value: 
       objectReference: {fileID: 5776858505796190294}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 1463905280894527837}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 6801813595482895474}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 4137989274909613657}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[3]
+      value: 
+      objectReference: {fileID: 157734590866506129}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1249,7 +1736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1365,31 +1852,83 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 1432455860909405242}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 4439108928641685377}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 2716542372577603605}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 8547961823307051582}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 5776858505796190294}
+      objectReference: {fileID: 1432455860909405242}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1432455860909405242}
+      objectReference: {fileID: 2716542372577603605}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 2716542372577603605}
+      objectReference: {fileID: 8547961823307051582}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 5356601425388074969}
+      objectReference: {fileID: 4439108928641685377}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
       value: 
       objectReference: {fileID: 8547961823307051582}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[5]
+      value: 
+      objectReference: {fileID: 4439108928641685377}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 2716542372577603605}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 8547961823307051582}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 1432455860909405242}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[3]
       value: 
       objectReference: {fileID: 4439108928641685377}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -1402,7 +1941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1518,8 +2057,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 5302358668705002114}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 2175612352449820511}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -1533,6 +2080,26 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
       objectReference: {fileID: 6801813595482895474}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 2175612352449820511}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 5302358668705002114}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1756,7 +2323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5984723160405532746, guid: b4702132af254624ebf1c204153ecfe6, type: 3}
       propertyPath: m_Name
-      value: TriangleLine
+      value: ________TriangleLine_________________________________________________________________________________________________
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4702132af254624ebf1c204153ecfe6, type: 3}
@@ -1773,8 +2340,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 5776858505796190294}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 1907069719183660024}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 7542683964895568631}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 9184279076133802842}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -1787,11 +2370,11 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 636387449550931281}
+      objectReference: {fileID: 7542683964895568631}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 7542683964895568631}
+      objectReference: {fileID: 9184279076133802842}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
       value: 
@@ -1804,6 +2387,42 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[6]
       value: 
       objectReference: {fileID: 4439108928641685377}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 7542683964895568631}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 9184279076133802842}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 5776858505796190294}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[3]
+      value: 
+      objectReference: {fileID: 1907069719183660024}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1814,7 +2433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1930,8 +2549,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 6801813595482895474}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 2716542372577603605}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 157734590866506129}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 1432455860909405242}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -1940,15 +2575,15 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 8321051196662822117}
+      objectReference: {fileID: 1432455860909405242}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 1432455860909405242}
+      objectReference: {fileID: 2716542372577603605}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 2716542372577603605}
+      objectReference: {fileID: 157734590866506129}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
       value: 
@@ -1965,6 +2600,42 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[7]
       value: 
       objectReference: {fileID: 4254497714518838912}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 157734590866506129}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 1432455860909405242}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 6801813595482895474}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[3]
+      value: 
+      objectReference: {fileID: 2716542372577603605}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1975,7 +2646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2047,7 +2718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000015258789
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2091,8 +2762,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 6191603353960803469}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 5356601425388074969}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -2106,6 +2785,26 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
       objectReference: {fileID: 2716542372577603605}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 5356601425388074969}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 6191603353960803469}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2220,8 +2919,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 8547961823307051582}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 1432455860909405242}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -2235,6 +2942,30 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
       objectReference: {fileID: 7542683964895568631}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 1432455860909405242}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 8547961823307051582}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -2349,8 +3080,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: isOccupied
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 8321051196662822117}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 4137989274909613657}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 636387449550931281}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -2359,17 +3106,21 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 6801813595482895474}
+      objectReference: {fileID: 8321051196662822117}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 8321051196662822117}
+      objectReference: {fileID: 636387449550931281}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 636387449550931281}
+      objectReference: {fileID: 8321051196662822117}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 636387449550931281}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: myNeighbourSpotPoints.Array.data[5]
       value: 
       objectReference: {fileID: 5776858505796190294}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -2460,24 +3211,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point_0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+--- !u!1 &1581912225927232711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4888143963110100121, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+  m_PrefabInstance: {fileID: 6206586737294618718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4306910085774973393 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7919314033074940303, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+  m_PrefabInstance: {fileID: 6206586737294618718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912351317891190331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb5e3af839900b44ab35b579ad662f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7912351317891190330 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
   m_PrefabInstance: {fileID: 6206586737294618718}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8855149090695260160 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+--- !u!1 &7912351317891190331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
   m_PrefabInstance: {fileID: 6206586737294618718}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &823088007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912351317891190331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3cc12bcee4b9744aed788fdb45c100, type: 3}
+  m_Script: {fileID: 11500000, guid: b3d34c988fb267543981545580a67817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOccupied: 1
+  isBlocked: 0
+  pointsAvailableToOccupy: []
+  canOccupyOverlayImage: {fileID: 1581912225927232711}
+  ownerOfTheSpotPoint: 1
+  neighborsDictionary:
+    m_keys: 010000000000000003000000
+    m_values:
+    - {fileID: 4137989274909613657}
+    - {fileID: 636387449550931281}
+    - {fileID: 8321051196662822117}
+  inputHandler: {fileID: 4306910085774973393}
+  down1: {fileID: 4137989274909613657}
+  down2: {fileID: 636387449550931281}
+  down3: {fileID: 8321051196662822117}
 --- !u!1001 &6359738632537950025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2486,8 +3275,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 3179533668744304904}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 5776858505796190294}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -2501,6 +3298,30 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
       objectReference: {fileID: 6801813595482895474}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 5776858505796190294}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 3179533668744304904}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -2724,7 +3545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5984723160405532746, guid: b4702132af254624ebf1c204153ecfe6, type: 3}
       propertyPath: m_Name
-      value: Line_1
+      value: ________Line_1_________________________________________________________________________________________________
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4702132af254624ebf1c204153ecfe6, type: 3}
@@ -2741,8 +3562,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 9184279076133802842}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 1907069719183660024}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -2756,6 +3585,30 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
       objectReference: {fileID: 2716542372577603605}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 1907069719183660024}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 9184279076133802842}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -2870,8 +3723,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: isOccupied
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 823088007}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 6801813595482895474}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 4137989274909613657}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 636387449550931281}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: ownerOfTheSpotPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -2884,11 +3761,11 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 7542683964895568631}
+      objectReference: {fileID: 4137989274909613657}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 4137989274909613657}
+      objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
       value: 
@@ -2900,7 +3777,43 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[6]
       value: 
-      objectReference: {fileID: 8855149090695260160}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 4137989274909613657}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 636387449550931281}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 823088007}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[3]
+      value: 
+      objectReference: {fileID: 6801813595482895474}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2911,7 +3824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3027,8 +3940,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 1463905280894527837}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 4137989274909613657}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -3042,6 +3963,26 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
       objectReference: {fileID: 8321051196662822117}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 4137989274909613657}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 1463905280894527837}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3156,8 +4097,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 157734590866506129}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 4959210751859623585}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 7428118494799820687}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 2716542372577603605}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -3166,21 +4123,57 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1907069719183660024}
+      objectReference: {fileID: 157734590866506129}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 157734590866506129}
+      objectReference: {fileID: 7428118494799820687}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 2175612352449820511}
+      objectReference: {fileID: 4959210751859623585}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
       value: 
       objectReference: {fileID: 7428118494799820687}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[5]
+      value: 
+      objectReference: {fileID: 4959210751859623585}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 7428118494799820687}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 2716542372577603605}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 157734590866506129}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[3]
       value: 
       objectReference: {fileID: 4959210751859623585}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -3193,7 +4186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3261,11 +4254,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -10.76
+      value: -10.76001
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00001835823
+      value: -0.000018119812
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3309,8 +4302,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 5356601425388074969}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 4254497714518838912}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -3319,7 +4320,7 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 4439108928641685377}
+      objectReference: {fileID: 5356601425388074969}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
@@ -3328,6 +4329,26 @@ PrefabInstance:
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
       objectReference: {fileID: 157734590866506129}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 4254497714518838912}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 5356601425388074969}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3442,8 +4463,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 8321051196662822117}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 7542683964895568631}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 2175612352449820511}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 5776858505796190294}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -3460,7 +4497,7 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 2716542372577603605}
+      objectReference: {fileID: 2175612352449820511}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
       value: 
@@ -3476,7 +4513,43 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[7]
       value: 
-      objectReference: {fileID: 8855149090695260160}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 2175612352449820511}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 5776858505796190294}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 8321051196662822117}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[3]
+      value: 
+      objectReference: {fileID: 7542683964895568631}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3487,7 +4560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3559,7 +4632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.16000366
+      value: -0.16003418
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3603,8 +4676,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 7428118494799820687}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 157734590866506129}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -3613,9 +4694,29 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 7542683964895568631}
+      objectReference: {fileID: 7428118494799820687}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 7428118494799820687}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 157734590866506129}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
       value: 
       objectReference: {fileID: 7428118494799820687}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -3732,8 +4833,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 7912351317544460085}
     m_Modifications:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.up
+      value: 
+      objectReference: {fileID: 636387449550931281}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.down
+      value: 
+      objectReference: {fileID: 1432455860909405242}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.left
+      value: 
+      objectReference: {fileID: 6801813595482895474}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighbors.right
+      value: 
+      objectReference: {fileID: 8395732774293331735}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.size
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[0]
@@ -3742,15 +4859,15 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1907069719183660024}
+      objectReference: {fileID: 636387449550931281}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 636387449550931281}
+      objectReference: {fileID: 6801813595482895474}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 6801813595482895474}
+      objectReference: {fileID: 8395732774293331735}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[4]
       value: 
@@ -3762,7 +4879,43 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: myNeighbourSpotPoints.Array.data[6]
       value: 
-      objectReference: {fileID: 8855149090695260160}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[0]
+      value: 
+      objectReference: {fileID: 6801813595482895474}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[1]
+      value: 
+      objectReference: {fileID: 8395732774293331735}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 636387449550931281}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_values.Array.data[3]
+      value: 
+      objectReference: {fileID: 1432455860909405242}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3773,7 +4926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_AnchorMax.x
