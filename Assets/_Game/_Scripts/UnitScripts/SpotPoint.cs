@@ -5,7 +5,7 @@ using SovereignStudios;
 public class SpotPoint : SpotPointBase, IInitializer
 {
 
-    /*
+        /*
      * Neighbour spot points
      * To show an overlay image when any neighbour point is selected and if the player can move to this spot point.(to show the possible ways to move)
      * Boolean to check whether the spotpoint is occupied or not.
