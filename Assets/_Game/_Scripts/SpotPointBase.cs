@@ -8,10 +8,13 @@ public class SpotPointBase : MonoBehaviour
 {
 
     #region Variables 
-    public bool isOccupied = false;
+
+    //public bool isOccupied = false;
     public bool isBlocked = false;
     public List<SpotPointBase> pointsAvailableToOccupy;
-    public GameObject canOccupyOverlayImage;
+    public UnityEngine.UI.Image canOccupyOverlayImage;
+    public RectTransform tigerGraphic;
+    public RectTransform goatGraphic;
     public Owner ownerOfTheSpotPoint = Owner.None;
     //public Neighbors neighbors;
     [Space(10)]
@@ -39,7 +42,7 @@ public class SpotPointBase : MonoBehaviour
     public virtual void CheckForVacancy(DirectionFace direction)
     {
         if (!neighborsDictionary.Contains(direction)) return;
-        if (neighborsDictionary[direction].isOccupied)
+        if (!neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.None))
         {
             if (ownerOfTheSpotPoint.Equals(Owner.Goat) && neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.Tiger))
             {
@@ -48,11 +51,12 @@ public class SpotPointBase : MonoBehaviour
             else if (ownerOfTheSpotPoint.Equals(Owner.Tiger) && neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.Goat))
             {
                 if (!neighborsDictionary[direction].neighborsDictionary.Contains(direction)) return;
-                if (!neighborsDictionary[direction].neighborsDictionary[direction].isOccupied)
+                if (neighborsDictionary[direction].neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.None))//can kill goat
                 {
                     if (!pointsAvailableToOccupy.Contains(neighborsDictionary[direction].neighborsDictionary[direction]))
                         pointsAvailableToOccupy.Add(neighborsDictionary[direction].neighborsDictionary[direction]);
                     neighborsDictionary[direction].neighborsDictionary[direction].ShowCanOccupyGraphic();
+                    GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_GOAT_DEAD_POINT_DETECTED, new System.Tuple<SpotPointBase, SpotPointBase>(neighborsDictionary[direction], neighborsDictionary[direction].neighborsDictionary[direction]));
                 }
             }
             else if (ownerOfTheSpotPoint.Equals(neighborsDictionary[direction].ownerOfTheSpotPoint))
@@ -66,6 +70,8 @@ public class SpotPointBase : MonoBehaviour
                 pointsAvailableToOccupy.Add(neighborsDictionary[direction]);
             neighborsDictionary[direction].ShowCanOccupyGraphic();
         }
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOT_POINTS_AVAILABLE_TO_OCCUPY, pointsAvailableToOccupy);
+        SovereignUtils.Log($"++ Check for vacancy from Base class");
     }
     public void UnblockBlockedCellsInNeighborsIfAny()
     {
@@ -83,19 +89,55 @@ public class SpotPointBase : MonoBehaviour
             }
         }
     }
+    public void ShowTigerGraphic()
+    {
+        tigerGraphic.gameObject.SetActive(true);
+    }
+    public void HideTigerGraphic()
+    {
+        tigerGraphic.gameObject.SetActive(false);
+    }
 
+    public void ShowGoatGraphic()
+    {
+        goatGraphic.gameObject.SetActive(true);
+    }
+    public void HideGoatGraphic()
+    {
+        goatGraphic.gameObject.SetActive(false);
+    }
+    public void UpdateOwner(Owner owner)
+    {
+        ownerOfTheSpotPoint = owner;
+    }
     public ICollection<DirectionFace> GetKeysOfTheNeighborDictionary()
     {
         return neighborsDictionary.Keys;
     }
-    public virtual void OnClickSpotPoint() { }
+    public virtual void OnClickSpotPoint()
+    {
+
+    }
+    public Hashtable GetInfo()
+    {
+        Hashtable hashtable = new Hashtable();
+        hashtable.Add(GameplayManager.Who.TargetSpotPoint, this);
+        return hashtable;
+    }
+    public Hashtable GetDetails()
+    {
+        Hashtable hashtable = new Hashtable();
+        hashtable.Add(GameplayManager.Who.Selected, this);
+        return hashtable;
+    }
     public virtual void ShowCanOccupyGraphic()
     {
-        canOccupyOverlayImage.SetActive(true);
+        canOccupyOverlayImage.enabled = true;
+        SovereignUtils.Log($"++ Showing CanOccupyGraphic {transform.name}");
     }
     public virtual void HideCanOccupyGraphic()
     {
-        canOccupyOverlayImage.SetActive(false);
+        canOccupyOverlayImage.enabled = false;
     }
     #endregion
 }

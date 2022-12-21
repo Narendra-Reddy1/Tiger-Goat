@@ -117,6 +117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7912351317544460085}
+  - component: {fileID: 2293425569097827373}
   m_Layer: 5
   m_Name: Map_01
   m_TagString: Untagged
@@ -174,6 +175,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2293425569097827373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912351317544460082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543825c916b1cd14a9baa04317219aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spotPoints:
+  - {fileID: 823088007}
+  - {fileID: 4137989274909613657}
+  - {fileID: 8321051196662822117}
 --- !u!1001 &62504934422937942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -215,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[0]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[1]
@@ -316,6 +333,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -526,6 +547,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -651,6 +676,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -817,6 +846,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point_1
       objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
 --- !u!224 &3078066005450158523 stripped
@@ -917,7 +950,7 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_values.Array.data[0]
       value: 
-      objectReference: {fileID: 8321051196662822117}
+      objectReference: {fileID: 5302358668705002114}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_values.Array.data[1]
       value: 
@@ -929,7 +962,7 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_values.Array.data[3]
       value: 
-      objectReference: {fileID: 5302358668705002114}
+      objectReference: {fileID: 8321051196662822117}
     - target: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1030,6 +1063,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point_12
       objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
 --- !u!224 &3332815345586092131 stripped
@@ -1097,6 +1134,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -1202,6 +1243,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -1410,6 +1455,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4888143963110100121, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1491,6 +1540,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -1617,6 +1670,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point_14
       objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
 --- !u!114 &157734590866506129 stripped
@@ -1700,6 +1757,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -1825,6 +1886,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -2031,6 +2096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point_23
       objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
 --- !u!224 &962322789260637634 stripped
@@ -2087,6 +2156,10 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_values.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[1]
@@ -2187,6 +2260,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -2523,6 +2600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point_22
       objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
 --- !u!224 &345798263453143552 stripped
@@ -2736,6 +2817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point_17
       objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
 --- !u!114 &7542683964895568631 stripped
@@ -2792,6 +2877,10 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_values.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[1]
@@ -2893,6 +2982,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point_11
       objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
 --- !u!114 &7428118494799820687 stripped
@@ -2952,7 +3045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[0]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[1]
@@ -3053,6 +3146,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -3211,12 +3308,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point_0
       objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
---- !u!1 &1581912225927232711 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4888143963110100121, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+--- !u!114 &1666587353573555069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4684537042392075043, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+  m_PrefabInstance: {fileID: 6206586737294618718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &2033838997263423232 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5340033350514091870, guid: e0306f37d007ecd408f28b2930046108, type: 3}
   m_PrefabInstance: {fileID: 6206586737294618718}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &4306910085774973393 stripped
@@ -3230,6 +3342,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb5e3af839900b44ab35b579ad662f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &6067995820070916978 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 150839580167856940, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+  m_PrefabInstance: {fileID: 6206586737294618718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7912351317891190330 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -3252,10 +3369,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d34c988fb267543981545580a67817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOccupied: 1
   isBlocked: 0
   pointsAvailableToOccupy: []
-  canOccupyOverlayImage: {fileID: 1581912225927232711}
+  canOccupyOverlayImage: {fileID: 1666587353573555069}
+  tigerGraphic: {fileID: 6067995820070916978}
+  goatGraphic: {fileID: 2033838997263423232}
   ownerOfTheSpotPoint: 1
   neighborsDictionary:
     m_keys: 010000000000000003000000
@@ -3308,7 +3426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[0]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[1]
@@ -3409,6 +3527,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -3595,7 +3717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[0]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[1]
@@ -3696,6 +3818,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -3801,11 +3927,11 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_values.Array.data[0]
       value: 
-      objectReference: {fileID: 4137989274909613657}
+      objectReference: {fileID: 636387449550931281}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_values.Array.data[1]
       value: 
-      objectReference: {fileID: 636387449550931281}
+      objectReference: {fileID: 4137989274909613657}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_values.Array.data[2]
       value: 
@@ -3914,6 +4040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point_19
       objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
 --- !u!224 &7230477858195444447 stripped
@@ -3970,6 +4100,10 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_values.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[1]
@@ -4071,6 +4205,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point_4
       objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
 --- !u!114 &5302358668705002114 stripped
@@ -4150,6 +4288,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[1]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -4275,6 +4417,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -4436,6 +4582,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -4650,6 +4800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point_18
       objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
 --- !u!224 &5280888210741924424 stripped
@@ -4706,6 +4860,10 @@ PrefabInstance:
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_values.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: neighborsDictionary.m_keys.Array.data[0]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3225130312385894494, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: neighborsDictionary.m_keys.Array.data[1]
@@ -4806,6 +4964,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -5015,6 +5177,10 @@ PrefabInstance:
     - target: {fileID: 4317940882136841829, guid: e0306f37d007ecd408f28b2930046108, type: 3}
       propertyPath: m_Name
       value: Point_21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052018309760221414, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0306f37d007ecd408f28b2930046108, type: 3}

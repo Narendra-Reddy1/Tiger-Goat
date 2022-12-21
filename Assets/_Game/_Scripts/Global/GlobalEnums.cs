@@ -22,12 +22,12 @@ namespace SovereignStudios
         Tiger = 0,
         Goat = 1
     }
-    public enum SelectionMode
-    {
-        TigerMove = 0,
-        GoatMove = 1,
-        GoatOnboarding = 2,
-    }
+    //public enum SelectionMode
+    //{
+    //    TigerMove = 0,
+    //    GoatMove = 1,
+    //    GoatOnboarding = 2,
+    //}
     public enum DirectionFace
     {
         Left,
