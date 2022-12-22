@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SovereignStudios
 {
@@ -46,6 +47,38 @@ namespace SovereignStudios
         {
             if (camera == null) camera = Camera.main;
             return camera.ScreenToWorldPoint(mousePosition);
+        }
+        public static void LoadSceneAsync(int scene, bool makeActive = false, System.Action onComplete = null)
+        {
+            SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive).completed += (handle) =>
+            {
+                if (makeActive)
+                    SceneManager.SetActiveScene(SceneManager.GetSceneAt(scene));
+                onComplete?.Invoke();
+            };
+        }
+        public static void LoadSceneAsync(string scene, bool makeActive = false, System.Action onComplete = null)
+        {
+            SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive).completed += (handle) =>
+            {
+                if (makeActive)
+                    SceneManager.SetActiveScene(SceneManager.GetSceneByName(scene));
+                onComplete?.Invoke();
+            };
+        }
+        public static void UnloadSceneAsync(string scene, System.Action onComplete = null)
+        {
+            SceneManager.UnloadSceneAsync(scene).completed += (handle) =>
+            {
+                onComplete?.Invoke();
+            };
+        }
+        public static void UnloadSceneAsync(int scene, System.Action onComplete = null)
+        {
+            SceneManager.UnloadSceneAsync(scene).completed += (handle) =>
+            {
+                onComplete?.Invoke();
+            };
         }
     }
 }

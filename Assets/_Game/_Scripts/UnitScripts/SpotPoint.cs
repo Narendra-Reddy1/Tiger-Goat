@@ -48,7 +48,7 @@ public class SpotPoint : SpotPointBase, IInitializer
                 {
                     if (!GameplayManager.AreGoatsOnboarded())
                     {
-                        GameplayManager.IncrementGoatCount();
+                        GameplayManager.IncrementPlacedGoatCount();
                         SovereignUtils.Log($"Goat onboarding...");
                         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_GOAT_ONBOARDING_REQUESTED, new System.Tuple<Vector3, System.Action>(goatGraphic.position, () =>
                         {
@@ -89,6 +89,7 @@ public class SpotPoint : SpotPointBase, IInitializer
                 }
                 else if (ownerOfTheSpotPoint.Equals(Owner.None) && GameplayManager.isSpotPointClicked && GameplayManager.GetPointsAvailableToMoveList().Contains(this))
                 {
+                    SovereignUtils.Log($"## Selecting target...");
                     GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTED, GetInfo());
                 }
                 break;
