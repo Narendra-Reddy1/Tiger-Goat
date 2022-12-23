@@ -7,7 +7,7 @@ namespace SovereignStudios
 {
     public class GameplayManager : MonoBehaviour
     {
-        private static PlayerTurn playerTurn = PlayerTurn.Goat;
+        private static PlayerTurn playerTurn;
         // private static SelectionMode selectionMode;
         private static List<SpotPointBase> spotPointsAvailableToMove = new List<SpotPointBase>();
         [SerializeField] private RectTransform goatAnim;
@@ -33,6 +33,10 @@ namespace SovereignStudios
 
         public static bool isSpotPointClicked = false;
 
+        private void Start()
+        {
+            playerTurn = PlayerTurn.Goat;
+        }
         private void OnEnable()
         {
             GlobalEventHandler.AddListener(EventID.EVENT_ON_SPOTPOINT_CLICKED, Callback_On_SpotPoint_Clicked);
@@ -54,55 +58,62 @@ namespace SovereignStudios
         private void MoveTheAnimal(object args)
         {
             Hashtable hashtable = (Hashtable)args;
-            if (hashtable.ContainsKey(Who.Selected))
+            try
             {
-                selectedPoint = (SpotPointBase)hashtable[Who.Selected];
-                //need check what if owneris none. I dont think it is need cause if owner is none the logic won't even execute to this point
-                isTiger = selectedPoint.ownerOfTheSpotPoint == Owner.Tiger;
-                isGoat = selectedPoint.ownerOfTheSpotPoint == Owner.Goat;
-                currentAnimal = isTiger ? selectedPoint.tigerGraphic : selectedPoint.goatGraphic;
-                avilablePos = selectedPoint.pointsAvailableToOccupy;
-                myPrevPos = currentAnimal.position;
-                SovereignUtils.Log($"Move TheAnimal CurrentGraphic event: {currentAnimal}, {avilablePos} ,{avilablePos.Count}, {myPrevPos}");
-            }
-            else if (hashtable.ContainsKey(Who.TargetSpotPoint))
-            {
-                targetPoint = (SpotPointBase)hashtable[Who.TargetSpotPoint];
-                //targetGraphic = 
-                targetPos = isTiger ? targetPoint.tigerGraphic.position : targetPoint.goatGraphic.position;
-                if (!avilablePos.Contains(targetPoint)) return;
-                if (targetPoint.Equals(goatDeadPoint))//Killing the goat 
+                if (hashtable.ContainsKey(Who.Selected))
                 {
-                    goatPoint.HideGoatGraphic();
-                    goatPoint.ownerOfTheSpotPoint = Owner.None;
-                    UpdateDeadGoatCount();
+                    selectedPoint = (SpotPointBase)hashtable[Who.Selected];
+                    //need check what if owneris none. I dont think it is need cause if owner is none the logic won't even execute to this point
+                    isTiger = selectedPoint.ownerOfTheSpotPoint == Owner.Tiger;
+                    isGoat = selectedPoint.ownerOfTheSpotPoint == Owner.Goat;
+                    currentAnimal = isTiger ? selectedPoint.tigerGraphic : selectedPoint.goatGraphic;
+                    avilablePos = selectedPoint.pointsAvailableToOccupy;
+                    myPrevPos = currentAnimal.position;
+                    SovereignUtils.Log($"Move TheAnimal CurrentGraphic event: {currentAnimal}, {avilablePos} ,{avilablePos.Count}, {myPrevPos}");
                 }
-                if (currentAnimal != null)
+                else if (hashtable.ContainsKey(Who.TargetSpotPoint))
                 {
-                    GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_CAN_OCCUPY_GRAPHIC);
-                    currentAnimal.DOMove(targetPos, 1f, true).onComplete += () =>
+                    targetPoint = (SpotPointBase)hashtable[Who.TargetSpotPoint];
+                    //targetGraphic = 
+                    targetPos = isTiger ? targetPoint.tigerGraphic.position : targetPoint.goatGraphic.position;
+                    if (!avilablePos.Contains(targetPoint)) return;
+                    if (targetPoint.Equals(goatDeadPoint))//Killing the goat 
                     {
-                        if (isTiger) targetPoint.ShowTigerGraphic();
-                        else if (isGoat) targetPoint.ShowGoatGraphic();
-                        currentAnimal.DOMove(myPrevPos, 0);
-                        currentAnimal.gameObject.SetActive(false);
-                        targetPoint.UpdateOwner(selectedPoint.ownerOfTheSpotPoint); ;
-                        //targetPoint.isOccupied = true;
-                        selectedPoint.UpdateOwner(Owner.None);
-                        // selectedPoint.isOccupied = false;
-                        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTION_ENDED);
-                        avilablePos.Clear();
+                        goatPoint.HideGoatGraphic();
+                        goatPoint.ownerOfTheSpotPoint = Owner.None;
+                        UpdateDeadGoatCount();
+                    }
+                    if (currentAnimal != null)
+                    {
+                        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_CAN_OCCUPY_GRAPHIC);
+                        currentAnimal.DOMove(targetPos, 1f, true).onComplete += () =>
+                        {
+                            if (isTiger) targetPoint.ShowTigerGraphic();
+                            else if (isGoat) targetPoint.ShowGoatGraphic();
+                            currentAnimal.DOMove(myPrevPos, 0);
+                            currentAnimal.gameObject.SetActive(false);
+                            targetPoint.UpdateOwner(selectedPoint.ownerOfTheSpotPoint); ;
+                            //targetPoint.isOccupied = true;
+                            selectedPoint.UpdateOwner(Owner.None);
+                            // selectedPoint.isOccupied = false;
+                            GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTION_ENDED);
+                            avilablePos.Clear();
 
-                    };
+                        };
+                    }
+                    SovereignUtils.Log($"Move TheAnimal CurrentGraphic event: {currentAnimal}, {avilablePos}, {myPrevPos}");
                 }
-                SovereignUtils.Log($"Move TheAnimal CurrentGraphic event: {currentAnimal}, {avilablePos}, {myPrevPos}");
+            }
+            catch (System.Exception e)
+            {
+                SovereignUtils.Log($"{e.Message} stackTrace: {e.StackTrace}", LogType.Error);
             }
         }
         private void ShowGoatOnboardingAnim(Vector3 targetPos, System.Action onComplete)
         {
             Vector3 myPrevPos = goatAnim.position;
             goatAnim.gameObject.SetActive(true);
-            goatAnim.DOMove(targetPos, 1.1f, true).onComplete += () =>
+            goatAnim.DOMove(targetPos, 1f, true).onComplete += () =>
             {
                 goatAnim.DOMove(myPrevPos, 0f).onComplete += () =>
                 {

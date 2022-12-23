@@ -304,14 +304,13 @@ namespace SovereignStudios
         private void Callback_On_Remove_All_Screens_Requested(object args) => RemoveAllScreens();
         private void Callback_On_Close_Last_Additive_Screen_Requested(object args)
         {
-            Action onComplete = default;
-            if (args != null)
-                onComplete = (Action)args;
+            var tuple = args as Tuple<Action>;
+            onComplete = tuple.Item1;
             CloseLastAdditiveScreen(onComplete);
         }
         private void Callback_On_Change_Screen_Requested(object args)
         {
-            Tuple<Window, ScreenType, bool, Action> tuple = (Tuple<Window, ScreenType, bool, Action>)args;
+            Tuple<Window, ScreenType, bool, Action> tuple = args as Tuple<Window, ScreenType, bool, Action>;
             ChangeScreen(tuple.Item1, tuple.Item2, tuple.Item3, tuple.Item4);
         }
 

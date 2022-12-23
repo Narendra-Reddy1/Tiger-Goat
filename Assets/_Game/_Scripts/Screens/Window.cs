@@ -12,6 +12,7 @@ namespace SovereignStudios
         GenericPopup,
         TriangleBoardMap,
         MainMenu,
+        GameplayScreen,
     }
 
     [System.Serializable]

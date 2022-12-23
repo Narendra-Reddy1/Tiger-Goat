@@ -57,12 +57,11 @@ public class SpotPoint : SpotPointBase, IInitializer
                             GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTION_ENDED);
                             //Aduio cue here
                         }));
-                        //show the goat anim.
-                        //tigger selection done event.
                         return;
                     }
                     if (GameplayManager.isSpotPointClicked)
                     {
+                        SovereignUtils.Log($"### {GameplayManager.GetPlayerTurn()} Selection Done");
                         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTED, GetInfo());
                     }
 
@@ -89,7 +88,7 @@ public class SpotPoint : SpotPointBase, IInitializer
                 }
                 else if (ownerOfTheSpotPoint.Equals(Owner.None) && GameplayManager.isSpotPointClicked && GameplayManager.GetPointsAvailableToMoveList().Contains(this))
                 {
-                    SovereignUtils.Log($"## Selecting target...");
+                    SovereignUtils.Log($"### {GameplayManager.GetPlayerTurn()} Selection Done");
                     GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTED, GetInfo());
                 }
                 break;

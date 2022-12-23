@@ -55,6 +55,7 @@ public class HeadPoint : SpotPointBase
                     }
                     if (GameplayManager.isSpotPointClicked)
                     {
+                        SovereignUtils.Log($"### {GameplayManager.GetPlayerTurn()} Selection Done");
                         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTED, GetInfo());
                     }
                 }
@@ -78,6 +79,7 @@ public class HeadPoint : SpotPointBase
                 }
                 else if (ownerOfTheSpotPoint.Equals(Owner.None) && GameplayManager.isSpotPointClicked && GameplayManager.GetPointsAvailableToMoveList().Contains(this))
                 {
+                    SovereignUtils.Log($"### {GameplayManager.GetPlayerTurn()} Selection Done");
                     GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTED, GetInfo());
                 }
                 break;

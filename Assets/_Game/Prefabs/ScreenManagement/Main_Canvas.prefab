@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CanvasParent: {fileID: 7955753113300870078}
   m_Screens:
-    m_keys: 010000000200000003000000
+    m_keys: 01000000020000000300000004000000
     m_values:
     - assetRefObj:
         m_AssetGUID: 544cd05628364b74da08176ca5fbea3a
@@ -70,6 +70,13 @@ MonoBehaviour:
       IsObjectExist: 0
     - assetRefObj:
         m_AssetGUID: fdfa1a0a4f126ce4f95d59afe3745b76
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      gameObject: {fileID: 0}
+      IsObjectExist: 0
+    - assetRefObj:
+        m_AssetGUID: 1c01c7c98f97305458f815b3af058733
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0

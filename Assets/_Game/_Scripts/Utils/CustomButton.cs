@@ -6,7 +6,9 @@ using UnityEngine.EventSystems;
 public class CustomButton : Button
 {
     [Header("Custom Setting")]
-    public bool clickAnimate = true;
+    [SerializeField] private bool clickAnimate = true;
+
+
     protected override void Start()
     {
         base.Start();

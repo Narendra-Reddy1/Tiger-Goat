@@ -15,12 +15,16 @@ public class SpotPointBlocker : MonoBehaviour
     private void OnEnable()
     {
         GlobalEventHandler.AddListener(EventID.EVENT_ON_SPOTPOINT_SELECTED, Callback_On_Spotpoint_Selected);
+        GlobalEventHandler.AddListener(EventID.EVENT_REQUEST_SCREEN_BLOCK, Callback_On_Screen_Blocker_Requested);
+        GlobalEventHandler.AddListener(EventID.EVENT_REQUEST_SCREEN_UNBLOCK, Callback_On_Screen_Unblocker_Requested);
         GlobalEventHandler.AddListener(EventID.EVENT_ON_SPOTPOINT_SELECTION_ENDED, Callback_On_Selection_Ended);
     }
     private void OnDisable()
     {
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_SPOTPOINT_SELECTED, Callback_On_Spotpoint_Selected);
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_SPOTPOINT_SELECTION_ENDED, Callback_On_Selection_Ended);
+        GlobalEventHandler.RemoveListener(EventID.EVENT_REQUEST_SCREEN_BLOCK, Callback_On_Screen_Blocker_Requested);
+        GlobalEventHandler.RemoveListener(EventID.EVENT_REQUEST_SCREEN_UNBLOCK, Callback_On_Screen_Unblocker_Requested);
     }
 
     public virtual void BlockTheCellIfNoWayToMove()
@@ -35,7 +39,7 @@ public class SpotPointBlocker : MonoBehaviour
             //if any of the neighbor is not occupied then it doesn't make sense to run the logic completely for the particular spotpoint.
             foreach (DirectionFace direction in directions)
             {
-                if (spotPoint.neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.None)) 
+                if (spotPoint.neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.None))
                 {
                     SovereignUtils.Log($"check occupancies: {directions.IndexOf(direction)}");
                     goto InnerLoopEnd;
@@ -86,6 +90,15 @@ public class SpotPointBlocker : MonoBehaviour
     }
 
     #region Callbacks
+
+    private void Callback_On_Screen_Unblocker_Requested(object arg)
+    {
+        UnblockScreen();
+    }
+    private void Callback_On_Screen_Blocker_Requested(object arg)
+    {
+        BlockScreen();
+    }
     private void Callback_On_Spotpoint_Selected(object arg)
     {
         BlockScreen();

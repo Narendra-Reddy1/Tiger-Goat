@@ -14861,7 +14861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593faa18ffd8b2e40a72122370e0ac09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenTransitionBg: {fileID: 0}
+  screenTransitionBg: {fileID: 1234878264699261651}
   leavesCanvasGroup: {fileID: 6915561403072502221}
   leavesAnimatorList:
   - {fileID: 1234878264664908772}

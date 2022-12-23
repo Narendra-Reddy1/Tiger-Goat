@@ -17,17 +17,12 @@ namespace SovereignStudios
         #region Public Methods
         public void OnClickPlayButton()
         {
-            GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SCREEN_TRANSITION_REQUESTED, true);
+            GlobalEventHandler.TriggerEvent(EventID.EVENT_REQUEST_TO_CHANGE_SCREEN_WITH_TRANSITION, Window.GameplayScreen);//ChangeScreenWithTransistion
 
-            //GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new System.Tuple<Window, ScreenType, bool, System.Action>(Window.GenericPopup, ScreenType.Additive, true, () =>
+            //GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new System.Tuple<Window, ScreenType, bool, System.Action>(Window.GameplayScreen, ScreenType.Replace, true, () =>
             //{
-            //    GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SETUP_GENERIC_POPUP_REQUESTED, new System.Tuple<string, string, UnityEngine.Events.UnityAction>("PLAY", "Testing.. " +
-            //        "You clicked on play button.", () => { GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CLOSE_LAST_ADDITIVE_SCREEN); }));
+            //  //  GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SCREEN_TRANSITION_REQUESTED, false);//false uncovers the screen.
             //}));
-            //ScreenManager.Instance.ChangeScreen(Window.GenericPopup, onComplete: () =>
-            //{
-            //    GenericPopup.SetupPopup("PLAY", "You clicked on the play on button to play!", () => { ScreenManager.Instance.CloseLastAdditiveScreen(); });
-            //});
         }
         #endregion Public Methods
 

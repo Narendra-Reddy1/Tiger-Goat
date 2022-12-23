@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,9 +17,9 @@ namespace SovereignStudios
     public class SovereignUtils
     {
 
-#if UNITY_EDITOR
         public static void Log(object message, LogType logType = LogType.Log)
         {
+#if UNITY_EDITOR
             switch (logType)
             {
                 case LogType.Log:
@@ -33,8 +35,10 @@ namespace SovereignStudios
                     Debug.LogAssertion($"{message}");
                     break;
             }
-        }
+#else
+            Debug.unityLogger.logEnabled = false;
 #endif
+        }
         public static string GetJsonStringForTheObject<T>(T data)
         {
             return JsonUtility.ToJson(data);
@@ -80,5 +84,69 @@ namespace SovereignStudios
                 onComplete?.Invoke();
             };
         }
+        public static string GetFormattedSeconds(int seconds)
+        {
+            TimeSpan timeSpan = TimeSpan.FromSeconds(seconds);
+
+            string formattedString = "";
+            if (timeSpan.Days > 0)
+                formattedString = timeSpan.ToString(@"d\d\ h\h");
+            else if (timeSpan.Hours > 0)
+                formattedString = timeSpan.ToString(@"h\h\ m\m");
+            else
+                formattedString = timeSpan.ToString(@"m\m\ s\s");
+            return formattedString;
+        }
+
+        /// <summary>
+        /// For executing all Coroutines in which EXACTLY one argument needs to be passed, call this method
+        /// Here the delay is always fixed, hence we pass WaitForSeconds object and do not create it dynamically
+        /// </summary>
+        public static void DelayedCallback<type>(double delay, Action<type> callBack, type t)
+        {
+            Delayed_Callback(delay, callBack, t).Forget();
+        }
+        /// <summary>
+        /// For executing all Coroutines in which no parameters need to be passed, call this method
+        /// </summary>
+        public static void DelayedCallback(float delay, Action callBack)
+        {
+            Delayed_Callback(delay, callBack).Forget();
+        }
+
+        /// <summary>
+        /// For executing all Coroutines in which EXACTLY one argument needs to be passed, call this method
+        /// </summary>
+        public static void DelayedCallback<type>(float delay, Action<type> callBack, type t)
+        {
+            Delayed_Callback(delay, callBack, t).Forget();
+        }
+
+        /// <summary>
+        /// For executing all Coroutines in which EXACTLY TWO argument needs to be passed, call this method
+        /// </summary>
+        public static void DelayedCallback<type>(float delay, Action<type, type> callBack, type t1, type t2)
+        {
+            Delayed_Callback(delay, callBack, t1, t2).Forget();
+
+        }
+
+
+        private static async UniTaskVoid Delayed_Callback(double delayInSeconds, Action callBack)
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(delayInSeconds), ignoreTimeScale: false);
+            callBack();
+        }
+        private static async UniTaskVoid Delayed_Callback<type>(float delay, Action<type, type> callBack, type t1, type t2)
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(delay), ignoreTimeScale: false);
+            callBack(t1, t2);
+        }
+        private static async UniTaskVoid Delayed_Callback<type>(double delayInSeconds, Action<type> callBack, type t)
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(delayInSeconds), ignoreTimeScale: false);
+            callBack(t);
+        }
+
     }
 }

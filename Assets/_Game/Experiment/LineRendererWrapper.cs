@@ -10,10 +10,11 @@ public class LineRendererWrapper : MonoBehaviour
     [SerializeField] private Canvas mainCanvas;
 
     private Vector2 rectPos;
-    private List<Vector2> pointsPositions;
+    private List<Vector2> pointsPositions = new List<Vector2>();
 
     private void Start()
     {
+        if (mainCanvas == null) mainCanvas = GameObject.FindGameObjectWithTag("Main Canvas").GetComponent<Canvas>();
         rectPos = GetComponent<RectTransform>().position;
         foreach (Transform t in pointsList)
         {
