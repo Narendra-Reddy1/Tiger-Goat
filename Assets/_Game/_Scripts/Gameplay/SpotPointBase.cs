@@ -44,11 +44,11 @@ public class SpotPointBase : MonoBehaviour
         if (!neighborsDictionary.Contains(direction)) return;
         if (!neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.None))
         {
-            if (ownerOfTheSpotPoint.Equals(Owner.Goat) && neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.Tiger))
-            {
-                //Goat can't Move....
-            }
-            else if (ownerOfTheSpotPoint.Equals(Owner.Tiger) && neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.Goat))
+            //if (ownerOfTheSpotPoint.Equals(Owner.Goat) && neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.Tiger))
+            //{
+            //    //Goat can't Move....
+            //}
+             if (ownerOfTheSpotPoint.Equals(Owner.Tiger) && neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.Goat))
             {
                 if (!neighborsDictionary[direction].neighborsDictionary.Contains(direction)) return;
                 if (neighborsDictionary[direction].neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.None))//can kill goat
@@ -59,10 +59,10 @@ public class SpotPointBase : MonoBehaviour
                     GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_GOAT_DEAD_POINT_DETECTED, new System.Tuple<SpotPointBase, SpotPointBase>(neighborsDictionary[direction], neighborsDictionary[direction].neighborsDictionary[direction]));
                 }
             }
-            else if (ownerOfTheSpotPoint.Equals(neighborsDictionary[direction].ownerOfTheSpotPoint))
-            {
+            //else if (ownerOfTheSpotPoint.Equals(neighborsDictionary[direction].ownerOfTheSpotPoint))
+            //{
 
-            }
+            //}
         }
         else
         {
@@ -118,13 +118,13 @@ public class SpotPointBase : MonoBehaviour
     {
 
     }
-    public Hashtable GetInfo()
+    public Hashtable GetInfo()//selected point to move
     {
         Hashtable hashtable = new Hashtable();
         hashtable.Add(GameplayManager.Who.TargetSpotPoint, this);
         return hashtable;
     }
-    public Hashtable GetDetails()
+    public Hashtable GetDetails()//clicked point
     {
         Hashtable hashtable = new Hashtable();
         hashtable.Add(GameplayManager.Who.Selected, this);

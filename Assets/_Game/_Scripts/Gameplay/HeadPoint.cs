@@ -95,11 +95,11 @@ public class HeadPoint : SpotPointBase
         if (point == null) return;
         if (!point.ownerOfTheSpotPoint.Equals(Owner.None))//occupied
         {
-            if (ownerOfTheSpotPoint.Equals(Owner.Goat) && point.ownerOfTheSpotPoint.Equals(Owner.Tiger))
-            {
-                //Goat can't Move....
-            }
-            else if (ownerOfTheSpotPoint.Equals(Owner.Tiger) && point.ownerOfTheSpotPoint.Equals(Owner.Goat))
+            //if (ownerOfTheSpotPoint.Equals(Owner.Goat) && point.ownerOfTheSpotPoint.Equals(Owner.Tiger))
+            //{
+            //    //Goat can't Move....
+            //}
+            if (ownerOfTheSpotPoint.Equals(Owner.Tiger) && point.ownerOfTheSpotPoint.Equals(Owner.Goat))
             {
                 if (point.neighborsDictionary[DirectionFace.Bottom] == null) return;
                 if (point.neighborsDictionary[DirectionFace.Bottom].ownerOfTheSpotPoint.Equals(Owner.None))
@@ -110,10 +110,10 @@ public class HeadPoint : SpotPointBase
                     GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_GOAT_DEAD_POINT_DETECTED, new Tuple<SpotPointBase, SpotPointBase>(point, point.neighborsDictionary[DirectionFace.Bottom]));
                 }
             }
-            else if (ownerOfTheSpotPoint.Equals(point.ownerOfTheSpotPoint))
-            {
+            //else if (ownerOfTheSpotPoint.Equals(point.ownerOfTheSpotPoint))
+            //{
 
-            }
+            //}
         }
         else
         {

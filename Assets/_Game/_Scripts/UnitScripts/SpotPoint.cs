@@ -59,12 +59,11 @@ public class SpotPoint : SpotPointBase, IInitializer
                         }));
                         return;
                     }
-                    if (GameplayManager.isSpotPointClicked)
+                    else if (GameplayManager.isSpotPointClicked)
                     {
                         SovereignUtils.Log($"### {GameplayManager.GetPlayerTurn()} Selection Done");
                         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTED, GetInfo());
                     }
-
                 }
                 else if (ownerOfTheSpotPoint.Equals(Owner.Goat) && GameplayManager.AreGoatsOnboarded())
                 {

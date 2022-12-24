@@ -5,16 +5,21 @@ using UnityEngine;
 
 namespace SovereignStudios
 {
-    public class GameplayManager : MonoBehaviour
+    /// <summary>
+    /// This class is resoponsible for handling player turn. killing the goat.
+    /// showing goat onboarding animation. It also keep tracks of no.og goats on the board,
+    /// no of goats killed and no.of tigers tied by goats.
+    /// </summary>
+    public class GameplayManager : MonoBehaviour, IInitializer
     {
         private static PlayerTurn playerTurn;
         // private static SelectionMode selectionMode;
         private static List<SpotPointBase> spotPointsAvailableToMove = new List<SpotPointBase>();
         [SerializeField] private RectTransform goatAnim;
 
+
         private RectTransform currentAnimal;
         private List<SpotPointBase> avilablePos;
-        private RectTransform targetGraphic;
         private Vector3 targetPos;
         private Vector3 myPrevPos;
         private bool isTiger;
@@ -35,7 +40,7 @@ namespace SovereignStudios
 
         private void Start()
         {
-            playerTurn = PlayerTurn.Goat;
+            Init();
         }
         private void OnEnable()
         {
@@ -45,6 +50,7 @@ namespace SovereignStudios
             GlobalEventHandler.AddListener(EventID.EVENT_ON_GOAT_ONBOARDING_REQUESTED, Callback_On_Goat_Onboarding_Anim_Requested);
             GlobalEventHandler.AddListener(EventID.EVENT_ON_GOAT_DEAD_POINT_DETECTED, Callback_On_Goat_Dead_Point_Detected);
             GlobalEventHandler.AddListener(EventID.EVENT_ON_SPOT_POINTS_AVAILABLE_TO_OCCUPY, Callback_On_Spotpoints_Avail_To_Occupy);
+            GlobalEventHandler.AddListener(EventID.EVENT_REQUEST_TO_CHANGE_PLAYER_TURN, Callback_On_Player_Turn_Change_Requested);
         }
         private void OnDisable()
         {
@@ -54,7 +60,12 @@ namespace SovereignStudios
             GlobalEventHandler.RemoveListener(EventID.EVENT_ON_GOAT_ONBOARDING_REQUESTED, Callback_On_Goat_Onboarding_Anim_Requested);
             GlobalEventHandler.RemoveListener(EventID.EVENT_ON_GOAT_DEAD_POINT_DETECTED, Callback_On_Goat_Dead_Point_Detected);
             GlobalEventHandler.RemoveListener(EventID.EVENT_ON_SPOT_POINTS_AVAILABLE_TO_OCCUPY, Callback_On_Spotpoints_Avail_To_Occupy);
+            GlobalEventHandler.RemoveListener(EventID.EVENT_REQUEST_TO_CHANGE_PLAYER_TURN, Callback_On_Player_Turn_Change_Requested);
         }
+        /// <summary>
+        /// This method is responsible to move the selected animal to the given target point.
+        /// </summary>
+        /// <param name="args"></param>
         private void MoveTheAnimal(object args)
         {
             Hashtable hashtable = (Hashtable)args;
@@ -124,6 +135,14 @@ namespace SovereignStudios
             };
         }
         #region Public Methods
+
+        public void Init()
+        {
+            playerTurn = PlayerTurn.Tiger;
+            GlobalEventHandler.TriggerEvent(EventID.EVENT_REQUEST_TO_CHANGE_PLAYER_TURN);
+            noOfGoatsPlacedOnBoard = 0;
+            noOfGoatsDied = 0;
+        }
         public static List<SpotPointBase> GetPointsAvailableToMoveList()
         {
             return spotPointsAvailableToMove;
@@ -132,6 +151,7 @@ namespace SovereignStudios
         public static PlayerTurn GetPlayerTurn() => playerTurn;
         public static void SwitchPlayerTurn()
         {
+            GlobalEventHandler.TriggerEvent(EventID.EVENT_REQUEST_TO_KILL_TURN_TIMER_TWEENING);
             if (playerTurn == PlayerTurn.Goat)
             {
                 playerTurn = PlayerTurn.Tiger;
@@ -184,6 +204,15 @@ namespace SovereignStudios
             List<SpotPointBase> list = (List<SpotPointBase>)args;
             spotPointsAvailableToMove.Clear();
             spotPointsAvailableToMove.AddRange(list);
+        }
+        private void Callback_On_Player_Turn_Change_Requested(object args)
+        {
+            SwitchPlayerTurn();
+            foreach (SpotPointBase item in spotPointsAvailableToMove)
+            {
+                item.HideCanOccupyGraphic();
+            };
+            spotPointsAvailableToMove.Clear();
         }
         #endregion Callbacks
     }

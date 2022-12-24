@@ -31,20 +31,19 @@ public class ScreenTransitionHandler : MonoBehaviour
 
     private void ChangeScreenWithTransition()
     {
-        isAnimating = true;
         leavesCanvasGroup.DOFade(1, 0.25f);
-        screenTransitionBg.DOFade(1, 0.75f);
+        isAnimating = true;
         for (int i = 0, count = leavesAnimatorList.Count; i < count; i++)
         {
             leavesAnimatorList[i].DOPlay();
             if (i == count - 1)
             {
-                Invoke(nameof(ChangeScreen), 1.1f);
-                Invoke(nameof(UncoverTheScreenWithEffect), 1.45f);
+                    screenTransitionBg.DOFade(1, 0.75f);
+                    SovereignUtils.Log($"## last bunch in leaves transistion");
+                    SovereignUtils.DelayedCallback(1.1f, ChangeScreen);
+                    SovereignUtils.DelayedCallback(1.45f, UncoverTheScreenWithEffect);
             }
         }
-
-
     }
     private void CoverTheScreenWithEffect()
     {

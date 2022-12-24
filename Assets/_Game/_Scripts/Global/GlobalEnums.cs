@@ -22,6 +22,12 @@ namespace SovereignStudios
         Tiger = 0,
         Goat = 1
     }
+    public enum GameResult
+    {
+        TigerWon,
+        GoatWon,
+        Draw,
+    }
     //public enum SelectionMode
     //{
     //    TigerMove = 0,

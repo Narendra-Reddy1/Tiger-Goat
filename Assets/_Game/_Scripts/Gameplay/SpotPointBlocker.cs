@@ -14,6 +14,7 @@ public class SpotPointBlocker : MonoBehaviour
 
     private void OnEnable()
     {
+        GlobalEventHandler.AddListener(EventID.EVENT_ON_GOAT_ONBOARDING_REQUESTED, Callback_On_GoatOnboardin_Requested);
         GlobalEventHandler.AddListener(EventID.EVENT_ON_SPOTPOINT_SELECTED, Callback_On_Spotpoint_Selected);
         GlobalEventHandler.AddListener(EventID.EVENT_REQUEST_SCREEN_BLOCK, Callback_On_Screen_Blocker_Requested);
         GlobalEventHandler.AddListener(EventID.EVENT_REQUEST_SCREEN_UNBLOCK, Callback_On_Screen_Unblocker_Requested);
@@ -21,6 +22,7 @@ public class SpotPointBlocker : MonoBehaviour
     }
     private void OnDisable()
     {
+        GlobalEventHandler.RemoveListener(EventID.EVENT_ON_GOAT_ONBOARDING_REQUESTED, Callback_On_GoatOnboardin_Requested);
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_SPOTPOINT_SELECTED, Callback_On_Spotpoint_Selected);
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_SPOTPOINT_SELECTION_ENDED, Callback_On_Selection_Ended);
         GlobalEventHandler.RemoveListener(EventID.EVENT_REQUEST_SCREEN_BLOCK, Callback_On_Screen_Blocker_Requested);
@@ -75,7 +77,7 @@ public class SpotPointBlocker : MonoBehaviour
                     }
                 }
             }
-            SovereignUtils.Log($"{spotPoint.name} Occupancies: {generalOccupancies}. Dir. count: {directions.Count}. Can it be blocked?: {directions.Count == generalOccupancies}");
+            SovereignUtils.Log($"### {spotPoint.name} Occupancies: {generalOccupancies}. Dir. count: {directions.Count}. Can it be blocked?: {directions.Count == generalOccupancies}");
         InnerLoopEnd:
             SovereignUtils.Log($"InnerLoop end {spotPoint.name}");
         }
@@ -96,6 +98,10 @@ public class SpotPointBlocker : MonoBehaviour
         UnblockScreen();
     }
     private void Callback_On_Screen_Blocker_Requested(object arg)
+    {
+        BlockScreen();
+    }
+    private void Callback_On_GoatOnboardin_Requested(object arg)
     {
         BlockScreen();
     }
