@@ -77,7 +77,7 @@ public class InitSceneInitializer : MonoBehaviour
     {
         GlobalEventHandler.TriggerEvent(EventID.EVENT_REQEST_FADE_SCREEN_IN, new System.Tuple<System.Action>(Oncomplete));
 
-        SovereignUtils.Log($"NAME: {initScene.editorAsset.name} {mainSceneHandle.IsDone}");
+        SovereignUtils.Log($"NAME: {Constants.INIT_SCENE} {mainSceneHandle.IsDone}");
         void Oncomplete()
         {
             if (!mainSceneHandle.IsDone) return;
@@ -87,7 +87,7 @@ public class InitSceneInitializer : MonoBehaviour
                 GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new System.Tuple<Window, ScreenType, bool, System.Action>(Window.MainMenu, ScreenType.Replace, false, () =>
                 {
                     GlobalEventHandler.TriggerEvent(EventID.EVENT_REQEST_FADE_SCREEN_OUT);
-                    SovereignUtils.UnloadSceneAsync(initScene.editorAsset.name);
+                    SovereignUtils.UnloadSceneAsync(Constants.INIT_SCENE);
 
                 }));
             };
