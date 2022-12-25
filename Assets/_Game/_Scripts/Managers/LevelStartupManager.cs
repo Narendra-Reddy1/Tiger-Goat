@@ -1,19 +1,41 @@
+using SovereignStudios;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelStartupManager : MonoBehaviour
+public class LevelStartupManager : MonoBehaviour, IInitializer
 {
     [SerializeField] private List<SpotPointBase> spotPoints;
-    [SerializeField] private SovereignStudios.Owner defaultOwner;
+    [SerializeField] private Owner defaultOwner;
+    private void OnEnable()
+    {
+        GlobalEventHandler.AddListener(EventID.EVENT_ON_LEVEL_STARTED, Callback_On_Level_Started);
+    }
+    private void OnDisable()
+    {
+        GlobalEventHandler.RemoveListener(EventID.EVENT_ON_LEVEL_STARTED, Callback_On_Level_Started);
+
+    }
     private void Start()
+    {
+        Init();
+    }
+
+
+    public void Init()
     {
         foreach (SpotPointBase sp in spotPoints)
         {
             //sp.isOccupied = true;
             sp.ownerOfTheSpotPoint = defaultOwner;
-            if (defaultOwner.Equals(SovereignStudios.Owner.Tiger)) sp.ShowTigerGraphic();
-            else if (defaultOwner.Equals(SovereignStudios.Owner.Goat)) sp.ShowGoatGraphic();
+            if (defaultOwner.Equals(Owner.Tiger)) sp.ShowTigerGraphic();
+            else if (defaultOwner.Equals(Owner.Goat)) sp.ShowGoatGraphic();
+            GlobalEventHandler.TriggerEvent(EventID.EVENT_ANIMAL_ONBOARDED, sp);
         }
     }
+    private void Callback_On_Level_Started(object args)
+    {
+        Init();
+    }
+
 }

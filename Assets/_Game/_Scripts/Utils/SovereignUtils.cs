@@ -19,7 +19,7 @@ namespace SovereignStudios
 
         public static void Log(object message, LogType logType = LogType.Log)
         {
-#if UNITY_EDITOR
+#if UNITY_EDITOR ||DEVELOPMENT_BUILD
             switch (logType)
             {
                 case LogType.Log:
@@ -35,8 +35,6 @@ namespace SovereignStudios
                     Debug.LogAssertion($"{message}");
                     break;
             }
-#else
-            Debug.unityLogger.logEnabled = false;
 #endif
         }
         public static string GetJsonStringForTheObject<T>(T data)

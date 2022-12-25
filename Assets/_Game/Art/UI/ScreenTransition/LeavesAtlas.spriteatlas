@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LeavesAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 512
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 65
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: c54958418f56e5f4ab661679047a22d6, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a0741a134ad0542459215c3545b28dc3, type: 3}
+  - {fileID: 21300000, guid: b8097f35c17a9a345902cb0803a44bad, type: 3}
+  - {fileID: 21300000, guid: 5f54b9081b2a45849a6907790cfa9d75, type: 3}
+  - {fileID: 21300000, guid: 1751951843ce7e940a8c98c764187cdc, type: 3}
+  - {fileID: 21300000, guid: ee4496e8adcbaa141b34756e29060736, type: 3}
+  - {fileID: 21300000, guid: 30d88c9aab4a8a3418d4dc730535a61d, type: 3}
+  - {fileID: 21300000, guid: 6295eacaf61533c4996e50be6e32c977, type: 3}
+  - {fileID: 21300000, guid: 7dea624d1da9ea94f9aca9e114813cb1, type: 3}
+  - {fileID: 21300000, guid: 06def9eed83b46e4f9c63aeaf0ba363a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - leaf_healty_6
+  - leaf_transparent_long_4
+  - leaf_transparent_small_2
+  - leaf_short_8
+  - leaf_healthy_5
+  - leaf_opaque_small_3
+  - leaf_beatle_eaten_1
+  - leaf_long_beatel_eaten_0
+  - leaf_opaque_long_7
+  m_RenderDataMap: {}
+  m_Tag: LeavesAtlas
+  m_IsVariant: 0

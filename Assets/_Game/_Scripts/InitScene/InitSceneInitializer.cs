@@ -84,12 +84,12 @@ public class InitSceneInitializer : MonoBehaviour
             mainSceneInstance.ActivateAsync().completed += (handle) =>
             {
                 SceneManager.SetActiveScene(mainSceneInstance.Scene);
-                GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new System.Tuple<Window, ScreenType, bool, System.Action>(Window.MainMenu, ScreenType.Replace, false, () =>
-                {
-                    GlobalEventHandler.TriggerEvent(EventID.EVENT_REQEST_FADE_SCREEN_OUT);
-                    SovereignUtils.UnloadSceneAsync(Constants.INIT_SCENE);
+                GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new ScreenChangeProperties(Window.MainMenu, onComplete: () =>
+                  {
+                      GlobalEventHandler.TriggerEvent(EventID.EVENT_REQEST_FADE_SCREEN_OUT);
+                      SovereignUtils.UnloadSceneAsync(Constants.INIT_SCENE);
 
-                }));
+                  }));
             };
             SovereignUtils.Log($"Done with Fading In");
         }

@@ -16,11 +16,11 @@ public class GenericPopup : PopupBase
     public override void OnEnable()
     {
         base.OnEnable();
-        GlobalEventHandler.AddListener(EventID.EVENT_ON_SETUP_GENERIC_POPUP_REQUESTED, Callback_On_Setup_Generic_Popup_Requested);
+        GlobalEventHandler.AddListener(EventID.EVENT_REQUEST_GENERIC_POPUP_SETUP, Callback_On_Setup_Generic_Popup_Requested);
     }
     public override void OnDisable()
     {
-        GlobalEventHandler.RemoveListener(EventID.EVENT_ON_SETUP_GENERIC_POPUP_REQUESTED, Callback_On_Setup_Generic_Popup_Requested);
+        GlobalEventHandler.RemoveListener(EventID.EVENT_REQUEST_GENERIC_POPUP_SETUP, Callback_On_Setup_Generic_Popup_Requested);
     }
 
     #endregion Unity Methods

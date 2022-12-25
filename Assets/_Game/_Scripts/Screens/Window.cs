@@ -13,6 +13,7 @@ namespace SovereignStudios
         TriangleBoardMap,
         MainMenu,
         GameplayScreen,
+        GameOverScreen,
     }
 
     [System.Serializable]

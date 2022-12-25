@@ -52,6 +52,7 @@ public class SpotPoint : SpotPointBase, IInitializer
                         SovereignUtils.Log($"Goat onboarding...");
                         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_GOAT_ONBOARDING_REQUESTED, new System.Tuple<Vector3, System.Action>(goatGraphic.position, () =>
                         {
+                            GlobalEventHandler.TriggerEvent(EventID.EVENT_ANIMAL_ONBOARDED, this);
                             ShowGoatGraphic();
                             ownerOfTheSpotPoint = Owner.Goat;
                             GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTION_ENDED);

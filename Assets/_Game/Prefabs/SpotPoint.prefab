@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 150839580167856940}
   - component: {fileID: 3711189534760216225}
   - component: {fileID: 2608481243575212151}
+  - component: {fileID: 1813402651956427796}
   m_Layer: 5
   m_Name: TigerHolder
   m_TagString: Untagged
@@ -76,6 +77,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1813402651956427796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285059511930596927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b2ed11d675446c5a49da1ea296d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectFactor: 1
+  m_ColorFactor: 1
+  m_BlurFactor: 1
+  m_EffectMode: 0
+  m_ColorMode: 0
+  m_BlurMode: 0
+  m_AdvancedBlur: 0
 --- !u!1 &4317940882136841829
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,14 +189,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3cc12bcee4b9744aed788fdb45c100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTurn: 0
-  selectionMode: 0
-  isOccupied: 0
   isBlocked: 0
   pointsAvailableToOccupy: []
   canOccupyOverlayImage: {fileID: 4684537042392075043}
   tigerGraphic: {fileID: 150839580167856940}
   goatGraphic: {fileID: 5340033350514091870}
+  tigerUiEffect: {fileID: 1813402651956427796}
   ownerOfTheSpotPoint: 2
   neighborsDictionary:
     m_keys: 

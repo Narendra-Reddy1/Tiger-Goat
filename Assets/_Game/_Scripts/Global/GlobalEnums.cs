@@ -11,6 +11,13 @@ namespace SovereignStudios
     {
 
     }
+    public enum ResourceType
+    {
+        Coin,
+        Tiger,
+        Goat,
+
+    }
     public enum Owner
     {
         Goat = 0,
@@ -24,9 +31,15 @@ namespace SovereignStudios
     }
     public enum GameResult
     {
+        None,
         TigerWon,
         GoatWon,
         Draw,
+    }
+    public enum GameState
+    {
+        Live,
+        Ended,
     }
     //public enum SelectionMode
     //{

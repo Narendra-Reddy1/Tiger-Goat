@@ -26,23 +26,21 @@ namespace SovereignStudios
 
         #region UnityMethods
 
-        private void Awake()
-        {
-            #region SingletonLogic
-            // Instance = this;
-            #endregion
-        }
         private void OnEnable()
         {
             GlobalEventHandler.AddListener(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, Callback_On_Change_Screen_Requested);
             GlobalEventHandler.AddListener(EventID.EVENT_ON_CLOSE_LAST_ADDITIVE_SCREEN, Callback_On_Close_Last_Additive_Screen_Requested);
             GlobalEventHandler.AddListener(EventID.EVENT_ON_REMOVE_ALL_SCREENS_REQUESTED, Callback_On_Remove_All_Screens_Requested);
+            GlobalEventHandler.AddListener(EventID.EVENT_REQUEST_GET_CURRENT_SCREEN, Callback_On_Current_Screen_Requested);
+            GlobalEventHandler.AddListener(EventID.EVENT_REQUEST_GE_PREVIOUS_SCREEN, Callback_On_Previous_Screen_Requested);
         }
         private void OnDisable()
         {
             GlobalEventHandler.RemoveListener(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, Callback_On_Change_Screen_Requested);
             GlobalEventHandler.RemoveListener(EventID.EVENT_ON_CLOSE_LAST_ADDITIVE_SCREEN, Callback_On_Close_Last_Additive_Screen_Requested);
             GlobalEventHandler.RemoveListener(EventID.EVENT_ON_REMOVE_ALL_SCREENS_REQUESTED, Callback_On_Remove_All_Screens_Requested);
+            GlobalEventHandler.RemoveListener(EventID.EVENT_REQUEST_GET_CURRENT_SCREEN, Callback_On_Current_Screen_Requested);
+            GlobalEventHandler.RemoveListener(EventID.EVENT_REQUEST_GE_PREVIOUS_SCREEN, Callback_On_Previous_Screen_Requested);
         }
         #endregion
 
@@ -304,27 +302,63 @@ namespace SovereignStudios
         private void Callback_On_Remove_All_Screens_Requested(object args) => RemoveAllScreens();
         private void Callback_On_Close_Last_Additive_Screen_Requested(object args)
         {
-            var tuple = args as Tuple<Action>;
-            onComplete = tuple.Item1;
-            CloseLastAdditiveScreen(onComplete);
+            try
+            {
+                Tuple<Action> onComplete = args as Tuple<Action>;
+                CloseLastAdditiveScreen(onComplete.Item1);
+            }
+            catch (Exception e)
+            {
+                SovereignUtils.Log($"Exception from CloseLastAddtive: {e.Message} ST: {e.StackTrace}");
+            }
         }
+        private object Callback_On_Previous_Screen_Requested(object args)
+        {
+            return GetPreviousScreenScreen();
+        }
+        private object Callback_On_Current_Screen_Requested(object args)
+        {
+            return GetCurrentScreen();
+        }
+
         private void Callback_On_Change_Screen_Requested(object args)
         {
-            Tuple<Window, ScreenType, bool, Action> tuple = args as Tuple<Window, ScreenType, bool, Action>;
-            ChangeScreen(tuple.Item1, tuple.Item2, tuple.Item3, tuple.Item4);
+            try
+            {
+                var properties = args as ScreenChangeProperties;
+
+                ChangeScreen(properties.window, properties.screenType, properties.enableDelay, properties.onComplete);
+            }
+            catch (Exception e)
+            {
+                SovereignUtils.Log($"Exception from ChangeScreen: {e.Message} ST: {e.StackTrace}");
+            }
         }
 
         #endregion Callbacks
     }
 
-    [Serializable]
-    public class ScreenSystemObjectDictionary : SerializableDictionary<Window, WindowAddressableObject> { }
     public enum ScreenType
     {
         Additive,//This mode retains the base layer and opens new UI on top of it eg. Popups
         Replace,//This replaces the Base screen eg. Dashboard/ Characters/ Social from ASC
                 //Temp_Replace//This is like replace but does not destroy the old base layer, to be used in case where Base Layer needs to instantiated again and again.
         Additive_Hide//This mode retains the base layer but hides it, and opens new UI on top of it eg. Over Change on top of Scoreboard
+    }
+    [Serializable]
+    public class ScreenChangeProperties
+    {
+        public Window window;
+        public ScreenType screenType;
+        public bool enableDelay;
+        public Action onComplete;
+        public ScreenChangeProperties(Window window, ScreenType screenType = ScreenType.Replace, bool enableDelay = true, Action onComplete = null)
+        {
+            this.window = window;
+            this.screenType = screenType;
+            this.enableDelay = enableDelay;
+            this.onComplete = onComplete;
+        }
     }
 
 }

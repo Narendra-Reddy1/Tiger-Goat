@@ -37,6 +37,10 @@ MonoBehaviour:
     m_Address: Assets/_Game/Prefabs/Screens/Gameplay_Canvas.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 10f56f7ba01d0e043a1879d7fdff1ee1
+    m_Address: Assets/_Game/Prefabs/Screens/GameOverScreen.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d9a4297b466d7e348ac129e8c16e853c, type: 2}
   m_SchemaSet:

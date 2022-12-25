@@ -44,6 +44,7 @@ public class HeadPoint : SpotPointBase
                         GameplayManager.IncrementPlacedGoatCount();
                         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_GOAT_ONBOARDING_REQUESTED, new System.Tuple<Vector3, System.Action>(goatGraphic.position, () =>
                         {
+                            GlobalEventHandler.TriggerEvent(EventID.EVENT_ANIMAL_ONBOARDED, this);
                             ShowGoatGraphic();
                             ownerOfTheSpotPoint = Owner.Goat;
                             GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTION_ENDED);
@@ -87,6 +88,42 @@ public class HeadPoint : SpotPointBase
 
 
 
+    }
+
+    public void CheckForBlocking()
+    {
+        byte myNeighborOccupancies = 0;
+        if (ownerOfTheSpotPoint.Equals(Owner.Tiger))
+        {
+            if (down1.ownerOfTheSpotPoint.Equals(Owner.None) || down2.ownerOfTheSpotPoint.Equals(Owner.None) || down3.ownerOfTheSpotPoint.Equals(Owner.None))
+                return;
+            ChekcOcccpancies(down1, ref myNeighborOccupancies);
+            ChekcOcccpancies(down2, ref myNeighborOccupancies);
+            ChekcOcccpancies(down3, ref myNeighborOccupancies);
+        }
+        if (myNeighborOccupancies == 3)
+        {
+            ShowTigerGrayscaleEffect();
+        }
+        //else if (ownerOfTheSpotPoint.Equals(Owner.Goat))
+        //{
+
+        //}
+    }
+    private void ChekcOcccpancies(SpotPointBase point, ref byte occupancies)
+    {
+        if (point.ownerOfTheSpotPoint.Equals(Owner.Tiger))
+        {
+            occupancies++;
+        }
+        else if (point.ownerOfTheSpotPoint.Equals(Owner.Goat))
+        {
+            if (point.neighborsDictionary[DirectionFace.Bottom].ownerOfTheSpotPoint.Equals(Owner.Tiger)
+                || point.neighborsDictionary[DirectionFace.Bottom].ownerOfTheSpotPoint.Equals(Owner.Goat))
+            {
+                occupancies++;
+            }
+        }
     }
     private void CheckForPossibleMoves(SpotPointBase pointBase)
     {

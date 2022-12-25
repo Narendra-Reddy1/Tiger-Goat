@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace SovereignStudios
     public class GameplayManager : MonoBehaviour, IInitializer
     {
         private static PlayerTurn playerTurn;
+        private static GameState gameState;
         // private static SelectionMode selectionMode;
         private static List<SpotPointBase> spotPointsAvailableToMove = new List<SpotPointBase>();
         [SerializeField] private RectTransform goatAnim;
@@ -30,13 +32,9 @@ namespace SovereignStudios
         private static byte noOfGoatsDied = 0;
         private SpotPointBase goatDeadPoint;
         private SpotPointBase goatPoint;
-        public enum Who
-        {
-            Selected,
-            TargetSpotPoint,
-        }
 
         public static bool isSpotPointClicked = false;
+        public static byte noOfTigersBlocked = 0;
 
         private void Start()
         {
@@ -51,6 +49,10 @@ namespace SovereignStudios
             GlobalEventHandler.AddListener(EventID.EVENT_ON_GOAT_DEAD_POINT_DETECTED, Callback_On_Goat_Dead_Point_Detected);
             GlobalEventHandler.AddListener(EventID.EVENT_ON_SPOT_POINTS_AVAILABLE_TO_OCCUPY, Callback_On_Spotpoints_Avail_To_Occupy);
             GlobalEventHandler.AddListener(EventID.EVENT_REQUEST_TO_CHANGE_PLAYER_TURN, Callback_On_Player_Turn_Change_Requested);
+            GlobalEventHandler.AddListener(EventID.EVENT_RESTART_LEVEL_REQUESTED, Callback_On_Level_Restart_Requested);
+            GlobalEventHandler.AddListener(EventID.EVENT_ON_TIGER_BLOCKED, Callback_On_Tiger_Blocked);
+            GlobalEventHandler.AddListener(EventID.EVENT_ON_TIGER_UNBLOCKED, Callback_On_Tiger_Unblocked);
+
         }
         private void OnDisable()
         {
@@ -61,7 +63,11 @@ namespace SovereignStudios
             GlobalEventHandler.RemoveListener(EventID.EVENT_ON_GOAT_DEAD_POINT_DETECTED, Callback_On_Goat_Dead_Point_Detected);
             GlobalEventHandler.RemoveListener(EventID.EVENT_ON_SPOT_POINTS_AVAILABLE_TO_OCCUPY, Callback_On_Spotpoints_Avail_To_Occupy);
             GlobalEventHandler.RemoveListener(EventID.EVENT_REQUEST_TO_CHANGE_PLAYER_TURN, Callback_On_Player_Turn_Change_Requested);
+            GlobalEventHandler.RemoveListener(EventID.EVENT_RESTART_LEVEL_REQUESTED, Callback_On_Level_Restart_Requested);
+            GlobalEventHandler.RemoveListener(EventID.EVENT_ON_TIGER_BLOCKED, Callback_On_Tiger_Blocked);
+            GlobalEventHandler.RemoveListener(EventID.EVENT_ON_TIGER_UNBLOCKED, Callback_On_Tiger_Unblocked);
         }
+
         /// <summary>
         /// This method is responsible to move the selected animal to the given target point.
         /// </summary>
@@ -92,26 +98,27 @@ namespace SovereignStudios
                     {
                         goatPoint.HideGoatGraphic();
                         goatPoint.ownerOfTheSpotPoint = Owner.None;
+                        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_GOAT_KILLED, goatPoint);
                         UpdateDeadGoatCount();
                     }
-                    if (currentAnimal != null)
-                    {
-                        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_CAN_OCCUPY_GRAPHIC);
-                        currentAnimal.DOMove(targetPos, 1f, true).onComplete += () =>
-                        {
-                            if (isTiger) targetPoint.ShowTigerGraphic();
-                            else if (isGoat) targetPoint.ShowGoatGraphic();
-                            currentAnimal.DOMove(myPrevPos, 0);
-                            currentAnimal.gameObject.SetActive(false);
-                            targetPoint.UpdateOwner(selectedPoint.ownerOfTheSpotPoint); ;
-                            //targetPoint.isOccupied = true;
-                            selectedPoint.UpdateOwner(Owner.None);
-                            // selectedPoint.isOccupied = false;
-                            GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTION_ENDED);
-                            avilablePos.Clear();
+                    GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_CAN_OCCUPY_GRAPHIC);
+                    hashtable.Add(Who.Selected, selectedPoint);//just for the sake of below event.
+                    GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_ANIMAL_MOVED, hashtable);
 
-                        };
-                    }
+                    currentAnimal.DOMove(targetPos, 1f, true).onComplete += () =>
+                    {
+                        if (isTiger) targetPoint.ShowTigerGraphic();
+                        else if (isGoat) targetPoint.ShowGoatGraphic();
+                        currentAnimal.DOMove(myPrevPos, 0);
+                        currentAnimal.gameObject.SetActive(false);
+                        targetPoint.UpdateOwner(selectedPoint.ownerOfTheSpotPoint); ;
+                        //targetPoint.isOccupied = true;
+                        selectedPoint.UpdateOwner(Owner.None);
+                        // selectedPoint.isOccupied = false;
+                        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_SELECTION_ENDED);
+                        avilablePos.Clear();
+
+                    };
                     SovereignUtils.Log($"Move TheAnimal CurrentGraphic event: {currentAnimal}, {avilablePos}, {myPrevPos}");
                 }
             }
@@ -134,14 +141,17 @@ namespace SovereignStudios
 
             };
         }
+
         #region Public Methods
 
         public void Init()
         {
+            gameState = GameState.Live;
             playerTurn = PlayerTurn.Tiger;
             GlobalEventHandler.TriggerEvent(EventID.EVENT_REQUEST_TO_CHANGE_PLAYER_TURN);
             noOfGoatsPlacedOnBoard = 0;
             noOfGoatsDied = 0;
+            noOfTigersBlocked = 0;
         }
         public static List<SpotPointBase> GetPointsAvailableToMoveList()
         {
@@ -170,13 +180,25 @@ namespace SovereignStudios
             Mathf.Clamp(++noOfGoatsPlacedOnBoard, 0, Constants.NUMBER_OF_GOATS_IN_THE_GAME);
             SovereignUtils.Log($"{noOfGoatsPlacedOnBoard} goats placed on board");
         }
+        /// <summary>
+        /// This method updates the dead goat count. <br></br>If the minimum threshold is reached for the tigers win
+        /// it will trigger the LEVEL_FINISH_EVENT.
+        /// </summary>
         public static void UpdateDeadGoatCount()
         {
             noOfGoatsDied++;
+            if (noOfGoatsDied >= Constants.MINIMUM_NUMBER_OF_GOATS_SHOULD_KILL_FOR_TIGERS_WIN)
+                GlobalEventHandler.TriggerEvent(EventID.EVEN_ON_LEVEL_FINISHED, GameResult.TigerWon);
         }
+        public static void SetGameState(GameState state)
+        {
+            gameState = state;
+        }
+        public static GameState GetCurrentGameState() => gameState;
         public static byte GetDeadGoatsCount() => noOfGoatsDied;
 
         #endregion Public Methods
+
         #region Callbacks
         private void Callback_On_Goat_Onboarding_Anim_Requested(object args)
         {
@@ -214,6 +236,38 @@ namespace SovereignStudios
             };
             spotPointsAvailableToMove.Clear();
         }
+        private void Callback_On_Level_Restart_Requested(object arg)
+        {
+            foreach (SpotPointBase item in spotPointsAvailableToMove)
+            {
+                item.HideCanOccupyGraphic();
+            };
+            spotPointsAvailableToMove.Clear();
+            Init();
+        }
+
+        private void Callback_On_Tiger_Unblocked(object args)
+        {
+            Mathf.Clamp(--noOfTigersBlocked, 0, Constants.NUMBER_OF_TIGERS_IN_THE_GAME);
+            SovereignUtils.Log($"*** NoOf Tigers un blocked: {noOfTigersBlocked} incre..");
+        }
+
+        private void Callback_On_Tiger_Blocked(object args)
+        {
+
+            Mathf.Clamp(++noOfTigersBlocked, 0, Constants.NUMBER_OF_TIGERS_IN_THE_GAME);
+            SovereignUtils.Log($"*** NoOf Tigers blocked: {noOfTigersBlocked} incre..");
+            if (noOfTigersBlocked >= Constants.NUMBER_OF_TIGERS_IN_THE_GAME)
+                GlobalEventHandler.TriggerEvent(EventID.EVEN_ON_LEVEL_FINISHED, GameResult.GoatWon);
+        }
+
+
         #endregion Callbacks
+
+    }
+    public enum Who
+    {
+        Selected,
+        TargetSpotPoint,
     }
 }

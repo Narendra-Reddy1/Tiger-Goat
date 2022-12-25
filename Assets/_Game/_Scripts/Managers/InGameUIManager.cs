@@ -50,6 +50,7 @@ public class InGameUIManager : MonoBehaviour
     #region Private Methods 
     private void SetupTigerTurn()
     {
+        if (GameplayManager.GetCurrentGameState().Equals(GameState.Ended)) return;
         goatTimerBar.fillAmount = 1;
         goatUiEffect.effectMode = EffectMode.Grayscale;
         tigerUiEffect.effectMode = EffectMode.None;
@@ -60,7 +61,7 @@ public class InGameUIManager : MonoBehaviour
     }
     private void SetupGoatTurn()
     {
-
+        if (GameplayManager.GetCurrentGameState().Equals(GameState.Ended)) return;
         tigerTimerBar.fillAmount = 1;
         tigerUiEffect.effectMode = EffectMode.Grayscale;
         goatUiEffect.effectMode = EffectMode.None;
@@ -76,7 +77,7 @@ public class InGameUIManager : MonoBehaviour
     }
     private void UpdateGoatsKilledByTigerCountText()
     {
-        goatsKilledCountTxt.text = $"{Mathf.Clamp(GameplayManager.GetDeadGoatsCount(), 0, Constants.MINIMUM_NUMBER_OF_GOATS_SHOULD_FOR_TIGERS_WIN)} / {Constants.MINIMUM_NUMBER_OF_GOATS_SHOULD_FOR_TIGERS_WIN}";
+        goatsKilledCountTxt.text = $"{Mathf.Clamp(GameplayManager.GetDeadGoatsCount(), 0, Constants.MINIMUM_NUMBER_OF_GOATS_SHOULD_KILL_FOR_TIGERS_WIN)} / {Constants.MINIMUM_NUMBER_OF_GOATS_SHOULD_KILL_FOR_TIGERS_WIN}";
     }
     #endregion Private Methods 
 

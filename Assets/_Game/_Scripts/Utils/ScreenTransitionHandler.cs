@@ -17,12 +17,12 @@ public class ScreenTransitionHandler : MonoBehaviour
     #region Unity Methods
     private void OnEnable()
     {
-        GlobalEventHandler.AddListener(EventID.EVENT_ON_SCREEN_TRANSITION_REQUESTED, Callback_On_Screen_Transition_Effect_Requested);
+        GlobalEventHandler.AddListener(EventID.EVENT_REQUEST_SCREEN_TRANSITION, Callback_On_Screen_Transition_Effect_Requested);
         GlobalEventHandler.AddListener(EventID.EVENT_REQUEST_TO_CHANGE_SCREEN_WITH_TRANSITION, Callback_On_Change_Screen_With_Transition_Requested);
     }
     private void OnDisable()
     {
-        GlobalEventHandler.RemoveListener(EventID.EVENT_ON_SCREEN_TRANSITION_REQUESTED, Callback_On_Screen_Transition_Effect_Requested);
+        GlobalEventHandler.RemoveListener(EventID.EVENT_REQUEST_SCREEN_TRANSITION, Callback_On_Screen_Transition_Effect_Requested);
         GlobalEventHandler.RemoveListener(EventID.EVENT_REQUEST_TO_CHANGE_SCREEN_WITH_TRANSITION, Callback_On_Change_Screen_With_Transition_Requested);
     }
     #endregion Unity Methods
@@ -38,10 +38,10 @@ public class ScreenTransitionHandler : MonoBehaviour
             leavesAnimatorList[i].DOPlay();
             if (i == count - 1)
             {
-                    screenTransitionBg.DOFade(1, 0.75f);
-                    SovereignUtils.Log($"## last bunch in leaves transistion");
-                    SovereignUtils.DelayedCallback(1.1f, ChangeScreen);
-                    SovereignUtils.DelayedCallback(1.45f, UncoverTheScreenWithEffect);
+                screenTransitionBg.DOFade(1, 0.75f);
+                SovereignUtils.Log($"## last bunch in leaves transistion");
+                SovereignUtils.DelayedCallback(1.1f, ChangeScreen);
+                SovereignUtils.DelayedCallback(1.45f, UncoverTheScreenWithEffect);
             }
         }
     }
@@ -58,10 +58,10 @@ public class ScreenTransitionHandler : MonoBehaviour
     }
     private void ChangeScreen()
     {
-        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new System.Tuple<Window, ScreenType, bool, System.Action>(window, ScreenType.Replace, true, () =>
-        {
-            window = Window.None;
-        }));
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new ScreenChangeProperties(window, enableDelay: true, onComplete: () =>
+         {
+             window = Window.None;
+         }));
     }
     //private void Update()
     //{

@@ -1,3 +1,4 @@
+using Coffee.UIEffects;
 using SovereignStudios;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ public class SpotPointBase : MonoBehaviour
     public UnityEngine.UI.Image canOccupyOverlayImage;
     public RectTransform tigerGraphic;
     public RectTransform goatGraphic;
+    public UIEffect tigerUiEffect;
     public Owner ownerOfTheSpotPoint = Owner.None;
     //public Neighbors neighbors;
     [Space(10)]
@@ -48,7 +50,7 @@ public class SpotPointBase : MonoBehaviour
             //{
             //    //Goat can't Move....
             //}
-             if (ownerOfTheSpotPoint.Equals(Owner.Tiger) && neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.Goat))
+            if (ownerOfTheSpotPoint.Equals(Owner.Tiger) && neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.Goat))
             {
                 if (!neighborsDictionary[direction].neighborsDictionary.Contains(direction)) return;
                 if (neighborsDictionary[direction].neighborsDictionary[direction].ownerOfTheSpotPoint.Equals(Owner.None))//can kill goat
@@ -106,6 +108,11 @@ public class SpotPointBase : MonoBehaviour
     {
         goatGraphic.gameObject.SetActive(false);
     }
+    public void HideAnimalGraphic()
+    {
+        HideGoatGraphic();
+        HideTigerGraphic();
+    }
     public void UpdateOwner(Owner owner)
     {
         ownerOfTheSpotPoint = owner;
@@ -121,25 +128,42 @@ public class SpotPointBase : MonoBehaviour
     public Hashtable GetInfo()//selected point to move
     {
         Hashtable hashtable = new Hashtable();
-        hashtable.Add(GameplayManager.Who.TargetSpotPoint, this);
+        hashtable.Add(Who.TargetSpotPoint, this);
         return hashtable;
     }
     public Hashtable GetDetails()//clicked point
     {
         Hashtable hashtable = new Hashtable();
-        hashtable.Add(GameplayManager.Who.Selected, this);
+        hashtable.Add(Who.Selected, this);
         return hashtable;
     }
     public virtual void ShowCanOccupyGraphic()
     {
-        canOccupyOverlayImage.enabled = true;
+        if (canOccupyOverlayImage)
+            canOccupyOverlayImage.enabled = true;
         SovereignUtils.Log($"++ Showing CanOccupyGraphic {transform.name}");
     }
     public virtual void HideCanOccupyGraphic()
     {
-        canOccupyOverlayImage.enabled = false;
+        if (canOccupyOverlayImage)
+            canOccupyOverlayImage.enabled = false;
+    }
+    public virtual void ShowTigerGrayscaleEffect()
+    {
+        if (Owner.Tiger == ownerOfTheSpotPoint)
+        {
+            tigerUiEffect.effectMode = EffectMode.Grayscale;
+            GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_TIGER_BLOCKED);
+        }
+    }
+    public virtual void HideTigerGrayscaleEffect()
+    {
+        if (Owner.Tiger == ownerOfTheSpotPoint)
+        {
+            tigerUiEffect.effectMode = EffectMode.None;
+            GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_TIGER_UNBLOCKED);
+        }
+
     }
     #endregion
 }
-[System.Serializable]
-public class NeighborsDictionary : SerializableDictionary<DirectionFace, SpotPointBase> { }
