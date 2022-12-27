@@ -67,6 +67,7 @@ public class SpotPointBlocker : MonoBehaviour
                 {
                     if (spotPoint.isBlocked)
                     {
+                        SovereignUtils.Log($"!!!! Unblockign spotpoint: {spotPoint.name}");
                         ShowOrHideBlockingEffect(spotPoint, false);
                     }
                     SovereignUtils.Log($"!!!! check occupancies: {spotPoint.name} {direction}");
@@ -107,8 +108,9 @@ public class SpotPointBlocker : MonoBehaviour
                         generalOccupancies++;
                     }
                 }
-                if (generalOccupancies == directions.Count)
+                if (generalOccupancies == directions.Count && !spotPoint.isBlocked)
                 {
+                    SovereignUtils.Log($"!!!! blocking spotpoint: {spotPoint.name}");
                     ShowOrHideBlockingEffect(spotPoint, true);
                 }
 

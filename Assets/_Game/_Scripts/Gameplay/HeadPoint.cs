@@ -15,6 +15,8 @@ public class HeadPoint : SpotPointBase
         inputHandler.PointerClickCallback.AddListener(Callback_On_SpotPoint_Clicked);
         //GlobalEventHandler.AddListener(EventID.EVENT_ON_SPOTPOINT_CLICKED, Callback_On_Spotpoint_Clicked);
         GlobalEventHandler.AddListener(EventID.EVENT_ON_HIDE_CAN_OCCUPY_GRAPHIC, Callback_On_Hide_Can_Occupy_Graphic_Requested);
+        GlobalEventHandler.AddListener(EventID.EVENT_ON_LEVEL_STARTED, Callback_On_Level_Started);
+
     }
 
     private void OnDisable()
@@ -22,6 +24,7 @@ public class HeadPoint : SpotPointBase
         inputHandler.PointerClickCallback.RemoveListener(Callback_On_SpotPoint_Clicked);
         //GlobalEventHandler.RemoveListener(EventID.EVENT_ON_SPOTPOINT_CLICKED, Callback_On_Spotpoint_Clicked);
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_HIDE_CAN_OCCUPY_GRAPHIC, Callback_On_Hide_Can_Occupy_Graphic_Requested);
+        GlobalEventHandler.RemoveListener(EventID.EVENT_ON_LEVEL_STARTED, Callback_On_Level_Started);
     }
     public override void OnClickSpotPoint()
     {
@@ -95,15 +98,29 @@ public class HeadPoint : SpotPointBase
         byte myNeighborOccupancies = 0;
         if (ownerOfTheSpotPoint.Equals(Owner.Tiger))
         {
-            if (down1.ownerOfTheSpotPoint.Equals(Owner.None) || down2.ownerOfTheSpotPoint.Equals(Owner.None) || down3.ownerOfTheSpotPoint.Equals(Owner.None))
+            if ((down1.ownerOfTheSpotPoint.Equals(Owner.None) || down2.ownerOfTheSpotPoint.Equals(Owner.None) || down3.ownerOfTheSpotPoint.Equals(Owner.None)) && isBlocked)
+            {
+                isBlocked = false;
+                HideTigerGrayscaleEffect();
+                SovereignUtils.Log($"!!!! UnBlocked Head poiint");
                 return;
+            }
+
             ChekcOcccpancies(down1, ref myNeighborOccupancies);
             ChekcOcccpancies(down2, ref myNeighborOccupancies);
             ChekcOcccpancies(down3, ref myNeighborOccupancies);
         }
-        if (myNeighborOccupancies == 3)
+        if (myNeighborOccupancies == 3 && !isBlocked)
         {
+            isBlocked = true;
             ShowTigerGrayscaleEffect();
+            SovereignUtils.Log($"!!!! Blocked Head poiint");
+        }
+        else if (myNeighborOccupancies < 3 && isBlocked)
+        {
+            isBlocked = false;
+            HideTigerGrayscaleEffect();
+            SovereignUtils.Log($"!!!! UnBlocked Head poiint");
         }
         //else if (ownerOfTheSpotPoint.Equals(Owner.Goat))
         //{
@@ -174,5 +191,11 @@ public class HeadPoint : SpotPointBase
     {
         HideCanOccupyGraphic();
         pointsAvailableToOccupy.Clear();
+    }
+
+    private void Callback_On_Level_Started(object args)
+    {
+        isBlocked = false;
+        HideTigerGrayscaleEffect();
     }
 }

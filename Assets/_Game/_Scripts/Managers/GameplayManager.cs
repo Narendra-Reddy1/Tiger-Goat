@@ -207,6 +207,8 @@ namespace SovereignStudios
         }
         private void Callback_On_SpotPoint_Clicked(object args)
         {
+            goatPoint = null;
+            goatDeadPoint = null;
             MoveTheAnimal(args);
             isSpotPointClicked = true;
         }
@@ -218,6 +220,8 @@ namespace SovereignStudios
         }
         private void Callback_On_Selection_Ended(object args)
         {
+            goatPoint = null;
+            goatDeadPoint = null;
             SwitchPlayerTurn();
             isSpotPointClicked = false;
         }
@@ -234,6 +238,8 @@ namespace SovereignStudios
             {
                 item.HideCanOccupyGraphic();
             };
+            goatPoint = null;
+            goatDeadPoint = null;
             spotPointsAvailableToMove.Clear();
         }
         private void Callback_On_Level_Restart_Requested(object arg)
@@ -242,6 +248,8 @@ namespace SovereignStudios
             {
                 item.HideCanOccupyGraphic();
             };
+            goatDeadPoint = null;
+            goatPoint = null;
             spotPointsAvailableToMove.Clear();
             Init();
         }

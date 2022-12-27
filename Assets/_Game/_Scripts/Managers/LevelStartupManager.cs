@@ -9,11 +9,11 @@ public class LevelStartupManager : MonoBehaviour, IInitializer
     [SerializeField] private Owner defaultOwner;
     private void OnEnable()
     {
-        GlobalEventHandler.AddListener(EventID.EVENT_ON_LEVEL_STARTED, Callback_On_Level_Started);
+        GlobalEventHandler.AddListener(EventID.EVENT_RESTART_LEVEL_REQUESTED, Callback_On_Level_Restarted);
     }
     private void OnDisable()
     {
-        GlobalEventHandler.RemoveListener(EventID.EVENT_ON_LEVEL_STARTED, Callback_On_Level_Started);
+        GlobalEventHandler.RemoveListener(EventID.EVENT_RESTART_LEVEL_REQUESTED, Callback_On_Level_Restarted);
 
     }
     private void Start()
@@ -33,7 +33,7 @@ public class LevelStartupManager : MonoBehaviour, IInitializer
             GlobalEventHandler.TriggerEvent(EventID.EVENT_ANIMAL_ONBOARDED, sp);
         }
     }
-    private void Callback_On_Level_Started(object args)
+    private void Callback_On_Level_Restarted(object args)
     {
         Init();
     }

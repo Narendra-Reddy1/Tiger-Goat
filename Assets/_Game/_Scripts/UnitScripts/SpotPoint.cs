@@ -1,5 +1,6 @@
 using UnityEngine;
 using SovereignStudios;
+using System;
 //Prototype Class
 
 public class SpotPoint : SpotPointBase, IInitializer
@@ -26,11 +27,13 @@ public class SpotPoint : SpotPointBase, IInitializer
     {
         inputHandler.PointerClickCallback.AddListener(Callback_On_SpotPoint_Clicked);
         GlobalEventHandler.AddListener(EventID.EVENT_ON_HIDE_CAN_OCCUPY_GRAPHIC, Callback_On_Hide_Can_Occupy_Graphic_Requested);
+        GlobalEventHandler.AddListener(EventID.EVENT_RESTART_LEVEL_REQUESTED, Callback_On_Level_Restart_Requested);
     }
     private void OnDisable()
     {
         inputHandler.PointerClickCallback.RemoveListener(Callback_On_SpotPoint_Clicked);
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_HIDE_CAN_OCCUPY_GRAPHIC, Callback_On_Hide_Can_Occupy_Graphic_Requested);
+        GlobalEventHandler.RemoveListener(EventID.EVENT_RESTART_LEVEL_REQUESTED, Callback_On_Level_Restart_Requested);
     }
     #endregion Unity Methods
 
@@ -118,5 +121,12 @@ public class SpotPoint : SpotPointBase, IInitializer
         HideCanOccupyGraphic();
         pointsAvailableToOccupy.Clear();
     }
+
+    private void Callback_On_Level_Restart_Requested(object args)
+    {
+        isBlocked = false;
+        HideTigerGrayscaleEffect();
+    }
+
     #endregion
 }
