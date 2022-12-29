@@ -59,7 +59,7 @@ public class InitSceneInitializer : MonoBehaviour
     private void ShowLoadingScreen()
     {
         loadingScreenCanvasGroup.DOFade(1, 0);
-        fillBar.DOFillAmount(1, 3f).onComplete += () =>
+        fillBar.DOFillAmount(1, fakeDuration).onComplete += () =>
         {
             HideLoadingScreen();
             offScreenTabBtn.interactable = true;
@@ -69,7 +69,10 @@ public class InitSceneInitializer : MonoBehaviour
     }
     private void HideLoadingScreen()
     {
-        loadingScreenCanvasGroup.DOFade(0, 0.35f);
+        loadingScreenCanvasGroup.DOFade(0, 0.35f).onComplete += () =>
+          {
+              fillBar.fillAmount = 0;
+          };
     }
 
 
