@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e06edcba729fe8448a2861c68587808a, type: 3}
+  m_Name: Project Asset Manager
+  m_EditorClassIdentifier: 
+  projectSettingAssets: {fileID: 11400000, guid: 486071a57ceec9b44abe0136a55b6a3c, type: 2}
+  assetSecurity: {fileID: 11400000, guid: 9e5ec8836344a164aaba0fcaed470c70, type: 2}
