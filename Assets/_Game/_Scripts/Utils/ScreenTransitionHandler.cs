@@ -31,11 +31,12 @@ public class ScreenTransitionHandler : MonoBehaviour
 
     private void ChangeScreenWithTransition()
     {
+        //Kill();
         leavesCanvasGroup.DOFade(1, 0.25f);
         isAnimating = true;
         for (int i = 0, count = leavesAnimatorList.Count; i < count; i++)
         {
-            leavesAnimatorList[i].DOPlay();
+            leavesAnimatorList[i].DOPlayForward();
             if (i == count - 1)
             {
                 screenTransitionBg.DOFade(1, 0.75f);

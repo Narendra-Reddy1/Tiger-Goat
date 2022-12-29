@@ -19,8 +19,6 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI goatsPlacedCountTxt;
 
 
-
-
     #endregion Variables
 
     #region Unity Methods
@@ -46,7 +44,10 @@ public class InGameUIManager : MonoBehaviour
     #endregion Unity Methods
 
     #region Public Methods 
-
+    public void OnClickSettingsBtn()
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new ScreenChangeProperties(Window.SettingsScreen, ScreenType.Additive));
+    }
     #endregion Public Methods 
 
     #region Private Methods 

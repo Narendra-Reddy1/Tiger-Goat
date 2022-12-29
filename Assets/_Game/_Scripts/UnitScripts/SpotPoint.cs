@@ -125,7 +125,8 @@ public class SpotPoint : SpotPointBase, IInitializer
     private void Callback_On_Level_Restart_Requested(object args)
     {
         isBlocked = false;
-        HideTigerGrayscaleEffect();
+        tigerUiEffect.effectMode = Coffee.UIEffects.EffectMode.None;
+        //HideTigerGrayscaleEffect();
     }
 
     #endregion

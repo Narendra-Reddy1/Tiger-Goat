@@ -50,34 +50,34 @@ namespace SovereignStudios
             if (camera == null) camera = Camera.main;
             return camera.ScreenToWorldPoint(mousePosition);
         }
-        public static void LoadSceneAsync(int scene, bool makeActive = false, System.Action onComplete = null)
+        public static void LoadSceneAsync(int sceneIndex, bool makeActive = false, System.Action onComplete = null)
         {
-            SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive).completed += (handle) =>
+            SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive).completed += (handle) =>
             {
                 if (makeActive)
-                    SceneManager.SetActiveScene(SceneManager.GetSceneAt(scene));
+                    SceneManager.SetActiveScene(SceneManager.GetSceneAt(sceneIndex));
                 onComplete?.Invoke();
             };
         }
-        public static void LoadSceneAsync(string scene, bool makeActive = false, System.Action onComplete = null)
+        public static void LoadSceneAsync(string sceneName, bool makeActive = false, System.Action onComplete = null)
         {
-            SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive).completed += (handle) =>
+            SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive).completed += (handle) =>
             {
                 if (makeActive)
-                    SceneManager.SetActiveScene(SceneManager.GetSceneByName(scene));
+                    SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
                 onComplete?.Invoke();
             };
         }
-        public static void UnloadSceneAsync(string scene, System.Action onComplete = null)
+        public static void UnloadSceneAsync(string sceneName, System.Action onComplete = null)
         {
-            SceneManager.UnloadSceneAsync(scene).completed += (handle) =>
+            SceneManager.UnloadSceneAsync(sceneName).completed += (handle) =>
             {
                 onComplete?.Invoke();
             };
         }
-        public static void UnloadSceneAsync(int scene, System.Action onComplete = null)
+        public static void UnloadSceneAsync(int sceneIndex, System.Action onComplete = null)
         {
-            SceneManager.UnloadSceneAsync(scene).completed += (handle) =>
+            SceneManager.UnloadSceneAsync(sceneIndex).completed += (handle) =>
             {
                 onComplete?.Invoke();
             };

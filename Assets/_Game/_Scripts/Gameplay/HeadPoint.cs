@@ -196,6 +196,7 @@ public class HeadPoint : SpotPointBase
     private void Callback_On_Level_Started(object args)
     {
         isBlocked = false;
-        HideTigerGrayscaleEffect();
+        tigerUiEffect.effectMode = Coffee.UIEffects.EffectMode.None;
+        //HideTigerGrayscaleEffect();
     }
 }

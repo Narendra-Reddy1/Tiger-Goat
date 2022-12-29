@@ -100,6 +100,8 @@ namespace SovereignStudios
                         goatPoint.ownerOfTheSpotPoint = Owner.None;
                         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_GOAT_KILLED, goatPoint);
                         UpdateDeadGoatCount();
+                        goatPoint = null;
+                        goatDeadPoint = null;
                     }
                     GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_CAN_OCCUPY_GRAPHIC);
                     hashtable.Add(Who.Selected, selectedPoint);//just for the sake of below event.
@@ -152,6 +154,7 @@ namespace SovereignStudios
             noOfGoatsPlacedOnBoard = 0;
             noOfGoatsDied = 0;
             noOfTigersBlocked = 0;
+            SovereignUtils.Log($"GameplayManager Init: {gameState} {playerTurn} {noOfGoatsPlacedOnBoard} {noOfGoatsDied} {noOfTigersBlocked}");
         }
         public static List<SpotPointBase> GetPointsAvailableToMoveList()
         {
@@ -207,8 +210,6 @@ namespace SovereignStudios
         }
         private void Callback_On_SpotPoint_Clicked(object args)
         {
-            goatPoint = null;
-            goatDeadPoint = null;
             MoveTheAnimal(args);
             isSpotPointClicked = true;
         }
@@ -256,14 +257,14 @@ namespace SovereignStudios
 
         private void Callback_On_Tiger_Unblocked(object args)
         {
-            Mathf.Clamp(--noOfTigersBlocked, 0, Constants.NUMBER_OF_TIGERS_IN_THE_GAME);
+            noOfTigersBlocked = (byte)Mathf.Clamp(--noOfTigersBlocked, 0, Constants.NUMBER_OF_TIGERS_IN_THE_GAME);
             SovereignUtils.Log($"*** NoOf Tigers un blocked: {noOfTigersBlocked} incre..");
         }
 
         private void Callback_On_Tiger_Blocked(object args)
         {
 
-            Mathf.Clamp(++noOfTigersBlocked, 0, Constants.NUMBER_OF_TIGERS_IN_THE_GAME);
+            noOfTigersBlocked = (byte)Mathf.Clamp(++noOfTigersBlocked, 0, Constants.NUMBER_OF_TIGERS_IN_THE_GAME);
             SovereignUtils.Log($"*** NoOf Tigers blocked: {noOfTigersBlocked} incre..");
             if (noOfTigersBlocked >= Constants.NUMBER_OF_TIGERS_IN_THE_GAME)
                 GlobalEventHandler.TriggerEvent(EventID.EVEN_ON_LEVEL_FINISHED, GameResult.GoatWon);

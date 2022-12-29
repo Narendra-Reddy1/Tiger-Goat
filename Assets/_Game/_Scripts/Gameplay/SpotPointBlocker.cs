@@ -46,7 +46,7 @@ public class SpotPointBlocker : MonoBehaviour
             SovereignUtils.Log($"!!!! Running loop for: {spotPoint.name}");
             if (spotPoint.name == "Point_0")
             {
-                SovereignUtils.Log($"!!!! Blocking HeadPoint: {spotPoint.name}");
+                SovereignUtils.Log($"!!!! Headpoint blocking logic: {spotPoint.name}");
                 var sp = (HeadPoint)spotPoint;
                 sp.CheckForBlocking();
                 goto InnerLoopEnd;
@@ -67,10 +67,9 @@ public class SpotPointBlocker : MonoBehaviour
                 {
                     if (spotPoint.isBlocked)
                     {
-                        SovereignUtils.Log($"!!!! Unblockign spotpoint: {spotPoint.name}");
+                        SovereignUtils.Log($"!!!! Unblocking spotpoint: {spotPoint.name}");
                         ShowOrHideBlockingEffect(spotPoint, false);
                     }
-                    SovereignUtils.Log($"!!!! check occupancies: {spotPoint.name} {direction}");
                     goto InnerLoopEnd;
                 }
             }
@@ -113,9 +112,7 @@ public class SpotPointBlocker : MonoBehaviour
                     SovereignUtils.Log($"!!!! blocking spotpoint: {spotPoint.name}");
                     ShowOrHideBlockingEffect(spotPoint, true);
                 }
-
             }
-            SovereignUtils.Log($"!!!! {spotPoint.name} Occupancies: {generalOccupancies}. Dir. count: {directions.Count}. Can it be blocked?: {directions.Count == generalOccupancies}");
         InnerLoopEnd:
             SovereignUtils.Log($"!!!! InnerLoop end {spotPoint.name}");
         }

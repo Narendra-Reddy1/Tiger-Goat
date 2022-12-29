@@ -448,29 +448,30 @@ public class ProjectBranchSettingEditor : Editor
     {
         // PlayerSettings.SetApplicationIdentifier(EditorUserBuildSettings.selectedBuildTargetGroup, ProjectSettingAssets.GetBundleId(ref projectSettingAsset));
     }
-    static void UpdateGSUploadFileNameForBuild(ref ProjectSettingAssets projectSettingAsset)
-    {
-        string assetPath = AssetDatabase.GetAssetPath(projectSettingAsset.thirdPartySdkKeys.goolgeService_Upload.GetInstanceID());
-        AssetDatabase.RenameAsset(assetPath, "google-services");
-    }
 
-    static void UpdateGSTestFileNameForBuild(ref ProjectSettingAssets projectSettingAsset)
-    {
-        string assetPath = AssetDatabase.GetAssetPath(projectSettingAsset.thirdPartySdkKeys.goolgeService_Dev.GetInstanceID());
-        AssetDatabase.RenameAsset(assetPath, "google-services");
-    }
+    //static void UpdateGSUploadFileNameForBuild(ref ProjectSettingAssets projectSettingAsset)
+    //{
+    //    string assetPath = AssetDatabase.GetAssetPath(projectSettingAsset.thirdPartySdkKeys.goolgeService_Upload.GetInstanceID());
+    //    AssetDatabase.RenameAsset(assetPath, "google-services");
+    //}
 
-    static void ResetGSUploadFileName(ref ProjectSettingAssets projectSettingAsset)
-    {
-        string assetPath = AssetDatabase.GetAssetPath(projectSettingAsset.thirdPartySdkKeys.goolgeService_Upload.GetInstanceID());
-        AssetDatabase.RenameAsset(assetPath, "google-services-prod");
-    }
+    //static void UpdateGSTestFileNameForBuild(ref ProjectSettingAssets projectSettingAsset)
+    //{
+    //    string assetPath = AssetDatabase.GetAssetPath(projectSettingAsset.thirdPartySdkKeys.goolgeService_Dev.GetInstanceID());
+    //    AssetDatabase.RenameAsset(assetPath, "google-services");
+    //}
 
-    static void ResetGSTestFileName(ref ProjectSettingAssets projectSettingAsset)
-    {
-        string assetPath = AssetDatabase.GetAssetPath(projectSettingAsset.thirdPartySdkKeys.goolgeService_Dev.GetInstanceID());
-        AssetDatabase.RenameAsset(assetPath, "google-services-dev");
-    }
+    //static void ResetGSUploadFileName(ref ProjectSettingAssets projectSettingAsset)
+    //{
+    //    string assetPath = AssetDatabase.GetAssetPath(projectSettingAsset.thirdPartySdkKeys.goolgeService_Upload.GetInstanceID());
+    //    AssetDatabase.RenameAsset(assetPath, "google-services-prod");
+    //}
+
+    //static void ResetGSTestFileName(ref ProjectSettingAssets projectSettingAsset)
+    //{
+    //    string assetPath = AssetDatabase.GetAssetPath(projectSettingAsset.thirdPartySdkKeys.goolgeService_Dev.GetInstanceID());
+    //    AssetDatabase.RenameAsset(assetPath, "google-services-dev");
+    //}
 
     /// <summary>
     /// Add define symbols as soon as Unity gets done compiling.

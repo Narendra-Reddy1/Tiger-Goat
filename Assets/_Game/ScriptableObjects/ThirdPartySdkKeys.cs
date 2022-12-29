@@ -9,7 +9,7 @@ public class ThirdPartySdkKeys : ScriptableObject
     
     //public MixpanelSettings mixpanelSettings;
     //public AppsFlyerObjectScript AppsFlyerObject;
-    public MixPanelSetting[] deftMixPanelSettingsList;
+    public MixPanelSetting[] mixPanelSettingsList;
     //public FacebookSettings facebookSettings;
 
     //public IronSourceMediationSettings ironSourceMediationSettings;
@@ -54,17 +54,17 @@ public class ThirdPartySdkKeys : ScriptableObject
 
    
 
-    public ref TextAsset GetGoolgeServiceAsset(ProjectBranch projectBranch)
-    {
-        if (projectBranch ==ProjectBranch.UPLOAD_BUILD)
-        {
-            return ref goolgeService_Dev;
-        }
-        else
-        {
-            return ref goolgeService_Upload;
-        }
-    }
+    //public ref TextAsset GetGoolgeServiceAsset(ProjectBranch projectBranch)
+    //{
+    //    if (projectBranch ==ProjectBranch.UPLOAD_BUILD)
+    //    {
+    //        return ref goolgeService_Dev;
+    //    }
+    //    else
+    //    {
+    //        return ref goolgeService_Upload;
+    //    }
+    //}
     //public  string GetIronSourceApiKey()
     //{
     //#if UNITY_ANDROID
@@ -84,15 +84,16 @@ public class ThirdPartySdkKeys : ScriptableObject
     //        AppsFlyerObject.isDebug = true;
     //    }
     //}
+
     public ref MixPanelSetting GetCurrentMixpanelSetting(ProjectBranch projectBranch)
     {
-        if(deftMixPanelSettingsList.Length>(int)projectBranch)
+        if(mixPanelSettingsList.Length>(int)projectBranch)
         {
-            return ref deftMixPanelSettingsList[(int)projectBranch];
+            return ref mixPanelSettingsList[(int)projectBranch];
         }
         else
         {
-            return ref deftMixPanelSettingsList[(int)ProjectBranch.DEVELOPMENT_BUILD];
+            return ref mixPanelSettingsList[(int)ProjectBranch.DEVELOPMENT_BUILD];
         }
 
     }
