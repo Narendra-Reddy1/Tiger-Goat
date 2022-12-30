@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
-using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
 using System;
-using UnityEditor.AddressableAssets.Settings;
-using UnityEditor.Build.Reporting;
 using System.Xml;
+using UnityEditor;
+using UnityEditor.Build.Reporting;
+using UnityEditor.AddressableAssets.Settings;
 //using GooglePlayGames.Editor;
 
 [CustomEditor(typeof(ProjectSettingAssets))]
@@ -209,11 +209,11 @@ public class ProjectBranchSettingEditor : Editor
             //GUILayout.EndHorizontal();
 
             EditorGUILayout.LabelField("-----------APPLOVIN SETTINGS--------", EditorStyles.boldLabel);
+            //GUILayout.BeginHorizontal();
+            //GUILayout.Label($"Quality Service Enabled: { projectSettingAsset.thirdPartySdkKeys.applovinSettings.QualityServiceEnabled.ToString()} ");
+            //GUILayout.EndHorizontal();
             GUILayout.BeginHorizontal();
-            GUILayout.Label($"Quality Service Enabled: { projectSettingAsset.thirdPartySdkKeys.applovinSettings.QualityServiceEnabled.ToString()} ");
-            GUILayout.EndHorizontal();
-            GUILayout.BeginHorizontal();
-            GUILayout.Label($"Applovin SDK key: {projectSettingAsset.thirdPartySdkKeys.applovinSettings.SdkKey} ");
+            GUILayout.Label($"Applovin SDK key: {projectSettingAsset.thirdPartySdkKeys.applovinSDKKey} ");
             GUILayout.EndHorizontal();
 
 

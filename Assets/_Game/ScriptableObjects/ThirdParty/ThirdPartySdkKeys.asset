@@ -13,18 +13,4 @@ MonoBehaviour:
   m_Name: ThirdPartySdkKeys
   m_EditorClassIdentifier: 
   mixPanelSettingsList: []
-  applovinSettings: {fileID: 11400000, guid: 466cf9405648bf44f8f6b4b3aec1949f, type: 2}
-  IronSourceAndroidApiKey: 
-  IronSourceIosApiKey: 
-  goolgeService: {fileID: 0}
-  goolgeService_Dev: {fileID: 0}
-  goolgeService_Upload: {fileID: 0}
-  liveBranchKey: 
-  liveBranchUri: 
-  liveBranchAppLink1: 
-  liveBranchAppLink2: 
-  testBranchKey: 
-  testBranchUri: 
-  testBranchAppLink1: 
-  testBranchAppLink2: 
-  SMART_LOOK_API_KEY: 
+  applovinSDKKey: FqTmN2rtMlfIKODFsX9UiUE9s4bEWR6vshptki1WFvJFe3KpMRnqdTi_TnS3HalSQ2xtRkRccG5Ryv8Ti6n6St

@@ -12,11 +12,7 @@ public class ThirdPartySdkKeys : ScriptableObject
     [Header("Analytics")]
     [Space(2)]
     public MixPanelSetting[] mixPanelSettingsList;
-
-    [Space(5)]
-    [Header("Ad Network")]
-    [Space(2)]
-    public AppLovinSettings applovinSettings;
+    public string applovinSDKKey;
 
     //public void SetUpBranchData(ProjectBranch projectBranch)
     //{

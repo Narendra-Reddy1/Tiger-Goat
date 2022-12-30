@@ -40,6 +40,7 @@ public class InGameUIManager : MonoBehaviour
     {
         UpdateGoatsKilledByTigerCountText();
         UpdateGoatsPlacedOnTheScreenCountText();
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SHOW_BANNER_AD_REQUESTED);
     }
     #endregion Unity Methods
 

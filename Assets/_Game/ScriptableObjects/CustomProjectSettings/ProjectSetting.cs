@@ -71,7 +71,7 @@ public class ProjectSetting
         //  DeftouchUtils.InitUtilityManager(projectAssetManager);
         SovereignUtils.Log("BundleVersionCode" + BundleVersionCode);
 
-        EnableCoreProjectSetting(projectAssetManager.projectSettingAssets.ENABLE_REPORTER);
+        EnableCoreProjectSetting(enableReporter);
         int branchIndex = (int)CurrentProjectBranch;
         if (branchIndex > (int)ProjectBranch.UPLOAD_BUILD)
         {
