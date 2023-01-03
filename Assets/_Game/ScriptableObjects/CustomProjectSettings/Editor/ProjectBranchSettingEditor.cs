@@ -352,17 +352,17 @@ public class ProjectBranchSettingEditor : Editor
     private static void HandleAndroidKeystore(ref ProjectSettingAssets projectSettingAsset)
     {
         string currentPath = Application.dataPath;
-        string keyStorePath = currentPath + "/../BuildPipeline/cs2Key.keystore";
+        string keyStorePath = currentPath + "/Keystore/ss.keystore";
         if (!File.Exists(keyStorePath))
         {
-            throw new Exception("not found, skipping setup, using Unity's default keystore ");
+            throw new Exception("not found, skipping setup, using Unity's default keystore " + keyStorePath);
         }
         PlayerSettings.Android.useCustomKeystore = true;
         PlayerSettings.Android.useCustomKeystore = true;
         PlayerSettings.Android.keystoreName = keyStorePath;
-        PlayerSettings.Android.keyaliasName = "cs2";
-        PlayerSettings.Android.keystorePass = "Alexi666";
-        PlayerSettings.Android.keyaliasPass = "Alexi666";
+        PlayerSettings.Android.keyaliasName = "ss";
+        PlayerSettings.Android.keystorePass = "naren137";
+        PlayerSettings.Android.keyaliasPass = "naren137";
     }
     private static void BuildAddresable(bool shouldCleanContent)
     {
@@ -566,9 +566,9 @@ public class ProjectBranchSettingEditor : Editor
         {
             case ProjectBranch.DEVELOPMENT_BUILD:
             case ProjectBranch.UPLOAD_BUILD:
-                return "sovereignstudios.tigergoat.com";
+                return "com.sovereign.studios";
             default:
-                return "io.asg.zen";
+                return "com.sovereign.studios";
         }
     }
     private static string GetprojectBranchName(ProjectBranch projectBranch)
@@ -589,9 +589,9 @@ public class ProjectBranchSettingEditor : Editor
         {
             case ProjectBranch.DEVELOPMENT_BUILD:
             case ProjectBranch.UPLOAD_BUILD:
-                return "Zen_Puzzle_Tile_Match_Games";
+                return "Tiger_and_Goat";
             default:
-                return "Zen_Puzzle_Tile_Match_Games";
+                return "Tiger_and_Goat";
         }
     }
     private static string GetProductName(ProjectBranch projectBranch)
@@ -600,9 +600,9 @@ public class ProjectBranchSettingEditor : Editor
         {
             case ProjectBranch.DEVELOPMENT_BUILD:
             case ProjectBranch.UPLOAD_BUILD:
-                return "Zen Puzzle: Tile Match Games";
+                return "Tiger and Goat";
             default:
-                return "Zen Puzzle: Tile Match Games";
+                return "Tiger and Goat";
         }
     }
 

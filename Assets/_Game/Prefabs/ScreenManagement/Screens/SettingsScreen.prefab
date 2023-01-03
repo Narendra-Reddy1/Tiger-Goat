@@ -257,9 +257,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PopupBase, Assembly-CSharp
-        m_MethodName: OnCloseClick
+      - m_Target: {fileID: 8890753440779480220}
+        m_TargetAssemblyTypeName: SettingsScreen, Assembly-CSharp
+        m_MethodName: OnClickQuitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -390,7 +390,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 626763907757136455}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8890753440779480220}
+        m_TargetAssemblyTypeName: SettingsScreen, Assembly-CSharp
+        m_MethodName: OnCloseClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   clickAnimate: 1
 --- !u!1 &626763907822360127
 GameObject:
@@ -1245,7 +1257,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5377094}
   m_AnchorMax: {x: 0.5, y: 0.5377094}
   m_AnchoredPosition: {x: -0.41289997, y: 0.4645996}
-  m_SizeDelta: {x: 289.1039, y: 296.9547}
+  m_SizeDelta: {x: 280, y: 280}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9128337856257164366
 CanvasRenderer:
@@ -1542,9 +1554,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PopupBase, Assembly-CSharp
-        m_MethodName: OnCloseClick
+      - m_Target: {fileID: 8890753440779480220}
+        m_TargetAssemblyTypeName: SettingsScreen, Assembly-CSharp
+        m_MethodName: OnClickToggleAudioButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

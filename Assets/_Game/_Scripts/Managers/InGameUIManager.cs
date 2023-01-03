@@ -18,7 +18,6 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image goatTimerBar;
     [SerializeField] private TextMeshProUGUI goatsPlacedCountTxt;
 
-
     #endregion Variables
 
     #region Unity Methods

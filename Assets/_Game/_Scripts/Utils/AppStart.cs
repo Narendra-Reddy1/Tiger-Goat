@@ -11,6 +11,10 @@ public class AppStart : MonoBehaviour
     {
         MaxSdk.SetSdkKey(assetManager.projectSettingAssets.thirdPartySdkKeys.applovinSDKKey);
         MaxSdk.InitializeSdk();
+        MaxSdkCallbacks.OnSdkInitializedEvent += (config) =>
+        {
+            SovereignStudios.SovereignUtils.Log($"Initialized Max Sdk");
+        };
     }
     private IEnumerator Start()
     {
@@ -25,7 +29,5 @@ public class AppStart : MonoBehaviour
 #endif
         if (!ProjectSetting.IsProjectSettingInitialized())
             ProjectSetting.InitializeProjectSetting(assetManager);
-      
-
     }
 }

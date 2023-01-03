@@ -302,15 +302,13 @@ namespace SovereignStudios
         private void Callback_On_Remove_All_Screens_Requested(object args) => RemoveAllScreens();
         private void Callback_On_Close_Last_Additive_Screen_Requested(object args)
         {
-            try
+            if (args != null)
             {
                 Tuple<Action> onComplete = args as Tuple<Action>;
                 CloseLastAdditiveScreen(onComplete.Item1);
             }
-            catch (Exception e)
-            {
-                SovereignUtils.Log($"Exception from CloseLastAddtive: {e.Message} ST: {e.StackTrace}");
-            }
+            else
+                CloseLastAdditiveScreen();
         }
         private object Callback_On_Previous_Screen_Requested(object args)
         {

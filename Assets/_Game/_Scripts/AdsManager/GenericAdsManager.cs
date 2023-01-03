@@ -48,6 +48,7 @@ public class GenericAdsManager : MonoBehaviour, IInitializer
     private void Callback_On_ShowBannerAd_Requested(object args)
     {
         AdsManager.ShowBannerAd();
+        SovereignUtils.Log($" Banner ad show callback");
     }
     private void Callback_On_HideBannerAd_Requested(object args)
     {

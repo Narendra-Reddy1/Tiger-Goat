@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64b5cc4e9b775d84f814341d4e6c3cf3, type: 3}
-  m_Name: Project Settings
+  m_Name: ProjectSettings
   m_EditorClassIdentifier: 
   CurrentProjectBranch: 0
   ENABLE_REPORTER: 1
@@ -18,9 +18,9 @@ MonoBehaviour:
   ENABLE_LOG_WRITE: 0
   ENABLE_GAMEPLAY_TESTING: 0
   APP_BUNDLE_BUILD: 0
-  EditEnablePlayerSetting: 0
+  EditEnablePlayerSetting: 1
   ViewThirdPartySdkKeys: 0
-  ViewPlayerSetting: 0
+  ViewPlayerSetting: 1
   BundleVersionCode: 1
   Version: 0.0.1
   PackageName: com.sovereign.studio
