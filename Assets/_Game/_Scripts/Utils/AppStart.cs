@@ -1,5 +1,5 @@
+using SovereignStudios.Utils;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AppStart : MonoBehaviour
@@ -13,7 +13,7 @@ public class AppStart : MonoBehaviour
         MaxSdk.InitializeSdk();
         MaxSdkCallbacks.OnSdkInitializedEvent += (config) =>
         {
-            SovereignStudios.SovereignUtils.Log($"Initialized Max Sdk");
+            SovereignUtils.Log($"Initialized Max Sdk");
         };
     }
     private IEnumerator Start()
@@ -24,7 +24,7 @@ public class AppStart : MonoBehaviour
     private void Initialize()
     {
 #if ENABLE_REPORTER && !UPLOAD_BUILD
-        SovereignStudios.SovereignUtils.Log($"Reporter created");
+        SovereignUtils.Log($"Reporter created");
         DontDestroyOnLoad(Instantiate(reporter));
 #endif
         if (!ProjectSetting.IsProjectSettingInitialized())

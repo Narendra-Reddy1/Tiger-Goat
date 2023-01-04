@@ -5,15 +5,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace SovereignStudios
+namespace SovereignStudios.Utils
 {
-    public enum LogType
-    {
-        Log,
-        Warning,
-        Error,
-        Assertion
-    }
+    //public enum LogType
+    //{
+    //    Log,
+    //    Warning,
+    //    Error,
+    //    Assertion
+    //}
     public class SovereignUtils
     {
 
@@ -31,8 +31,11 @@ namespace SovereignStudios
                 case LogType.Error:
                     Debug.LogError($"{message}");
                     break;
-                case LogType.Assertion:
+                case LogType.Assert:
                     Debug.LogAssertion($"{message}");
+                    break;
+                default:
+                    Debug.Log($"{logType}: {message}");
                     break;
             }
 #endif

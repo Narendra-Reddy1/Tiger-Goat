@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using SovereignStudios;
+using SovereignStudios.Utils;
 using UnityEngine.Events;
-using System.Linq;
 
 public class InputPointerHandler : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
 {

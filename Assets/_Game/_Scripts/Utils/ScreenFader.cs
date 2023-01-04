@@ -1,4 +1,5 @@
-using SovereignStudios;
+using SovereignStudios.EventSystem;
+using SovereignStudios.Utils;
 using UnityEngine;
 using DG.Tweening;
 
@@ -28,7 +29,7 @@ public class ScreenFader : MonoBehaviour
     {
         if (!isScreenFaderAvailable)
         {
-            SovereignUtils.Log($"Screen Fader Unavailable!!", SovereignStudios.LogType.Error);
+            SovereignUtils.Log($"Screen Fader Unavailable!!", LogType.Error);
             return;
         }
         screenFader.blocksRaycasts = true;
@@ -51,7 +52,7 @@ public class ScreenFader : MonoBehaviour
     {
         if (!isScreenFaderAvailable)
         {
-            SovereignUtils.Log($"Screen Fader Unavailable!!", SovereignStudios.LogType.Error);
+            SovereignUtils.Log($"Screen Fader Unavailable!!", LogType.Error);
             return;
         }
         screenFader.blocksRaycasts = true;

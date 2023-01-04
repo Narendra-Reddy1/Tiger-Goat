@@ -1,6 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
-using SovereignStudios;
+using SovereignStudios.EventSystem;
 
 public class PopupBase : WindowBase
 {

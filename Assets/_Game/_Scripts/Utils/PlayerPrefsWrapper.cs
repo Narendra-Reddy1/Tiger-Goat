@@ -1,3 +1,4 @@
+using SovereignStudios.Enums;
 using UnityEngine;
 
 namespace SovereignStudios

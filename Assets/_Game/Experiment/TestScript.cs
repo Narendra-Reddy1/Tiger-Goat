@@ -11,17 +11,4 @@ public class TestScript : MonoBehaviour
     public GameObject tigerAtTargetPos;
     public Vector3 myPrevPos;
 
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.L))
-        {
-            myPrevPos = tiger.position;
-            tiger.DOMove(targetPos.position, 1f, true).onComplete += () =>
-            {
-                tigerAtTargetPos.SetActive(true);
-                tiger.DOMove(myPrevPos, 0);
-                tiger.gameObject.SetActive(false);
-            };
-        }
-    }
 }

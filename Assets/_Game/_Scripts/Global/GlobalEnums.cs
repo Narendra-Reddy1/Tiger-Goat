@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SovereignStudios
+namespace SovereignStudios.Enums
 {
     public enum PlayerPrefKeys
     {
@@ -47,6 +47,11 @@ namespace SovereignStudios
     //    GoatMove = 1,
     //    GoatOnboarding = 2,
     //}
+    public enum Who
+    {
+        Selected,
+        TargetSpotPoint,
+    }
     public enum DirectionFace
     {
         Left,

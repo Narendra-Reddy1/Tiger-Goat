@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using SovereignStudios.Enums;
 using UnityEngine;
 using System;
 

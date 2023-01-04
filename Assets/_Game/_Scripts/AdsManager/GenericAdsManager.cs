@@ -1,13 +1,15 @@
-using SovereignStudios;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using SovereignStudios.EventSystem;
+using SovereignStudios.Utils;
 
 public class GenericAdsManager : MonoBehaviour, IInitializer
 {
+    #region Variables
+
     [SerializeField] private AdUnitIds adUnitIds;
     private IAds AdsManager;
 
+    #endregion Variables
 
     #region Unity Methods
     private void Awake()
@@ -39,6 +41,7 @@ public class GenericAdsManager : MonoBehaviour, IInitializer
     }
 
     #endregion Unity Methods
+
     public void Init()
     {
         AdsManager = new ApplovinManager(adUnitIds);

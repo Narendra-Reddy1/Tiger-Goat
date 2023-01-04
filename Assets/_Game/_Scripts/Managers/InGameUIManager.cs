@@ -1,8 +1,11 @@
 using Coffee.UIEffects;
+using SovereignStudios.EventSystem;
+using SovereignStudios.Enums;
 using SovereignStudios;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using SovereignStudios.Utils;
 
 public class InGameUIManager : MonoBehaviour
 {

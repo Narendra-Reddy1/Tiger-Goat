@@ -1,8 +1,8 @@
-using SovereignStudios;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using SovereignStudios;
+using SovereignStudios.EventSystem;
+using SovereignStudios.Utils;
+using SovereignStudios.Enums;
 
 public class WinOrDefeatHandler : MonoBehaviour
 {
@@ -65,7 +65,6 @@ public class WinOrDefeatHandler : MonoBehaviour
         gameResult = GameResult.None;
     }
     #endregion Callbacks
-
 
 
 }

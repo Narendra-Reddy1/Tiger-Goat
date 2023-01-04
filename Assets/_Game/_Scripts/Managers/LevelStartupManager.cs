@@ -1,5 +1,5 @@
-using SovereignStudios;
-using System.Collections;
+using SovereignStudios.EventSystem;
+using SovereignStudios.Enums;
 using System.Collections.Generic;
 using UnityEngine;
 

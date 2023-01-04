@@ -1,6 +1,5 @@
-using SovereignStudios;
-using System.Collections;
-using System.Collections.Generic;
+using SovereignStudios.Utils;
+using SovereignStudios.EventSystem;
 using UnityEngine;
 
 public enum AdState

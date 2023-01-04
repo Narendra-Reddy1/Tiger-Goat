@@ -1,7 +1,8 @@
 using DG.Tweening;
 using SovereignStudios;
+using SovereignStudios.EventSystem;
+using SovereignStudios.Utils;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.ResourceProviders;
@@ -44,6 +45,7 @@ public class InitSceneInitializer : MonoBehaviour
 
         //to shift logic to another script easily if needed.
     }
+
     #region LoadinScreen Logic
 
     [Space(25)]

@@ -1,6 +1,5 @@
-using SovereignStudios;
-using System.Collections;
-using System.Collections.Generic;
+using SovereignStudios.EventSystem;
+using SovereignStudios.Utils;
 using UnityEngine;
 
 public class SettingsScreen : ScreenBase
@@ -18,7 +17,24 @@ public class SettingsScreen : ScreenBase
     #region Private Methods
     private void ToggleAudio()
     {
-
+        if (GameObject.Find("MRec") != null)
+            SovereignUtils.Log($"Found mrec!!");
+        else if (GameObject.Find("MRec(clone)") != null)
+            SovereignUtils.Log($"mrec clone!!!");
+        else if (GameObject.Find("MRecCenter(clone)") != null)
+            SovereignUtils.Log($"MRecCenter clone!!!");
+        else if (GameObject.Find("CenteredMRec(clone)") != null)
+            SovereignUtils.Log($"CenteredMRec clone!!!");
+        else if (GameObject.Find("CenterMRec(clone)") != null)
+            SovereignUtils.Log($"CenterMRec clone!!!");
+        else if (GameObject.Find("MRec") != null)
+            SovereignUtils.Log($"mrec");
+        else if (GameObject.Find("MRecCenter") != null)
+            SovereignUtils.Log($"MRecCenter");
+        else if (GameObject.Find("CenteredMRec") != null)
+            SovereignUtils.Log($"CenteredMRec");
+        else if (GameObject.Find("CenterMRec") != null)
+            SovereignUtils.Log($"CenterMRec");
     }
     private void QuitToTheMainMenu()
     {

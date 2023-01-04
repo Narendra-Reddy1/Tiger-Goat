@@ -1,6 +1,7 @@
 using SovereignStudios;
-using System.Collections;
-using System.Collections.Generic;
+using SovereignStudios.Utils;
+using SovereignStudios.EventSystem;
+using SovereignStudios.Enums;
 using UnityEngine;
 
 public class GameOverPopup : PopupBase
@@ -14,7 +15,7 @@ public class GameOverPopup : PopupBase
         SetupPopup();
     }
     private void SetupPopup()
-    {
+    { 
         switch (WinOrDefeatHandler.gameResult)
         {
             case GameResult.GoatWon:
@@ -29,7 +30,7 @@ public class GameOverPopup : PopupBase
                 messageTxt.text = "Match Draw!!";
                 break;
             default:
-                SovereignUtils.Log($"Incorrect GameResult: {WinOrDefeatHandler.gameResult}", SovereignStudios.LogType.Error);
+                SovereignUtils.Log($"Incorrect GameResult: {WinOrDefeatHandler.gameResult}", LogType.Error);
                 break;
         }
     }

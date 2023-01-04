@@ -1,5 +1,5 @@
 ﻿//using Facebook.Unity.Settings;
-using SovereignStudios;
+using SovereignStudios.Utils;
 using System;
 using UnityEngine;
 

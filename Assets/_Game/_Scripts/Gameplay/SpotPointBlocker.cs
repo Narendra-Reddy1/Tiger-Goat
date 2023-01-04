@@ -1,9 +1,11 @@
-using SovereignStudios;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using SovereignStudios.EventSystem;
+using SovereignStudios.Utils;
+using SovereignStudios.Enums;
 
 
 //this class should run after the tiger or goat positions are changed only.
@@ -54,7 +56,7 @@ public class SpotPointBlocker : MonoBehaviour
             if (spotPoint.ownerOfTheSpotPoint.Equals(Owner.None))
             {
                 occupiedSpotPoints.Remove(spotPoint);
-                SovereignUtils.Log($"!!!! Removed empty spotPoint From blocker!!", SovereignStudios.LogType.Error);
+                SovereignUtils.Log($"!!!! Removed empty spotPoint From blocker!!", LogType.Error);
                 continue;
             }
             List<DirectionFace> directions = spotPoint.GetKeysOfTheNeighborDictionary().ToList();

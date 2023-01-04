@@ -1,4 +1,4 @@
-using SovereignStudios;
+using SovereignStudios.EventSystem;
 using TMPro;
 using UnityEngine;
 

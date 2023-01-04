@@ -90,7 +90,7 @@ MonoBehaviour:
       gameObject: {fileID: 0}
       IsObjectExist: 0
     - assetRefObj:
-        m_AssetGUID: 46cc064fe3cfc4c4c909838f28b61c37
+        m_AssetGUID: d428f35a9200fe04a93f1e45a9037e60
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0

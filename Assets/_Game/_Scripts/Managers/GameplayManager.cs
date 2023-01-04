@@ -1,5 +1,7 @@
 using DG.Tweening;
-using System;
+using SovereignStudios.Enums;
+using SovereignStudios.EventSystem;
+using SovereignStudios.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -273,10 +275,5 @@ namespace SovereignStudios
 
         #endregion Callbacks
 
-    }
-    public enum Who
-    {
-        Selected,
-        TargetSpotPoint,
     }
 }
