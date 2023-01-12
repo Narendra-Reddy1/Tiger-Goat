@@ -1,4 +1,6 @@
 using SovereignStudios.EventSystem;
+using UnityEngine;
+
 namespace SovereignStudios
 {
     public class MainMenuScreen : ScreenBase
@@ -24,7 +26,6 @@ namespace SovereignStudios
         #endregion Public Methods
 
         #region Private Methods
-
         #endregion Private Methods
 
         #region Callbacks

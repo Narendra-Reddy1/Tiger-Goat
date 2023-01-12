@@ -92,4 +92,41 @@ public class GenericAdsManager : MonoBehaviour, IInitializer
     }
     #endregion MREC Ads
 
+    #region Debug 
+    [DebugButton("ShowBanner")]
+    public void ShowBannerAd()
+    {
+        Callback_On_ShowBannerAd_Requested(null);
+    }
+
+    [DebugButton("HideBanner")]
+    public void HideBannerAd()
+    {
+        Callback_On_HideBannerAd_Requested(null);
+    }
+
+    [DebugButton("ShowMRec")]
+    public void ShowMrec()
+    {
+        Callback_On_ShowMRECAd_Requested(null);
+    }
+
+    [DebugButton("HideMRec")]
+    public void HideMRec()
+    {
+        Callback_On_HideMRECAd_Requested(null);
+    }
+
+    [DebugButton("ShowInter")]
+    public void ShowInter()
+    {
+        Callback_On_ShowInterstitialAd_Requested(null);
+    }
+
+    [DebugButton("ShowRewarded")]
+    public void ShowRewarded()
+    {
+        Callback_On_ShowRewardedAd_Requested(null);
+    }
+    #endregion Debug
 }

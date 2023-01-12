@@ -1,25 +1,15 @@
 using Cysharp.Threading.Tasks;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace SovereignStudios.Utils
 {
-    //public enum LogType
-    //{
-    //    Log,
-    //    Warning,
-    //    Error,
-    //    Assertion
-    //}
     public class SovereignUtils
     {
 
         public static void Log(object message, LogType logType = LogType.Log)
         {
-#if UNITY_EDITOR ||DEVELOPMENT_BUILD
             switch (logType)
             {
                 case LogType.Log:
@@ -38,7 +28,6 @@ namespace SovereignStudios.Utils
                     Debug.Log($"{logType}: {message}");
                     break;
             }
-#endif
         }
         public static string GetJsonStringForTheObject<T>(T data)
         {

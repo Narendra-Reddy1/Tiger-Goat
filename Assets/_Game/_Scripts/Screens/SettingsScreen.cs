@@ -49,6 +49,10 @@ public class SettingsScreen : ScreenBase
     }
     public void OnClickQuitButton()
     {
+        foreach (Object obj in Object.FindObjectsOfType(typeof(GameObject)))
+        {
+            Debug.Log($"##### {obj.name}");
+        }
         QuitToTheMainMenu();
     }
     public override void OnCloseClick()

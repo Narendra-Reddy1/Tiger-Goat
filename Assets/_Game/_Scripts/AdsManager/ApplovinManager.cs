@@ -301,6 +301,7 @@ public class ApplovinManager : IInitializer, IAds
 
     public void OnMRecAdCollapsedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo) { }
     #endregion MREC Ads
+
     public void ShowBannerAd()
     {
         SovereignUtils.Log($"Inside applovin.showbannerad");

@@ -333,16 +333,6 @@ MonoBehaviour:
   - {fileID: 7912351317984098938}
   - {fileID: 7912351317984098940}
   screenBlocker: {fileID: 742898822}
---- !u!1 &305050391 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3873204791937545008, guid: ad4793248f4f4444d8b4d06fbbe472c5, type: 3}
-  m_PrefabInstance: {fileID: 7912351317984098937}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &305050394 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2739017748953857571, guid: ad4793248f4f4444d8b4d06fbbe472c5, type: 3}
-  m_PrefabInstance: {fileID: 7912351317984098937}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &742898822
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +364,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1868845974}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -545,10 +535,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee68ff7d0b5ae844931bc36bbdf2635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiger: {fileID: 1947239275}
-  targetPos: {fileID: 305050394}
-  tigerAtTargetPos: {fileID: 305050391}
-  myPrevPos: {x: 0, y: 0, z: 0}
+  artAssetsToInclude: Assets/ASG/2D/ZenPuzzle
+  folders:
+  - ' Assets/ASG/2D/Mahjong'
+  - ' Assets/ASG/2D/ZenPuzzle'
+  - ' Assets/ASG/2D/Solitaire'
 --- !u!4 &883428784
 Transform:
   m_ObjectHideFlags: 0
@@ -808,9 +799,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 987620684}
   - {fileID: 2046505746}
   - {fileID: 742898823}
+  - {fileID: 987620684}
   - {fileID: 283178197}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -820,11 +811,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!224 &1947239275 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6067995820070916978, guid: ad4793248f4f4444d8b4d06fbbe472c5, type: 3}
-  m_PrefabInstance: {fileID: 7912351317984098937}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2012804602
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +873,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1868845974}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

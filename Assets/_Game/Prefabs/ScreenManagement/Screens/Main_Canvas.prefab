@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7955753113300870078}
   - component: {fileID: 7955753113300870079}
+  - component: {fileID: 6233736557064486354}
   m_Layer: 5
   m_Name: ScreenManager
   m_TagString: Untagged
@@ -52,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CanvasParent: {fileID: 7955753113300870078}
   m_Screens:
-    m_keys: 010000000200000003000000040000000500000006000000
+    m_keys: 01000000020000000300000004000000050000000600000007000000
     m_values:
     - assetRefObj:
         m_AssetGUID: 544cd05628364b74da08176ca5fbea3a
@@ -96,7 +97,28 @@ MonoBehaviour:
         m_EditorAssetChanged: 0
       gameObject: {fileID: 0}
       IsObjectExist: 0
+    - assetRefObj:
+        m_AssetGUID: 0ffb3e15d0d35b54981bbcb2fa3c8cdc
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      gameObject: {fileID: 0}
+      IsObjectExist: 0
   m_AdditiveScreenStack: 
+--- !u!114 &6233736557064486354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955753113300870077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d070cde4437ee8e4b82d23d41d9cd694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugPanel: {fileID: 5243619140104941055, guid: 0ffb3e15d0d35b54981bbcb2fa3c8cdc, type: 3}
+  noOfTapsToOpenPanel: 2
 --- !u!1 &7955753113895729978
 GameObject:
   m_ObjectHideFlags: 0
