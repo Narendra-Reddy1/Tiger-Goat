@@ -28,8 +28,8 @@ public class LevelStartupManager : MonoBehaviour, IInitializer
         {
             //sp.isOccupied = true;
             sp.ownerOfTheSpotPoint = defaultOwner;
-            if (defaultOwner.Equals(Owner.Tiger)) sp.ShowTigerGraphic();
-            else if (defaultOwner.Equals(Owner.Goat)) sp.ShowGoatGraphic();
+            if (defaultOwner.Equals(Owner.Tiger)) sp.ShowAnimalGraphic(true);
+            else if (defaultOwner.Equals(Owner.Goat)) sp.ShowAnimalGraphic(false);
             GlobalEventHandler.TriggerEvent(EventID.EVENT_ANIMAL_ONBOARDED, sp);
         }
     }

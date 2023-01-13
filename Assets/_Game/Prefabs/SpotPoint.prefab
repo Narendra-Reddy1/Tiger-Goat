@@ -1,101 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1285059511930596927
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 150839580167856940}
-  - component: {fileID: 3711189534760216225}
-  - component: {fileID: 2608481243575212151}
-  - component: {fileID: 1813402651956427796}
-  m_Layer: 5
-  m_Name: TigerHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &150839580167856940
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285059511930596927}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4317940882136841828}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3711189534760216225
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285059511930596927}
-  m_CullTransparentMesh: 1
---- !u!114 &2608481243575212151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285059511930596927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 129bfdb8b03346d448694dff0b76d778, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &1813402651956427796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285059511930596927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b2ed11d675446c5a49da1ea296d490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectFactor: 1
-  m_ColorFactor: 1
-  m_BlurFactor: 1
-  m_EffectMode: 0
-  m_ColorMode: 0
-  m_BlurMode: 0
-  m_AdvancedBlur: 0
 --- !u!1 &4317940882136841829
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +33,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1348443828646870496}
-  - {fileID: 150839580167856940}
   - {fileID: 5340033350514091870}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -189,17 +92,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3cc12bcee4b9744aed788fdb45c100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteManager: {fileID: 11400000, guid: edb1fa91fe564b14eaee104550075ef0, type: 2}
   isBlocked: 0
   pointsAvailableToOccupy: []
   canOccupyOverlayImage: {fileID: 4684537042392075043}
-  tigerGraphic: {fileID: 150839580167856940}
-  goatGraphic: {fileID: 5340033350514091870}
-  tigerUiEffect: {fileID: 1813402651956427796}
+  animalGraphicTransform: {fileID: 5340033350514091870}
+  tigerUiEffect: {fileID: 8996281188413177657}
   ownerOfTheSpotPoint: 2
   neighborsDictionary:
     m_keys: 
     m_values: []
   inputHandler: {fileID: 7919314033074940303}
+  animalGraphic: {fileID: 0}
 --- !u!114 &7919314033074940303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,8 +206,9 @@ GameObject:
   - component: {fileID: 5340033350514091870}
   - component: {fileID: 1860914817369375686}
   - component: {fileID: 2377094463924824772}
+  - component: {fileID: 8996281188413177657}
   m_Layer: 5
-  m_Name: GoatHolder
+  m_Name: AnimalHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,7 +227,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4317940882136841828}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -357,7 +262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 32bb3f8ed710e6e47a9166464e7cc03d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 129bfdb8b03346d448694dff0b76d778, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -367,3 +272,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8996281188413177657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6052018309760221414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b2ed11d675446c5a49da1ea296d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectFactor: 1
+  m_ColorFactor: 1
+  m_BlurFactor: 1
+  m_EffectMode: 0
+  m_ColorMode: 0
+  m_BlurMode: 0
+  m_AdvancedBlur: 0

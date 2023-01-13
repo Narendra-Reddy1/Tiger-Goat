@@ -3344,6 +3344,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5340033350514091870, guid: e0306f37d007ecd408f28b2930046108, type: 3}
   m_PrefabInstance: {fileID: 6206586737294618718}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3097086569387773799 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8996281188413177657, guid: e0306f37d007ecd408f28b2930046108, type: 3}
+  m_PrefabInstance: {fileID: 6206586737294618718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b2ed11d675446c5a49da1ea296d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4306910085774973393 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7919314033074940303, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -3355,22 +3366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb5e3af839900b44ab35b579ad662f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5695006076249148490 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1813402651956427796, guid: e0306f37d007ecd408f28b2930046108, type: 3}
-  m_PrefabInstance: {fileID: 6206586737294618718}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b2ed11d675446c5a49da1ea296d490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!224 &6067995820070916978 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 150839580167856940, guid: e0306f37d007ecd408f28b2930046108, type: 3}
-  m_PrefabInstance: {fileID: 6206586737294618718}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7912351317891190330 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4317940882136841828, guid: e0306f37d007ecd408f28b2930046108, type: 3}
@@ -3393,12 +3388,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d34c988fb267543981545580a67817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteManager: {fileID: 11400000, guid: edb1fa91fe564b14eaee104550075ef0, type: 2}
   isBlocked: 0
   pointsAvailableToOccupy: []
   canOccupyOverlayImage: {fileID: 1666587353573555069}
-  tigerGraphic: {fileID: 6067995820070916978}
-  goatGraphic: {fileID: 2033838997263423232}
-  tigerUiEffect: {fileID: 5695006076249148490}
+  animalGraphicTransform: {fileID: 2033838997263423232}
+  tigerUiEffect: {fileID: 3097086569387773799}
   ownerOfTheSpotPoint: 1
   neighborsDictionary:
     m_keys: 010000000000000003000000
@@ -3407,6 +3402,7 @@ MonoBehaviour:
     - {fileID: 636387449550931281}
     - {fileID: 8321051196662822117}
   inputHandler: {fileID: 4306910085774973393}
+  animalGraphic: {fileID: 0}
   down1: {fileID: 4137989274909613657}
   down2: {fileID: 636387449550931281}
   down3: {fileID: 8321051196662822117}

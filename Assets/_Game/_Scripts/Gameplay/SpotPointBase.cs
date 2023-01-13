@@ -15,11 +15,11 @@ public class SpotPointBase : MonoBehaviour
     #region Variables 
 
     //public bool isOccupied = false;
+    public SpriteManager spriteManager;
     public bool isBlocked = false;
     public List<SpotPointBase> pointsAvailableToOccupy;
     public UnityEngine.UI.Image canOccupyOverlayImage;
-    public RectTransform tigerGraphic;
-    public RectTransform goatGraphic;
+    public RectTransform animalGraphicTransform;
     public UIEffect tigerUiEffect;
     public Owner ownerOfTheSpotPoint = Owner.None;
     //public Neighbors neighbors;
@@ -27,7 +27,25 @@ public class SpotPointBase : MonoBehaviour
     public NeighborsDictionary neighborsDictionary;
     [Space(10)]
     public InputPointerHandler inputHandler;
+    [HideInInspector]
+    public UnityEngine.UI.Image animalGraphic;
+
+    public readonly Vector3 tigerScale = Vector3.one * 0.7f;
     #endregion Variables
+
+    #region Unity Methods
+
+    public virtual void OnEnable()
+    {
+        animalGraphicTransform.TryGetComponent(out animalGraphic);
+    }
+    public virtual void OnDisable()
+    {
+
+    }
+    #endregion Unity Methods
+
+
     //private void OnValidate()
     //{
     //    if (this.name == "HeadPoint")
@@ -95,28 +113,27 @@ public class SpotPointBase : MonoBehaviour
             }
         }
     }
-    public void ShowTigerGraphic()
-    {
-        tigerGraphic.gameObject.SetActive(true);
-    }
-    public void HideTigerGraphic()
-    {
-        tigerGraphic.gameObject.SetActive(false);
-    }
 
-    public void ShowGoatGraphic()
+
+    public void ShowAnimalGraphic(bool isTiger)
     {
-        goatGraphic.gameObject.SetActive(true);
-    }
-    public void HideGoatGraphic()
-    {
-        goatGraphic.gameObject.SetActive(false);
+        animalGraphic.gameObject.SetActive(true);
+        if (isTiger)
+            animalGraphicTransform.localScale = tigerScale;
+        else
+            animalGraphicTransform.localScale = Vector3.one;
+        animalGraphic.sprite = spriteManager.resourcesDictionary[isTiger ? ResourceType.Tiger : ResourceType.Goat];
     }
     public void HideAnimalGraphic()
     {
-        HideGoatGraphic();
-        HideTigerGraphic();
+        animalGraphic.gameObject.SetActive(false);
     }
+
+    //public void HideAnimalGraphic()
+    //{
+    //    HideGoatGraphic();
+    //    HideTigerGraphic();
+    //}
     public void UpdateOwner(Owner owner)
     {
         ownerOfTheSpotPoint = owner;

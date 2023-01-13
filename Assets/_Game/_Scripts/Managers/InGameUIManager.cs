@@ -11,15 +11,19 @@ public class InGameUIManager : MonoBehaviour
 {
     #region Variables
 
-    [Header("Tiger")]
-    [SerializeField] private UIEffect tigerUiEffect;
-    [SerializeField] private UnityEngine.UI.Image tigerTimerBar;
-    [SerializeField] private TextMeshProUGUI goatsKilledCountTxt;
+    [SerializeField] private SpriteManager spritesManager;
+    [Space(10)]
+    [Header("Player 1")]
+    [SerializeField] private UnityEngine.UI.Image player1AnimalHolder;
+    [SerializeField] private UIEffect player1UiEffect;
+    [SerializeField] private UnityEngine.UI.Image player1TimerBar;
+    [SerializeField] private TextMeshProUGUI player1CountText;
     [Space(5)]
-    [Header("Goat")]
-    [SerializeField] private UIEffect goatUiEffect;
-    [SerializeField] private UnityEngine.UI.Image goatTimerBar;
-    [SerializeField] private TextMeshProUGUI goatsPlacedCountTxt;
+    [Header("Player 2")]
+    [SerializeField] private UnityEngine.UI.Image player2AnimalHolder;
+    [SerializeField] private UIEffect player2UiEffect;
+    [SerializeField] private UnityEngine.UI.Image player2TimerBar;
+    [SerializeField] private TextMeshProUGUI player2CountTxt;
 
     #endregion Variables
 
@@ -54,24 +58,24 @@ public class InGameUIManager : MonoBehaviour
     #endregion Public Methods 
 
     #region Private Methods 
-    private void SetupTigerTurn()
+    private void SetupPlayer1Turn()
     {
         if (GameplayManager.GetCurrentGameState().Equals(GameState.Ended)) return;
-        goatTimerBar.fillAmount = 1;
-        goatUiEffect.effectMode = EffectMode.Grayscale;
-        tigerUiEffect.effectMode = EffectMode.None;
-        tigerTimerBar.DOFillAmount(0, Constants.TIMER_FOR_TURN_CHANGE).SetRecyclable(true).onComplete += () =>
+        player2TimerBar.fillAmount = 1;
+        player2UiEffect.effectMode = EffectMode.Grayscale;
+        player1UiEffect.effectMode = EffectMode.None;
+        player1TimerBar.DOFillAmount(0, Constants.TIMER_FOR_TURN_CHANGE).SetRecyclable(true).onComplete += () =>
         {
             GlobalEventHandler.TriggerEvent(EventID.EVENT_REQUEST_TO_CHANGE_PLAYER_TURN);
         };
     }
-    private void SetupGoatTurn()
+    private void SetupPlayer2Turn()
     {
         if (GameplayManager.GetCurrentGameState().Equals(GameState.Ended)) return;
-        tigerTimerBar.fillAmount = 1;
-        tigerUiEffect.effectMode = EffectMode.Grayscale;
-        goatUiEffect.effectMode = EffectMode.None;
-        goatTimerBar.DOFillAmount(0, Constants.TIMER_FOR_TURN_CHANGE).SetRecyclable(true).onComplete += () =>
+        player1TimerBar.fillAmount = 1;
+        player1UiEffect.effectMode = EffectMode.Grayscale;
+        player2UiEffect.effectMode = EffectMode.None;
+        player2TimerBar.DOFillAmount(0, Constants.TIMER_FOR_TURN_CHANGE).SetRecyclable(true).onComplete += () =>
         {
             GlobalEventHandler.TriggerEvent(EventID.EVENT_REQUEST_TO_CHANGE_PLAYER_TURN);
         };
@@ -79,29 +83,29 @@ public class InGameUIManager : MonoBehaviour
 
     private void UpdateGoatsPlacedOnTheScreenCountText()
     {
-        goatsPlacedCountTxt.text = (Constants.NUMBER_OF_GOATS_IN_THE_GAME - GameplayManager.GetGoatsOnTheBoard()).ToString();
+        player2CountTxt.text = (Constants.NUMBER_OF_GOATS_IN_THE_GAME - GameplayManager.GetGoatsOnTheBoard()).ToString();
     }
     private void UpdateGoatsKilledByTigerCountText()
     {
-        goatsKilledCountTxt.text = $"{Mathf.Clamp(GameplayManager.GetDeadGoatsCount(), 0, Constants.MINIMUM_NUMBER_OF_GOATS_SHOULD_KILL_FOR_TIGERS_WIN)} / {Constants.MINIMUM_NUMBER_OF_GOATS_SHOULD_KILL_FOR_TIGERS_WIN}";
+        player1CountText.text = $"{Mathf.Clamp(GameplayManager.GetDeadGoatsCount(), 0, Constants.MINIMUM_NUMBER_OF_GOATS_SHOULD_KILL_FOR_TIGERS_WIN)} / {Constants.MINIMUM_NUMBER_OF_GOATS_SHOULD_KILL_FOR_TIGERS_WIN}";
     }
     #endregion Private Methods 
 
     #region Callbacks
     private void Callback_On_Goat_Turn(object args)
     {
-        SetupGoatTurn();
+        SetupPlayer2Turn();
         UpdateGoatsKilledByTigerCountText();
     }
     private void Callback_On_Tiger_Turn(object args)
     {
-        SetupTigerTurn();
+        SetupPlayer1Turn();
         UpdateGoatsPlacedOnTheScreenCountText();
     }
     private void Callback_On_Kill_Timer_Tweening_Requested(object args)
     {
-        goatTimerBar.DOKill();
-        tigerTimerBar.DOKill();
+        player2TimerBar.DOKill();
+        player1TimerBar.DOKill();
         SovereignUtils.Log($"### KILLED Tweens");
     }
     private void Callback_On_Level_Started(object args)

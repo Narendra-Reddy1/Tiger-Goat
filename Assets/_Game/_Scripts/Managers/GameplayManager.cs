@@ -85,7 +85,7 @@ namespace SovereignStudios
                     //need check what if owneris none. I dont think it is need cause if owner is none the logic won't even execute to this point
                     isTiger = selectedPoint.ownerOfTheSpotPoint == Owner.Tiger;
                     isGoat = selectedPoint.ownerOfTheSpotPoint == Owner.Goat;
-                    currentAnimal = isTiger ? selectedPoint.tigerGraphic : selectedPoint.goatGraphic;
+                    currentAnimal = isTiger ? selectedPoint.animalGraphicTransform : selectedPoint.animalGraphicTransform;
                     avilablePos = selectedPoint.pointsAvailableToOccupy;
                     myPrevPos = currentAnimal.position;
                     SovereignUtils.Log($"Move TheAnimal CurrentGraphic event: {currentAnimal}, {avilablePos} ,{avilablePos.Count}, {myPrevPos}");
@@ -94,11 +94,11 @@ namespace SovereignStudios
                 {
                     targetPoint = (SpotPointBase)hashtable[Who.TargetSpotPoint];
                     //targetGraphic = 
-                    targetPos = isTiger ? targetPoint.tigerGraphic.position : targetPoint.goatGraphic.position;
+                    targetPos = isTiger ? targetPoint.animalGraphicTransform.position : targetPoint.animalGraphicTransform.position;
                     if (!avilablePos.Contains(targetPoint)) return;
                     if (targetPoint.Equals(goatDeadPoint))//Killing the goat 
                     {
-                        goatPoint.HideGoatGraphic();
+                        goatPoint.HideAnimalGraphic();
                         goatPoint.ownerOfTheSpotPoint = Owner.None;
                         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_GOAT_KILLED, goatPoint);
                         UpdateDeadGoatCount();
@@ -108,12 +108,15 @@ namespace SovereignStudios
                     GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_CAN_OCCUPY_GRAPHIC);
                     hashtable.Add(Who.Selected, selectedPoint);//just for the sake of below event.
                     GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_ANIMAL_MOVED, hashtable);
-
+                    var c = (Canvas)currentAnimal.gameObject.AddComponent(typeof(Canvas));
+                    c.overrideSorting = true;
+                    c.sortingOrder = 40;
                     currentAnimal.DOMove(targetPos, 1f, true).onComplete += () =>
                     {
-                        if (isTiger) targetPoint.ShowTigerGraphic();
-                        else if (isGoat) targetPoint.ShowGoatGraphic();
+                        if (isTiger) targetPoint.ShowAnimalGraphic(true);
+                        else if (isGoat) targetPoint.ShowAnimalGraphic(false);
                         currentAnimal.DOMove(myPrevPos, 0);
+                        Destroy(currentAnimal.GetComponent<Canvas>());
                         currentAnimal.gameObject.SetActive(false);
                         targetPoint.UpdateOwner(selectedPoint.ownerOfTheSpotPoint); ;
                         //targetPoint.isOccupied = true;
