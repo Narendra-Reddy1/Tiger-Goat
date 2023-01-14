@@ -195,5 +195,8 @@ namespace SovereignStudios.EventSystem
 
         //Ad State
         EVENT_ON_AD_STATE_CHANGED,
+
+        //SelectionScreen
+        EVENT_ON_DIFFICULTY_LEVEL_SELECTED,
     }
 }

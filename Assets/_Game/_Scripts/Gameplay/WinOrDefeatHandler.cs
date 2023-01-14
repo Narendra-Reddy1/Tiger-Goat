@@ -56,7 +56,6 @@ public class WinOrDefeatHandler : MonoBehaviour
             GameplayManager.SetGameState(GameState.Ended);
             GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new ScreenChangeProperties(Window.GameOverScreen, ScreenType.Additive, true, null));
         });
-
     }
 
 
