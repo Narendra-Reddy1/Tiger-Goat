@@ -53,7 +53,7 @@ public class InGameUIManager : MonoBehaviour
     #region Public Methods 
     public void OnClickSettingsBtn()
     {
-        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new ScreenChangeProperties(Window.SettingsScreen, ScreenType.Additive));
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new ScreenChangeProperties(Window.SettingsScreen, ScreenType.Additive, false));
     }
     #endregion Public Methods 
 

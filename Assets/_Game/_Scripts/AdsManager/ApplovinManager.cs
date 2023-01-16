@@ -130,7 +130,7 @@ public class ApplovinManager : IInitializer, IAds
         MaxSdkCallbacks.Interstitial.OnAdLoadFailedEvent += OnInterstitialLoadFailedEvent;
         MaxSdkCallbacks.Interstitial.OnAdDisplayedEvent += OnInterstitialDisplayedEvent;
         MaxSdkCallbacks.Interstitial.OnAdClickedEvent += OnInterstitialClickedEvent;
-        MaxSdkCallbacks.Interstitial.OnAdHiddenEvent += OnInterstitialHiddenEvent;
+        MaxSdkCallbacks.Interstitial.OnAdHiddenEvent += OnInterstitialDismissedEvent;
         MaxSdkCallbacks.Interstitial.OnAdDisplayFailedEvent += OnInterstitialAdFailedToDisplayEvent;
 
         // Load the first interstitial
@@ -176,9 +176,10 @@ public class ApplovinManager : IInitializer, IAds
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.INTERSTITIAL_AD_CLICKED, adInfo.Revenue, networkName: adInfo.NetworkName, adFormat: adInfo.AdFormat));
     }
 
-    private void OnInterstitialHiddenEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
+    private void OnInterstitialDismissedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
         // Interstitial ad is hidden. Pre-load the next ad.
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.INTERSTITIAL_DISMISSED, adInfo.Revenue, networkName: adInfo.NetworkName, adFormat: adInfo.AdFormat));
         LoadInterstitial();
     }
     #endregion Interstitial Ads

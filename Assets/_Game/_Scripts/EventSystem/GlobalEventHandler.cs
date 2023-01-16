@@ -63,6 +63,7 @@ namespace SovereignStudios.EventSystem
                     eventTable.Add(eventType, null);
                 }
                 // Add the handler to the event.
+                //If there are multiple methods bind to the same event then the last binded method's returned value will be sent.
                 eventTable[eventType] = (CallbackWithReturnType)eventTable[eventType] + handler;
             }
         }
@@ -120,6 +121,7 @@ namespace SovereignStudios.EventSystem
                     returnValue = callback(arg);
                 }
             }
+            //If there are multiple methods bind to the same event then the last binded method's returned value will be sent.
             return returnValue;
         }
 

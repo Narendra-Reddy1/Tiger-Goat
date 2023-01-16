@@ -902,6 +902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed08dfcdb1164d429ca9309eed76688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popupPanel: {fileID: 626763907822360126}
+  transparentBGCanvasGroup: {fileID: 430629949074181279}
 --- !u!1 &626763909279975811
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ public class ScreenTransitionHandler : MonoBehaviour
             leavesAnimatorList[i].DOPlayForward();
             if (i == count - 1)
             {
-                screenTransitionBg.DOFade(1, 0.75f);
+                SovereignUtils.DelayedCallback(0.5f, () => { screenTransitionBg.DOFade(1, 0.75f); });
                 SovereignUtils.Log($"## last bunch in leaves transistion");
                 SovereignUtils.DelayedCallback(1.1f, ChangeScreen);
                 SovereignUtils.DelayedCallback(1.45f, UncoverTheScreenWithEffect);
