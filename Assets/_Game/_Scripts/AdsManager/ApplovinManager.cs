@@ -35,7 +35,16 @@ public enum AdState
     MREC_DISPLAYED,
     MREC_FAILED_TO_DISPLAY,
     MREC_REVENUE_PAID,
-    MREC_AD_CLICKED
+    MREC_AD_CLICKED,
+    //App Open Ads
+    APP_OPEN_LOADED,
+    APP_OPEN_FAILED_TO_LOAD,
+    APP_OPEN_DISPLAYED,
+    APP_OPEN_FAILED_TO_DISPLAY,
+    APP_OPEN_REVENUE_PAID,
+    APP_OPEN_AD_CLICKED,
+    APP_OPEN_AD_DISMISSED,
+
 }
 
 public class AdEventData
@@ -73,6 +82,7 @@ public class ApplovinManager : IInitializer, IAds
         InitializeInterstitialAds();
         InitializeMRecAds();
         InitializeRewardedAds();
+        InitializeAppOpenAd();
     }
 
     #region BannerAds
@@ -120,6 +130,24 @@ public class ApplovinManager : IInitializer, IAds
 
     private void OnBannerAdCollapsedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo) { }
     #endregion BannerAds
+
+    #region App Open
+    private void InitializeAppOpenAd()
+    {
+        MaxSdkCallbacks.AppOpen.OnAdLoadedEvent += OnAppOpenAdLoadedEvent;
+        MaxSdkCallbacks.AppOpen.OnAdLoadFailedEvent += OnAppOpenAdLoadFailedEvent;
+        MaxSdkCallbacks.AppOpen.OnAdRevenuePaidEvent += OnAppOpenAdRevenuePaidEvent;
+        MaxSdkCallbacks.AppOpen.OnAdHiddenEvent += OnAppOpenAdDismissedEvent;
+        LoadAppOpenAd();
+    }
+    private void OnAppOpenAdLoadedEvent(string adID, MaxSdkBase.AdInfo adInfo) { }
+    private void OnAppOpenAdLoadFailedEvent(string adId, MaxSdkBase.ErrorInfo errorInfo) { }
+    private void OnAppOpenAdRevenuePaidEvent(string adId, MaxSdkBase.AdInfo adInfo) { }
+    private void OnAppOpenAdDismissedEvent(string adId, MaxSdkBase.AdInfo adInfo)
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.APP_OPEN_AD_DISMISSED, adInfo.Revenue, adInfo.NetworkName, adInfo.AdFormat));
+    }
+    #endregion  App Open
 
     #region Interstitial Ads
 
@@ -285,6 +313,7 @@ public class ApplovinManager : IInitializer, IAds
 
     public void OnMRecAdLoadFailedEvent(string adUnitId, MaxSdkBase.ErrorInfo error)
     {
+        isMRECAdLoaded = false;
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.MREC_FAILED_TO_LOAD, errorInfo: error));
     }
 
@@ -303,6 +332,7 @@ public class ApplovinManager : IInitializer, IAds
     public void OnMRecAdCollapsedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo) { }
     #endregion MREC Ads
 
+    #region IAds 
     public void ShowBannerAd()
     {
         SovereignUtils.Log($"Inside applovin.showbannerad");
@@ -352,6 +382,24 @@ public class ApplovinManager : IInitializer, IAds
     {
         MaxSdk.HideMRec(adUnitIds.MRECAdId);
     }
+    public void LoadAppOpenAd()
+    {
+        if (IsAppOpenAdAvailable())
+            return;
+        MaxSdk.LoadAppOpenAd(adUnitIds.AppOpenId);
+    }
+    public void ShowAppOpenAd()
+    {
+        if (IsAppOpenAdAvailable())
+            MaxSdk.ShowAppOpenAd(adUnitIds.AppOpenId);
+        else
+            MaxSdk.LoadAppOpenAd(adUnitIds.AppOpenId);
+
+    }
+    public bool IsAppOpenAdAvailable()
+    {
+        return MaxSdk.IsAppOpenAdReady(adUnitIds.AppOpenId);
+    }
     public bool IsRewardedAdAvailable()
     {
         return MaxSdk.IsRewardedAdReady(adUnitIds.RewardedAdId);
@@ -360,4 +408,5 @@ public class ApplovinManager : IInitializer, IAds
     {
         return MaxSdk.IsInterstitialReady(adUnitIds.InterstitialAdId);
     }
+    #endregion IAds
 }

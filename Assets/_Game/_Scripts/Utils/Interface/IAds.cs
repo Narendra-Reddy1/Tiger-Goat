@@ -10,6 +10,9 @@ public interface IAds
     public void ShowInterstitialAd();
     public void ShowMRECAd();
     public void HideMRECAd();
+    public void LoadAppOpenAd() { }
+    public void ShowAppOpenAd();
+    public bool IsAppOpenAdAvailable();
     public bool IsRewardedAdAvailable();
     public bool IsInterstitialAdAvailable();
 

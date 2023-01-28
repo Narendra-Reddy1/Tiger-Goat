@@ -8,10 +8,13 @@ public class AdUnitIds : BaseScriptlableObject
     [SerializeField] private string interstitialAdId;
     [SerializeField] private string rewardedAdId;
     [SerializeField] private string mrecAdId;
+    [SerializeField] private string appOpenAdId;
 
     public string BannerAdId => bannerAdId;
     public string InterstitialAdId => interstitialAdId;
     public string RewardedAdId => rewardedAdId;
     public string MRECAdId => mrecAdId;
+    public string AppOpenId => appOpenAdId;
 }
+
 
