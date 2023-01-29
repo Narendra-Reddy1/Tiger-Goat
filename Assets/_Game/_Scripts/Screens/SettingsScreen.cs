@@ -28,6 +28,7 @@ public class SettingsScreen : PopupBase
     private void QuitToTheMainMenu()
     {
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_MREC_AD_REQUESTED);
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_BANNER_AD_REQUESTED);
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SHOW_INTERSTITIAL_AD_REQUESTED);
     }
     #endregion Private  Methods
@@ -40,6 +41,14 @@ public class SettingsScreen : PopupBase
     public void OnClickQuitButton()
     {
         QuitToTheMainMenu();
+    }
+    public void OnClickRestartButton()
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CLOSE_LAST_ADDITIVE_SCREEN, new System.Tuple<System.Action>(() =>
+        {
+            GlobalEventHandler.TriggerEvent(EventID.EVENT_RESTART_LEVEL_REQUESTED);
+            GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_LEVEL_STARTED);
+        }));
     }
     public override void OnCloseClick()
     {
