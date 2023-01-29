@@ -6,6 +6,7 @@ using UnityEngine;
 public class SettingsScreen : PopupBase
 {
     #region Variables
+    private bool isRewardedAdWatchedCompletely = false;
     #endregion Variables
 
     #region Unity Methods
@@ -31,6 +32,15 @@ public class SettingsScreen : PopupBase
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_BANNER_AD_REQUESTED);
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SHOW_INTERSTITIAL_AD_REQUESTED);
     }
+    private void RestartLevel()
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CLOSE_LAST_ADDITIVE_SCREEN, new System.Tuple<System.Action>(() =>
+        {
+            GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_MREC_AD_REQUESTED);
+            GlobalEventHandler.TriggerEvent(EventID.EVENT_RESTART_LEVEL_REQUESTED);
+            GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_LEVEL_STARTED);
+        }));
+    }
     #endregion Private  Methods
 
     #region Public Methods
@@ -44,11 +54,12 @@ public class SettingsScreen : PopupBase
     }
     public void OnClickRestartButton()
     {
-        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CLOSE_LAST_ADDITIVE_SCREEN, new System.Tuple<System.Action>(() =>
+        if (!(bool)GlobalEventHandler.TriggerEventForReturnType(EventID.EVENT_ON_REWARDED_AD_AVAILABILITY_REQUESTED))
         {
-            GlobalEventHandler.TriggerEvent(EventID.EVENT_RESTART_LEVEL_REQUESTED);
-            GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_LEVEL_STARTED);
-        }));
+            RestartLevel();
+            return;
+        }
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SHOW_REWARDED_AD_REQUESTED);
     }
     public override void OnCloseClick()
     {
@@ -67,6 +78,13 @@ public class SettingsScreen : PopupBase
             case AdState.INTERSTITIAL_DISMISSED:
                 SovereignUtils.Log($"Inter dismissed: ");
                 GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new ScreenChangeProperties(Window.MainMenu, enableDelay: true));
+                break;
+            case AdState.REWARDED_REWARD_RECEIVED:
+                isRewardedAdWatchedCompletely = true;
+                break;
+            case AdState.REWARDED_DISMISSED:
+                if (isRewardedAdWatchedCompletely)
+                    RestartLevel();
                 break;
             default:
                 break;

@@ -319,7 +319,7 @@ public class ApplovinManager : IInitializer, IAds
     {
         // MRECs are sized to 300x250 on phones and tablets
         MaxSdk.CreateMRec(adUnitIds.MRECAdId, MaxSdkBase.AdViewPosition.Centered);
-        MaxSdk.LoadMRec(adUnitIds.MRECAdId);
+        LoadMRECAd();
         MaxSdkCallbacks.MRec.OnAdLoadedEvent += OnMRecAdLoadedEvent;
         MaxSdkCallbacks.MRec.OnAdLoadFailedEvent += OnMRecAdLoadFailedEvent;
         MaxSdkCallbacks.MRec.OnAdClickedEvent += OnMRecAdClickedEvent;
@@ -396,10 +396,14 @@ public class ApplovinManager : IInitializer, IAds
         }
         else
         {
-
             SovereignUtils.Log($"Mrec not loaded reloading...");
-            MaxSdk.LoadMRec(adUnitIds.MRECAdId);
+            LoadMRECAd();
         }
+    }
+    public void LoadMRECAd()
+    {
+        if (isMRECAdLoaded) return;
+        MaxSdk.LoadMRec(adUnitIds.MRECAdId);
     }
     public void HideMRECAd()
     {

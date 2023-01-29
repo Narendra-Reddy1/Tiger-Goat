@@ -21,6 +21,7 @@ public class GenericAdsManager : MonoBehaviour, IInitializer
     {
         GlobalEventHandler.AddListener(EventID.EVENT_ON_SHOW_BANNER_AD_REQUESTED, Callback_On_ShowBannerAd_Requested);
         GlobalEventHandler.AddListener(EventID.EVENT_ON_HIDE_BANNER_AD_REQUESTED, Callback_On_HideBannerAd_Requested);
+        GlobalEventHandler.AddListener(EventID.EVENT_ON_LOAD_MREC_AD_REQUESTED, Callback_On_Load_MREC_Ad_Requested);
         GlobalEventHandler.AddListener(EventID.EVENT_ON_SHOW_MREC_AD_REQUESTED, Callback_On_ShowMRECAd_Requested);
         GlobalEventHandler.AddListener(EventID.EVENT_ON_HIDE_MREC_AD_REQUESTED, Callback_On_HideMRECAd_Requested);
         GlobalEventHandler.AddListener(EventID.EVENT_ON_SHOW_INTERSTITIAL_AD_REQUESTED, Callback_On_ShowInterstitialAd_Requested);
@@ -35,6 +36,7 @@ public class GenericAdsManager : MonoBehaviour, IInitializer
     {
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_SHOW_BANNER_AD_REQUESTED, Callback_On_ShowBannerAd_Requested);
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_HIDE_BANNER_AD_REQUESTED, Callback_On_HideBannerAd_Requested);
+        GlobalEventHandler.RemoveListener(EventID.EVENT_ON_LOAD_MREC_AD_REQUESTED, Callback_On_Load_MREC_Ad_Requested);
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_SHOW_MREC_AD_REQUESTED, Callback_On_ShowMRECAd_Requested);
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_HIDE_MREC_AD_REQUESTED, Callback_On_HideMRECAd_Requested);
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_SHOW_INTERSTITIAL_AD_REQUESTED, Callback_On_ShowInterstitialAd_Requested);
@@ -88,6 +90,10 @@ public class GenericAdsManager : MonoBehaviour, IInitializer
     #endregion Rewarded Ads
 
     #region MREC Ads
+    private void Callback_On_Load_MREC_Ad_Requested(object args)
+    {
+        AdsManager.LoadMRECAd();
+    }
     private void Callback_On_ShowMRECAd_Requested(object args)
     {
         AdsManager.ShowMRECAd();
