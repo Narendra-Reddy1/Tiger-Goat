@@ -69,7 +69,7 @@ public class ProjectSetting
         CurrentProjectBranch = projectAssetManager.projectSettingAssets.CurrentProjectBranch;
         BundleVersionCode = projectAssetManager.projectSettingAssets.GetBundleVersionCode();
         //  DeftouchUtils.InitUtilityManager(projectAssetManager);
-        SovereignUtils.Log("BundleVersionCode" + BundleVersionCode);
+        SovereignUtils.Log("BundleVersionCode: " + BundleVersionCode);
 
         EnableCoreProjectSetting(enableReporter);
         int branchIndex = (int)CurrentProjectBranch;

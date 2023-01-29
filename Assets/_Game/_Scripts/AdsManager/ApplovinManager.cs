@@ -1,6 +1,7 @@
 using SovereignStudios.Utils;
 using SovereignStudios.EventSystem;
 using UnityEngine;
+using System;
 
 public enum AdState
 {
@@ -135,14 +136,30 @@ public class ApplovinManager : IInitializer, IAds
     private void InitializeAppOpenAd()
     {
         MaxSdkCallbacks.AppOpen.OnAdLoadedEvent += OnAppOpenAdLoadedEvent;
+        MaxSdkCallbacks.AppOpen.OnAdDisplayedEvent += OnAppOpenAdDisplayedEvent;
         MaxSdkCallbacks.AppOpen.OnAdLoadFailedEvent += OnAppOpenAdLoadFailedEvent;
         MaxSdkCallbacks.AppOpen.OnAdRevenuePaidEvent += OnAppOpenAdRevenuePaidEvent;
         MaxSdkCallbacks.AppOpen.OnAdHiddenEvent += OnAppOpenAdDismissedEvent;
         LoadAppOpenAd();
     }
-    private void OnAppOpenAdLoadedEvent(string adID, MaxSdkBase.AdInfo adInfo) { }
-    private void OnAppOpenAdLoadFailedEvent(string adId, MaxSdkBase.ErrorInfo errorInfo) { }
-    private void OnAppOpenAdRevenuePaidEvent(string adId, MaxSdkBase.AdInfo adInfo) { }
+
+    private void OnAppOpenAdDisplayedEvent(string adId, MaxSdkBase.AdInfo adInfo)
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.APP_OPEN_DISPLAYED, adInfo.Revenue, adInfo.NetworkName, adInfo.AdFormat));
+    }
+
+    private void OnAppOpenAdLoadedEvent(string adId, MaxSdkBase.AdInfo adInfo)
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.APP_OPEN_LOADED, networkName: adInfo.NetworkName, adFormat: adInfo.AdFormat));
+    }
+    private void OnAppOpenAdLoadFailedEvent(string adId, MaxSdkBase.ErrorInfo errorInfo)
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.APP_OPEN_LOADED, errorInfo: errorInfo));
+    }
+    private void OnAppOpenAdRevenuePaidEvent(string adId, MaxSdkBase.AdInfo adInfo)
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.APP_OPEN_REVENUE_PAID, adInfo.Revenue, adInfo.NetworkName, adInfo.AdFormat));
+    }
     private void OnAppOpenAdDismissedEvent(string adId, MaxSdkBase.AdInfo adInfo)
     {
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.APP_OPEN_AD_DISMISSED, adInfo.Revenue, adInfo.NetworkName, adInfo.AdFormat));
@@ -157,13 +174,15 @@ public class ApplovinManager : IInitializer, IAds
         MaxSdkCallbacks.Interstitial.OnAdLoadedEvent += OnInterstitialLoadedEvent;
         MaxSdkCallbacks.Interstitial.OnAdLoadFailedEvent += OnInterstitialLoadFailedEvent;
         MaxSdkCallbacks.Interstitial.OnAdDisplayedEvent += OnInterstitialDisplayedEvent;
+        MaxSdkCallbacks.Interstitial.OnAdDisplayFailedEvent += OnInterstitialAdFailedToDisplayEvent;
         MaxSdkCallbacks.Interstitial.OnAdClickedEvent += OnInterstitialClickedEvent;
         MaxSdkCallbacks.Interstitial.OnAdHiddenEvent += OnInterstitialDismissedEvent;
-        MaxSdkCallbacks.Interstitial.OnAdDisplayFailedEvent += OnInterstitialAdFailedToDisplayEvent;
+        MaxSdkCallbacks.Interstitial.OnAdRevenuePaidEvent += OnInterstitialRevenuePaidEvent;
 
         // Load the first interstitial
         LoadInterstitial();
     }
+
 
     private void LoadInterstitial()
     {
@@ -203,7 +222,10 @@ public class ApplovinManager : IInitializer, IAds
     {
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.INTERSTITIAL_AD_CLICKED, adInfo.Revenue, networkName: adInfo.NetworkName, adFormat: adInfo.AdFormat));
     }
-
+    private void OnInterstitialRevenuePaidEvent(string adId, MaxSdkBase.AdInfo adInfo)
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.INTERSTITIAL_REVENUE_PAID, adInfo.Revenue, networkName: adInfo.NetworkName, adFormat: adInfo.AdFormat));
+    }
     private void OnInterstitialDismissedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
         // Interstitial ad is hidden. Pre-load the next ad.
@@ -276,6 +298,7 @@ public class ApplovinManager : IInitializer, IAds
     {
         // Rewarded ad is hidden. Pre-load the next ad
         LoadRewardedAd();
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.REWARDED_DISMISSED, adInfo.Revenue, adInfo.NetworkName, adInfo.AdFormat));
     }
 
     private void OnRewardedAdReceivedRewardEvent(string adUnitId, MaxSdk.Reward reward, MaxSdkBase.AdInfo adInfo)
