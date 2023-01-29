@@ -30,10 +30,11 @@ public class SettingsScreen : PopupBase
     {
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_MREC_AD_REQUESTED);
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_BANNER_AD_REQUESTED);
-        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SHOW_INTERSTITIAL_AD_REQUESTED);
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new ScreenChangeProperties(Window.MainMenu, enableDelay: true));
     }
     private void RestartLevel()
     {
+        isRewardedAdWatchedCompletely = false;
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CLOSE_LAST_ADDITIVE_SCREEN, new System.Tuple<System.Action>(() =>
         {
             GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_MREC_AD_REQUESTED);
@@ -50,7 +51,12 @@ public class SettingsScreen : PopupBase
     }
     public void OnClickQuitButton()
     {
-        QuitToTheMainMenu();
+        if (!(bool)GlobalEventHandler.TriggerEventForReturnType(EventID.EVENT_ON_INTERSTITIAL_AD_AVAILABILITY_REQUESTED))
+        {
+            QuitToTheMainMenu();
+            return;
+        }
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SHOW_INTERSTITIAL_AD_REQUESTED);
     }
     public void OnClickRestartButton()
     {
@@ -77,7 +83,7 @@ public class SettingsScreen : PopupBase
         {
             case AdState.INTERSTITIAL_DISMISSED:
                 SovereignUtils.Log($"Inter dismissed: ");
-                GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new ScreenChangeProperties(Window.MainMenu, enableDelay: true));
+                QuitToTheMainMenu();
                 break;
             case AdState.REWARDED_REWARD_RECEIVED:
                 isRewardedAdWatchedCompletely = true;

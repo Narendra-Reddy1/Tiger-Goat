@@ -21,7 +21,7 @@ MonoBehaviour:
   EditEnablePlayerSetting: 1
   ViewThirdPartySdkKeys: 0
   ViewPlayerSetting: 1
-  BundleVersionCode: 4
+  BundleVersionCode: 1
   Version: 0.0.1
   PackageName: com.sovereign.studio
   thirdPartySdkKeys: {fileID: 11400000, guid: 01e0b7e0867cc6544964bda61da55f0e, type: 2}
