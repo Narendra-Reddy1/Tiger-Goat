@@ -12,6 +12,12 @@ public class DebugPanelHandler : MonoBehaviour, IPointerClickHandler
     [SerializeField] private byte noOfTapsToOpenPanel = 2;
     private byte taps;
     private System.TimeSpan time;
+    private void Awake()
+    {
+#if UPLOAD_BUILD
+        Destroy(this);
+#endif
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         SovereignUtils.Log($"OnPointerClick: {eventData.clickCount}");
