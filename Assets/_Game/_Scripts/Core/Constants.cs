@@ -8,5 +8,4 @@ public static class Constants
     public readonly static byte NUMBER_OF_TIGERS_IN_THE_GAME = 3;
     public readonly static byte MINIMUM_NUMBER_OF_GOATS_SHOULD_KILL_FOR_TIGERS_WIN = 6;
     public readonly static byte TIMER_FOR_TURN_CHANGE = 60;//seconds
-
 }

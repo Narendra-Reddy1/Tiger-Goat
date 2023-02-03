@@ -1,6 +1,7 @@
 using SovereignStudios.Utils;
 using SovereignStudios.EventSystem;
 using UnityEngine;
+using System;
 
 public enum AdState
 {
@@ -35,7 +36,16 @@ public enum AdState
     MREC_DISPLAYED,
     MREC_FAILED_TO_DISPLAY,
     MREC_REVENUE_PAID,
-    MREC_AD_CLICKED
+    MREC_AD_CLICKED,
+    //App Open Ads
+    APP_OPEN_LOADED,
+    APP_OPEN_FAILED_TO_LOAD,
+    APP_OPEN_DISPLAYED,
+    APP_OPEN_FAILED_TO_DISPLAY,
+    APP_OPEN_REVENUE_PAID,
+    APP_OPEN_AD_CLICKED,
+    APP_OPEN_AD_DISMISSED,
+
 }
 
 public class AdEventData
@@ -73,6 +83,7 @@ public class ApplovinManager : IInitializer, IAds
         InitializeInterstitialAds();
         InitializeMRecAds();
         InitializeRewardedAds();
+        InitializeAppOpenAd();
     }
 
     #region BannerAds
@@ -121,6 +132,40 @@ public class ApplovinManager : IInitializer, IAds
     private void OnBannerAdCollapsedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo) { }
     #endregion BannerAds
 
+    #region App Open
+    private void InitializeAppOpenAd()
+    {
+        MaxSdkCallbacks.AppOpen.OnAdLoadedEvent += OnAppOpenAdLoadedEvent;
+        MaxSdkCallbacks.AppOpen.OnAdDisplayedEvent += OnAppOpenAdDisplayedEvent;
+        MaxSdkCallbacks.AppOpen.OnAdLoadFailedEvent += OnAppOpenAdLoadFailedEvent;
+        MaxSdkCallbacks.AppOpen.OnAdRevenuePaidEvent += OnAppOpenAdRevenuePaidEvent;
+        MaxSdkCallbacks.AppOpen.OnAdHiddenEvent += OnAppOpenAdDismissedEvent;
+        LoadAppOpenAd();
+    }
+
+    private void OnAppOpenAdDisplayedEvent(string adId, MaxSdkBase.AdInfo adInfo)
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.APP_OPEN_DISPLAYED, adInfo.Revenue, adInfo.NetworkName, adInfo.AdFormat));
+    }
+
+    private void OnAppOpenAdLoadedEvent(string adId, MaxSdkBase.AdInfo adInfo)
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.APP_OPEN_LOADED, networkName: adInfo.NetworkName, adFormat: adInfo.AdFormat));
+    }
+    private void OnAppOpenAdLoadFailedEvent(string adId, MaxSdkBase.ErrorInfo errorInfo)
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.APP_OPEN_LOADED, errorInfo: errorInfo));
+    }
+    private void OnAppOpenAdRevenuePaidEvent(string adId, MaxSdkBase.AdInfo adInfo)
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.APP_OPEN_REVENUE_PAID, adInfo.Revenue, adInfo.NetworkName, adInfo.AdFormat));
+    }
+    private void OnAppOpenAdDismissedEvent(string adId, MaxSdkBase.AdInfo adInfo)
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.APP_OPEN_AD_DISMISSED, adInfo.Revenue, adInfo.NetworkName, adInfo.AdFormat));
+    }
+    #endregion  App Open
+
     #region Interstitial Ads
 
     public void InitializeInterstitialAds()
@@ -129,13 +174,15 @@ public class ApplovinManager : IInitializer, IAds
         MaxSdkCallbacks.Interstitial.OnAdLoadedEvent += OnInterstitialLoadedEvent;
         MaxSdkCallbacks.Interstitial.OnAdLoadFailedEvent += OnInterstitialLoadFailedEvent;
         MaxSdkCallbacks.Interstitial.OnAdDisplayedEvent += OnInterstitialDisplayedEvent;
-        MaxSdkCallbacks.Interstitial.OnAdClickedEvent += OnInterstitialClickedEvent;
-        MaxSdkCallbacks.Interstitial.OnAdHiddenEvent += OnInterstitialHiddenEvent;
         MaxSdkCallbacks.Interstitial.OnAdDisplayFailedEvent += OnInterstitialAdFailedToDisplayEvent;
+        MaxSdkCallbacks.Interstitial.OnAdClickedEvent += OnInterstitialClickedEvent;
+        MaxSdkCallbacks.Interstitial.OnAdHiddenEvent += OnInterstitialDismissedEvent;
+        MaxSdkCallbacks.Interstitial.OnAdRevenuePaidEvent += OnInterstitialRevenuePaidEvent;
 
         // Load the first interstitial
         LoadInterstitial();
     }
+
 
     private void LoadInterstitial()
     {
@@ -175,10 +222,14 @@ public class ApplovinManager : IInitializer, IAds
     {
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.INTERSTITIAL_AD_CLICKED, adInfo.Revenue, networkName: adInfo.NetworkName, adFormat: adInfo.AdFormat));
     }
-
-    private void OnInterstitialHiddenEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
+    private void OnInterstitialRevenuePaidEvent(string adId, MaxSdkBase.AdInfo adInfo)
+    {
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.INTERSTITIAL_REVENUE_PAID, adInfo.Revenue, networkName: adInfo.NetworkName, adFormat: adInfo.AdFormat));
+    }
+    private void OnInterstitialDismissedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
         // Interstitial ad is hidden. Pre-load the next ad.
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.INTERSTITIAL_DISMISSED, adInfo.Revenue, networkName: adInfo.NetworkName, adFormat: adInfo.AdFormat));
         LoadInterstitial();
     }
     #endregion Interstitial Ads
@@ -247,6 +298,7 @@ public class ApplovinManager : IInitializer, IAds
     {
         // Rewarded ad is hidden. Pre-load the next ad
         LoadRewardedAd();
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.REWARDED_DISMISSED, adInfo.Revenue, adInfo.NetworkName, adInfo.AdFormat));
     }
 
     private void OnRewardedAdReceivedRewardEvent(string adUnitId, MaxSdk.Reward reward, MaxSdkBase.AdInfo adInfo)
@@ -267,7 +319,7 @@ public class ApplovinManager : IInitializer, IAds
     {
         // MRECs are sized to 300x250 on phones and tablets
         MaxSdk.CreateMRec(adUnitIds.MRECAdId, MaxSdkBase.AdViewPosition.Centered);
-        MaxSdk.LoadMRec(adUnitIds.MRECAdId);
+        LoadMRECAd();
         MaxSdkCallbacks.MRec.OnAdLoadedEvent += OnMRecAdLoadedEvent;
         MaxSdkCallbacks.MRec.OnAdLoadFailedEvent += OnMRecAdLoadFailedEvent;
         MaxSdkCallbacks.MRec.OnAdClickedEvent += OnMRecAdClickedEvent;
@@ -284,6 +336,7 @@ public class ApplovinManager : IInitializer, IAds
 
     public void OnMRecAdLoadFailedEvent(string adUnitId, MaxSdkBase.ErrorInfo error)
     {
+        isMRECAdLoaded = false;
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AD_STATE_CHANGED, new AdEventData(AdState.MREC_FAILED_TO_LOAD, errorInfo: error));
     }
 
@@ -302,6 +355,7 @@ public class ApplovinManager : IInitializer, IAds
     public void OnMRecAdCollapsedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo) { }
     #endregion MREC Ads
 
+    #region IAds 
     public void ShowBannerAd()
     {
         SovereignUtils.Log($"Inside applovin.showbannerad");
@@ -342,14 +396,36 @@ public class ApplovinManager : IInitializer, IAds
         }
         else
         {
-
             SovereignUtils.Log($"Mrec not loaded reloading...");
-            MaxSdk.LoadMRec(adUnitIds.MRECAdId);
+            LoadMRECAd();
         }
+    }
+    public void LoadMRECAd()
+    {
+        if (isMRECAdLoaded) return;
+        MaxSdk.LoadMRec(adUnitIds.MRECAdId);
     }
     public void HideMRECAd()
     {
         MaxSdk.HideMRec(adUnitIds.MRECAdId);
+    }
+    public void LoadAppOpenAd()
+    {
+        if (IsAppOpenAdAvailable())
+            return;
+        MaxSdk.LoadAppOpenAd(adUnitIds.AppOpenId);
+    }
+    public void ShowAppOpenAd()
+    {
+        if (IsAppOpenAdAvailable())
+            MaxSdk.ShowAppOpenAd(adUnitIds.AppOpenId);
+        else
+            MaxSdk.LoadAppOpenAd(adUnitIds.AppOpenId);
+
+    }
+    public bool IsAppOpenAdAvailable()
+    {
+        return MaxSdk.IsAppOpenAdReady(adUnitIds.AppOpenId);
     }
     public bool IsRewardedAdAvailable()
     {
@@ -359,4 +435,5 @@ public class ApplovinManager : IInitializer, IAds
     {
         return MaxSdk.IsInterstitialReady(adUnitIds.InterstitialAdId);
     }
+    #endregion IAds
 }

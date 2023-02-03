@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using SovereignStudios;
 using SovereignStudios.EventSystem;
 using SovereignStudios.Utils;
@@ -20,32 +20,20 @@ public class InitSceneInitializer : MonoBehaviour
     private IEnumerator Start()
     {
         yield return WaitForEndOfFrame;
+
         ShowLoadingScreen();
         Addressables.LoadSceneAsync(persistentScene, LoadSceneMode.Additive).Completed += (handle) =>
         {
             if (handle.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
-                mainScene.LoadSceneAsync(LoadSceneMode.Additive, false).Completed += (handle) =>
+                mainScene.LoadSceneAsync(LoadSceneMode.Additive, false).Completed += (mainSceneHandle) =>
                 {
-                    mainSceneHandle = handle;
-                    mainSceneInstance = handle.Result;
+                    this.mainSceneHandle = mainSceneHandle;
+                    mainSceneInstance = mainSceneHandle.Result;
                 };
         };
-
-        /* SovereignUtils.LoadSceneAsync(persis, onComplete: () =>
-          {
-              SovereignUtils.LoadSceneAsync(Constants.MAIN_SCENE, true, () =>
-              {
-                  GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new System.Tuple<Window, ScreenType, bool, System.Action>(Window.MainMenu, ScreenType.Replace, false, () =>
-                  {
-                      SovereignUtils.UnloadSceneAsync(Constants.INIT_SCENE);
-                  }));
-              });
-          });*/
-
-
-        //to shift logic to another script easily if needed.
     }
 
+    //to shift logic to another script easily if needed.☺
     #region LoadinScreen Logic
 
     [Space(25)]
@@ -63,9 +51,13 @@ public class InitSceneInitializer : MonoBehaviour
         loadingScreenCanvasGroup.DOFade(1, 0);
         fillBar.DOFillAmount(1, fakeDuration).onComplete += () =>
         {
-            HideLoadingScreen();
+            //HideLoadingScreen();
             offScreenTabBtn.interactable = true;
-            tapToStartTxtCanvasGroup.DOFade(1, 0.35f);
+            tapToStartTxtCanvasGroup.DOFade(1, 0.35f).onComplete += () =>
+            {
+
+                tapToStartTxtCanvasGroup.DOFade(.75f, 1.25f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutQuad);
+            };
             SovereignUtils.Log($"Done with loading");
         };
     }

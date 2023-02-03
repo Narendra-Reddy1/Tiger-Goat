@@ -63,6 +63,7 @@ namespace SovereignStudios.EventSystem
                     eventTable.Add(eventType, null);
                 }
                 // Add the handler to the event.
+                //If there are multiple methods bind to the same event then the last binded method's returned value will be sent.
                 eventTable[eventType] = (CallbackWithReturnType)eventTable[eventType] + handler;
             }
         }
@@ -120,6 +121,7 @@ namespace SovereignStudios.EventSystem
                     returnValue = callback(arg);
                 }
             }
+            //If there are multiple methods bind to the same event then the last binded method's returned value will be sent.
             return returnValue;
         }
 
@@ -186,10 +188,14 @@ namespace SovereignStudios.EventSystem
         ////ADS 
         EVENT_ON_SHOW_BANNER_AD_REQUESTED,
         EVENT_ON_HIDE_BANNER_AD_REQUESTED,
+        EVENT_ON_LOAD_MREC_AD_REQUESTED,
         EVENT_ON_SHOW_MREC_AD_REQUESTED,
         EVENT_ON_HIDE_MREC_AD_REQUESTED,
         EVENT_ON_SHOW_INTERSTITIAL_AD_REQUESTED,
         EVENT_ON_SHOW_REWARDED_AD_REQUESTED,
+        EVENT_ON_LOAD_APP_OPEN_AD_REQUESTED,
+        EVENT_ON_SHOW_APP_OPEN_AD_REQUESTED,
+        EVENT_ON_APP_OPEN_AD_AVAILABILITTY_REQUESTED,
         EVENT_ON_REWARDED_AD_AVAILABILITY_REQUESTED,
         EVENT_ON_INTERSTITIAL_AD_AVAILABILITY_REQUESTED,
 
