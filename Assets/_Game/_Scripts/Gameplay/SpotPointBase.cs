@@ -37,6 +37,7 @@ public class SpotPointBase : MonoBehaviour
 
     public virtual void OnEnable()
     {
+        
         animalGraphicTransform.TryGetComponent(out animalGraphic);
     }
     public virtual void OnDisable()

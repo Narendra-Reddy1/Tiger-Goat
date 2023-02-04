@@ -189,8 +189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spotPoints:
   - {fileID: 823088007}
-  - {fileID: 4137989274909613657}
   - {fileID: 8321051196662822117}
+  - {fileID: 6801813595482895474}
   defaultOwner: 1
 --- !u!1001 &62504934422937942
 PrefabInstance:

@@ -58,7 +58,6 @@ public class SessionManager : MonoBehaviour
     }
     private void ShowAppOpenAdOnApplicationPause(bool pause)
     {
-        Debug.Log($"TTIMER: {appColdStartTimer.GetElapsedTimeInSeconds()}");
 
         if (appColdStartTimer.GetElapsedTimeInSeconds() <= WAITING_TIME_TO_SHOW_APP_OPEN_AD) return;
         if (pause)
@@ -68,10 +67,8 @@ public class SessionManager : MonoBehaviour
         }
         else
         {
-            Debug.Log($"isAppOpeShwoing?: {isAppOpenAdDisplaying}");
             if (!isAppOpenAdDisplaying)
             {
-                Debug.Log($"Showing appopen!!");
                 GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SHOW_APP_OPEN_AD_REQUESTED);
             }
         }
@@ -80,11 +77,6 @@ public class SessionManager : MonoBehaviour
     {
         appColdStartTimer = null;
     }
-    private void OnApplicationFocus(bool focus)
-    {
-        SovereignUtils.Log($"Application Focus: {focus}");
-    }
-
     #endregion Private Methods
 
     #region Callbacks

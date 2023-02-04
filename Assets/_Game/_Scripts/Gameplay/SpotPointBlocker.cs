@@ -42,13 +42,10 @@ public class SpotPointBlocker : MonoBehaviour
 
     public virtual void BlockTheCellIfNoWayToMove()
     {
-        SovereignUtils.Log($"!!!! THIS SpotBlocker method");
         foreach (SpotPointBase spotPoint in occupiedSpotPoints)
         {
-            SovereignUtils.Log($"!!!! Running loop for: {spotPoint.name}");
             if (spotPoint.name == "Point_0")
             {
-                SovereignUtils.Log($"!!!! Headpoint blocking logic: {spotPoint.name}");
                 var sp = (HeadPoint)spotPoint;
                 sp.CheckForBlocking();
                 goto InnerLoopEnd;
@@ -56,7 +53,6 @@ public class SpotPointBlocker : MonoBehaviour
             if (spotPoint.ownerOfTheSpotPoint.Equals(Owner.None))
             {
                 occupiedSpotPoints.Remove(spotPoint);
-                SovereignUtils.Log($"!!!! Removed empty spotPoint From blocker!!", LogType.Error);
                 continue;
             }
             List<DirectionFace> directions = spotPoint.GetKeysOfTheNeighborDictionary().ToList();
@@ -69,7 +65,6 @@ public class SpotPointBlocker : MonoBehaviour
                 {
                     if (spotPoint.isBlocked)
                     {
-                        SovereignUtils.Log($"!!!! Unblocking spotpoint: {spotPoint.name}");
                         ShowOrHideBlockingEffect(spotPoint, false);
                     }
                     goto InnerLoopEnd;
@@ -111,7 +106,6 @@ public class SpotPointBlocker : MonoBehaviour
                 }
                 if (generalOccupancies == directions.Count && !spotPoint.isBlocked)
                 {
-                    SovereignUtils.Log($"!!!! blocking spotpoint: {spotPoint.name}");
                     ShowOrHideBlockingEffect(spotPoint, true);
                 }
             }

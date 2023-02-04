@@ -41,6 +41,12 @@ namespace SovereignStudios.Enums
         Live,
         Ended,
     }
+    public enum GameDifficultyLevel
+    {
+        Easy = 0,
+        Medium = 1,
+        Hard = 2,
+    }
     //public enum SelectionMode
     //{
     //    TigerMove = 0,

@@ -36,30 +36,15 @@ public class WinOrDefeatHandler : MonoBehaviour
 
     #region Callbacks
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyUp(KeyCode.L))
-    //    {
-    //        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new ScreenChangeProperties(Window.GameOverScreen, ScreenType.Additive, true, null));
-    //        SovereignUtils.Log($"@@@@ CurrentScreen: {((Window)GlobalEventHandler.TriggerEventForReturnType(EventID.EVENT_REQUEST_GET_CURRENT_SCREEN)).ToString()}");
-    //        SovereignUtils.Log($"@@@@ PreviousScreen: {((Window)GlobalEventHandler.TriggerEventForReturnType(EventID.EVENT_REQUEST_GE_PREVIOUS_SCREEN)).ToString()}");
-
-    //    }
-
-    //}
     private void Callback_On_Level_Finished(object args)
     {
         gameResult = (GameResult)args;
         SovereignUtils.DelayedCallback(1f, () =>
         {
-
             GameplayManager.SetGameState(GameState.Ended);
             GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new ScreenChangeProperties(Window.GameOverScreen, ScreenType.Additive, true, null));
         });
-
     }
-
-
     private void Callback_On_Level_Restart_Requested(object arg)
     {
         gameResult = GameResult.None;

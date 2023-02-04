@@ -15,7 +15,9 @@ namespace SovereignStudios
         GameplayScreen,
         GameOverScreen,
         SettingsScreen,
-        ConsoleScreen,
+        ConsoleScreen,//Debug Screen
+        AIModeSelectionScreen,
+
     }
 
     [System.Serializable]
