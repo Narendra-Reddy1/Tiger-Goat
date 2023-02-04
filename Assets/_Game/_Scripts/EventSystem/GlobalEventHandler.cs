@@ -206,3 +206,145 @@ namespace SovereignStudios.EventSystem
         EVENT_ON_DIFFICULTY_LEVEL_SELECTED,
     }
 }
+
+
+/*
+// These are callbacks (delegates) that can be used by the messengers defined in EventHandler class below
+   public delegate void Callback(System.Object arg);
+   public delegate object CallbackWithReturnType(System.Object arg);
+
+
+public static class DeftEventHandler
+{
+
+   private static Dictionary<EventID, Dictionary<int, List<Delegate>>> eventTable = new Dictionary<EventID, Dictionary<int, List<Delegate>>>();
+   public static Dictionary<EventID, Dictionary<int, List<Delegate>>> EventTable => eventTable;
+   public static void AddListener(EventID eventType, Callback handler, int priority = 5)
+   {
+       // Obtain a lock on the event table to keep this thread-safe.
+       lock (eventTable)
+       {
+
+           if (!eventTable.ContainsKey(eventType))
+           {
+               eventTable.Add(eventType, new Dictionary<int, List<Delegate>>());
+           }
+
+           Dictionary<int, List<Delegate>> value = eventTable[eventType];
+
+           if (!value.ContainsKey(priority))
+           {
+               value.Add(priority, new List<Delegate>());
+           }
+
+           value[priority].Add(handler);
+
+       }
+   }
+
+   public static void RemoveListener(EventID eventType, Callback handler)
+   {
+       // Obtain a lock on the event table to keep this thread-safe.
+       lock (eventTable)
+       {
+           if (eventTable.ContainsKey(eventType))
+           {
+               Dictionary<int, List<Delegate>> value = eventTable[eventType];
+
+               foreach (KeyValuePair<int, List<Delegate>> entry in value)
+               {
+                   entry.Value.Remove(handler);
+               }
+           }
+       }
+   }
+
+   public static void TriggerEvent(EventID eventType, System.Object arg = null)
+   {
+       if (eventTable.ContainsKey(eventType))
+       {
+           Dictionary<int, List<Delegate>> value = eventTable[eventType];
+
+           foreach (KeyValuePair<int, List<Delegate>> entry in value.OrderByDescending(x => x.Key))
+           {
+               foreach (Delegate observer in entry.Value)
+               {
+                   observer.DynamicInvoke(arg);
+               }
+           }
+       }
+   }
+
+   public static void CleanUpTable()
+   {
+       eventTable.Clear();
+   }
+
+   #region Return Type 
+   public static void AddListener(EventID eventType, CallbackWithReturnType handler, int priority = 5)
+   {
+       // Obtain a lock on the event table to keep this thread-safe.
+       lock (eventTable)
+       {
+
+           if (!eventTable.ContainsKey(eventType))
+           {
+               eventTable.Add(eventType, new Dictionary<int, List<Delegate>>());
+           }
+
+           Dictionary<int, List<Delegate>> value = eventTable[eventType];
+
+           if (!value.ContainsKey(priority))
+           {
+               value.Add(priority, new List<Delegate>());
+           }
+
+           value[priority].Add(handler);
+
+       }
+   }
+
+   public static void RemoveListener(EventID eventType, CallbackWithReturnType handler)
+   {
+       // Obtain a lock on the event table to keep this thread-safe.
+       lock (eventTable)
+       {
+           if (eventTable.ContainsKey(eventType))
+           {
+               Dictionary<int, List<Delegate>> value = eventTable[eventType];
+
+               foreach (KeyValuePair<int, List<Delegate>> entry in value)
+               {
+                   entry.Value.Remove(handler);
+               }
+           }
+       }
+   }
+
+   public static object TriggerEventForReturnType(EventID eventType, System.Object arg = null)
+   {
+       object returnValue = null;
+       if (eventTable.ContainsKey(eventType))
+       {
+           Dictionary<int, List<Delegate>> value = eventTable[eventType];
+
+           foreach (KeyValuePair<int, List<Delegate>> entry in value.OrderByDescending(x => x.Key))
+           {
+               foreach (Delegate observer in entry.Value)
+               {
+                   returnValue = observer.DynamicInvoke(arg);
+               }
+           }
+       }
+       return returnValue;
+   }
+   #endregion
+
+
+}
+
+
+
+
+
+*/
