@@ -82,7 +82,6 @@ public class SettingsScreen : PopupBase
         switch (eventData.adState)
         {
             case AdState.INTERSTITIAL_DISMISSED:
-                SovereignUtils.Log($"Inter dismissed: ");
                 QuitToTheMainMenu();
                 break;
             case AdState.REWARDED_REWARD_RECEIVED:

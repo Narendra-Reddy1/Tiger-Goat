@@ -13,7 +13,6 @@ public class AppStart : MonoBehaviour
         MaxSdk.InitializeSdk();
         MaxSdkCallbacks.OnSdkInitializedEvent += (config) =>
         {
-
             SovereignUtils.Log($"Initialized Max Sdk: {JsonUtility.ToJson(config)}");
         };
     }

@@ -358,10 +358,8 @@ public class ApplovinManager : IInitializer, IAds
     #region IAds 
     public void ShowBannerAd()
     {
-        SovereignUtils.Log($"Inside applovin.showbannerad");
         if (isBannerAdLoaded)
         {
-            SovereignUtils.Log($"Inside applovin.showbannerad if statement");
             MaxSdk.ShowBanner(adUnitIds.BannerAdId);
         }
         else
@@ -391,12 +389,10 @@ public class ApplovinManager : IInitializer, IAds
     {
         if (isMRECAdLoaded)
         {
-            SovereignUtils.Log($"Mrec showing...");
             MaxSdk.ShowMRec(adUnitIds.MRECAdId);
         }
         else
         {
-            SovereignUtils.Log($"Mrec not loaded reloading...");
             LoadMRECAd();
         }
     }

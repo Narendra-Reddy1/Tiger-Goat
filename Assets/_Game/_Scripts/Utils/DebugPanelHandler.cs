@@ -14,7 +14,6 @@ public class DebugPanelHandler : MonoBehaviour, IPointerClickHandler
     private System.TimeSpan time;
     public void OnPointerClick(PointerEventData eventData)
     {
-        SovereignUtils.Log($"OnPointerClick: {eventData.clickCount}");
 
         if ((Now.TimeOfDay.TotalSeconds - time.TotalSeconds) > 1)
         {
@@ -25,7 +24,6 @@ public class DebugPanelHandler : MonoBehaviour, IPointerClickHandler
         taps++;
         if (taps >= noOfTapsToOpenPanel)
         {
-            SovereignUtils.Log($"showing Console");
             GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_CHANGE_SCREEN_REQUESTED, new ScreenChangeProperties(Window.ConsoleScreen, ScreenType.Additive));
         }
 
