@@ -513,7 +513,7 @@ public class ProjectBranchSettingEditor : Editor
 
     static void UpdateAndroidSetting(ref ProjectSettingAssets projectSettingAsset)
     {
-        PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel24;
+        //PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevelAuto;
         if (projectSettingAsset.APP_BUNDLE_BUILD)
         {
             //PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevel30;
