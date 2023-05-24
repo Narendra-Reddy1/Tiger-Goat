@@ -67,6 +67,10 @@ public class SettingsScreen : PopupBase
         }
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SHOW_REWARDED_AD_REQUESTED);
     }
+    public void OnClickPrivacyPolicy()
+    {
+        Application.OpenURL("https://sites.google.com/view/benstudiosprivacypolicy/home?authuser=1");
+    }
     public override void OnCloseClick()
     {
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_HIDE_MREC_AD_REQUESTED);
