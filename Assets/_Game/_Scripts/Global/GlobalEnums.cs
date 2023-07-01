@@ -26,22 +26,8 @@ namespace SovereignStudios.Enums
     }
     public enum PlayerTurn
     {
-        Goat = 0,
-        Tiger = 1,
-    }
-
-    public enum GameMode
-    {
-        AI,
-        LocalPlayer,
-        Multiplayer,
-    }
-
-    public enum AIDifficultyLevel
-    {
-        Easy,
-        Medium,
-        Hard,
+        Tiger = 0,
+        Goat = 1
     }
     public enum GameResult
     {
@@ -69,13 +55,7 @@ namespace SovereignStudios.Enums
     //}
     public enum Who
     {
-        /// <summary>
-        /// Currently clicked or Selected to move.
-        /// </summary>
         Selected,
-        /// <summary>
-        /// Destination spotpoint for the selected spotpoint.
-        /// </summary>
         TargetSpotPoint,
     }
     public enum DirectionFace

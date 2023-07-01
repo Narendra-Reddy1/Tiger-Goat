@@ -32,14 +32,14 @@ public class InGameUIManager : MonoBehaviour
     {
         GlobalEventHandler.AddListener(EventID.EVENT_ON_TIGER_TURN, Callback_On_Tiger_Turn);
         GlobalEventHandler.AddListener(EventID.EVENT_REQUEST_TO_KILL_TURN_TIMER_TWEENING, Callback_On_Kill_Timer_Tweening_Requested);
-        GlobalEventHandler.AddListener(EventID.EVENT_ON_PLAYER_TURN_CHANGED, Callback_On_PLayer_Trun_Changed);
+        GlobalEventHandler.AddListener(EventID.EVENT_ON_GOAT_TURN, Callback_On_Goat_Turn);
         GlobalEventHandler.AddListener(EventID.EVENT_ON_LEVEL_STARTED, Callback_On_Level_Started);
     }
     private void OnDisable()
     {
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_TIGER_TURN, Callback_On_Tiger_Turn);
         GlobalEventHandler.RemoveListener(EventID.EVENT_REQUEST_TO_KILL_TURN_TIMER_TWEENING, Callback_On_Kill_Timer_Tweening_Requested); ;
-        GlobalEventHandler.RemoveListener(EventID.EVENT_ON_PLAYER_TURN_CHANGED, Callback_On_PLayer_Trun_Changed);
+        GlobalEventHandler.RemoveListener(EventID.EVENT_ON_GOAT_TURN, Callback_On_Goat_Turn);
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_LEVEL_STARTED, Callback_On_Level_Started);
     }
     private void Start()
@@ -92,26 +92,15 @@ public class InGameUIManager : MonoBehaviour
     #endregion Private Methods 
 
     #region Callbacks
-    private void Callback_On_PLayer_Trun_Changed(object args)
+    private void Callback_On_Goat_Turn(object args)
     {
-        PlayerTurn turn = (PlayerTurn)args;
-        switch (turn)
-        {
-            case PlayerTurn.Tiger:
-                SetupPlayer1Turn();
-                UpdateGoatsPlacedOnTheScreenCountText();
-                break;
-            case PlayerTurn.Goat:
-                SetupPlayer2Turn();
-                UpdateGoatsKilledByTigerCountText();
-                break;
-        }
-
-
+        SetupPlayer2Turn();
+        UpdateGoatsKilledByTigerCountText();
     }
     private void Callback_On_Tiger_Turn(object args)
     {
-
+        SetupPlayer1Turn();
+        UpdateGoatsPlacedOnTheScreenCountText();
     }
     private void Callback_On_Kill_Timer_Tweening_Requested(object args)
     {
