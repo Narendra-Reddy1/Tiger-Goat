@@ -37,7 +37,7 @@ public class SpotPointBase : MonoBehaviour
 
     public virtual void OnEnable()
     {
-        
+
         animalGraphicTransform.TryGetComponent(out animalGraphic);
     }
     public virtual void OnDisable()
@@ -107,8 +107,7 @@ public class SpotPointBase : MonoBehaviour
             {
                 neighborsDictionary[direction].isBlocked = false;
             }
-            if (!neighborsDictionary[direction].neighborsDictionary.Contains(direction)) return;
-            else
+            if (neighborsDictionary[direction].neighborsDictionary.Contains(direction))
             {
                 neighborsDictionary[direction].neighborsDictionary[direction].isBlocked = false;
             }
@@ -149,14 +148,18 @@ public class SpotPointBase : MonoBehaviour
     }
     public Hashtable GetInfo()//selected point to move
     {
-        Hashtable hashtable = new Hashtable();
-        hashtable.Add(Who.TargetSpotPoint, this);
+        Hashtable hashtable = new Hashtable
+        {
+            { Who.TargetSpotPoint, this }
+        };
         return hashtable;
     }
     public Hashtable GetDetails()//clicked point
     {
-        Hashtable hashtable = new Hashtable();
-        hashtable.Add(Who.Selected, this);
+        Hashtable hashtable = new Hashtable
+        {
+            { Who.Selected, this }
+        };
         return hashtable;
     }
     public virtual void ShowCanOccupyGraphic()

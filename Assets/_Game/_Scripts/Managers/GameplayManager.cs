@@ -170,16 +170,18 @@ namespace SovereignStudios
         public static void SwitchPlayerTurn()
         {
             GlobalEventHandler.TriggerEvent(EventID.EVENT_REQUEST_TO_KILL_TURN_TIMER_TWEENING);
-            if (playerTurn == PlayerTurn.Goat)
-            {
-                playerTurn = PlayerTurn.Tiger;
-                GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_TIGER_TURN);
-            }
-            else
-            {
-                playerTurn = PlayerTurn.Goat;
-                GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_GOAT_TURN);
-            }
+            //if (playerTurn == PlayerTurn.Goat)
+            //{
+            //    playerTurn = PlayerTurn.Tiger;
+            //    GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_TIGER_TURN);
+            //}
+            //else
+            //{
+            //    playerTurn = PlayerTurn.Goat;
+            //    GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_GOAT_TURN);
+            //}
+            playerTurn = playerTurn.Equals(PlayerTurn.Goat) ? PlayerTurn.Tiger : PlayerTurn.Goat;
+            GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_PLAYER_TURN_CHANGED, playerTurn);
             SovereignUtils.Log($"Player Switch: {playerTurn}");
         }
         public static bool AreGoatsOnboarded() => noOfGoatsPlacedOnBoard >= Constants.NUMBER_OF_GOATS_IN_THE_GAME;
