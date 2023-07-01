@@ -164,6 +164,7 @@ namespace SovereignStudios.EventSystem
         //Gameplay
         EVENT_ON_SPOT_POINTS_AVAILABLE_TO_OCCUPY,
         EVENT_REQUEST_TO_CHANGE_PLAYER_TURN,
+        EVENT_ON_PLAYER_TURN_CHANGED,
         EVENT_ON_ANIMAL_MOVED,
 
         //ScreenManager
