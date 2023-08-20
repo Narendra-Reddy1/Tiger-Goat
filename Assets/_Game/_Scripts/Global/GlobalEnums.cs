@@ -6,6 +6,7 @@ namespace SovereignStudios.Enums
 {
     public enum PlayerPrefKeys
     {
+        audio_toggle
     }
     public enum ResourceID
     {
@@ -16,7 +17,8 @@ namespace SovereignStudios.Enums
         Coin,
         Tiger,
         Goat,
-
+        AudioON,
+        AudioOFF,
     }
     public enum Owner
     {

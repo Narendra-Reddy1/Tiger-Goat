@@ -58,26 +58,12 @@ namespace SovereignStudios
 
         public static void SetPlayerPrefsBool(PlayerPrefKeys key, bool value)
         {
-            if (value)
-            {
-                SetPlayerPrefsInt(key, 1);
-            }
-            else
-            {
-                SetPlayerPrefsInt(key, 0);
-            }
+            SetPlayerPrefsInt(key, value ? 1 : 0);
         }
 
         public static void SetPlayerPrefsBool(string key, bool value)
         {
-            if (value)
-            {
-                SetPlayerPrefsInt(key, 1);
-            }
-            else
-            {
-                SetPlayerPrefsInt(key, 0);
-            }
+            SetPlayerPrefsInt(key, value ? 1 : 0);
         }
 
         public static void AddPlayerPrefsStringCollection(PlayerPrefKeys key, string value)

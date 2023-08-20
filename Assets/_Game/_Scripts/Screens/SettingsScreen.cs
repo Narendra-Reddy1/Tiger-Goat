@@ -1,11 +1,16 @@
 using SovereignStudios;
+using SovereignStudios.Enums;
 using SovereignStudios.EventSystem;
 using SovereignStudios.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingsScreen : PopupBase
 {
     #region Variables
+    [SerializeField] private Toggle m_audioToggle;
+    [SerializeField] private Image m_audioToggleImage;
+    [SerializeField] private SpriteManager m_spriteManager;
     private bool isRewardedAdWatchedCompletely = false;
     #endregion Variables
 
@@ -13,18 +18,24 @@ public class SettingsScreen : PopupBase
     public override void OnEnable()
     {
         base.OnEnable();
+        m_audioToggle.onValueChanged.AddListener(OnClickToggleAudioButton);
+        ToggleAudio(PlayerPrefsWrapper.GetPlayerPrefsBool(PlayerPrefKeys.audio_toggle, true));
         GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SHOW_MREC_AD_REQUESTED);
         GlobalEventHandler.AddListener(EventID.EVENT_ON_AD_STATE_CHANGED, Callback_On_Ad_State_Changed);
     }
     public override void OnDisable()
     {
+        m_audioToggle.onValueChanged.RemoveListener(OnClickToggleAudioButton);
         GlobalEventHandler.RemoveListener(EventID.EVENT_ON_AD_STATE_CHANGED, Callback_On_Ad_State_Changed);
     }
     #endregion Unity Methods
 
     #region Private Methods
-    private void ToggleAudio()
+    private void ToggleAudio(bool value)
     {
+        PlayerPrefsWrapper.SetPlayerPrefsBool(PlayerPrefKeys.audio_toggle, value);
+        m_audioToggleImage.sprite = value ? m_spriteManager.resourcesDictionary[ResourceType.AudioON] : m_spriteManager.resourcesDictionary[ResourceType.AudioOFF];
+        GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_AUDIO_TOGGLE_UPDATED);
     }
     private void QuitToTheMainMenu()
     {
@@ -45,9 +56,9 @@ public class SettingsScreen : PopupBase
     #endregion Private  Methods
 
     #region Public Methods
-    public void OnClickToggleAudioButton()
+    public void OnClickToggleAudioButton(bool value)
     {
-        ToggleAudio();
+        ToggleAudio(value);
     }
     public void OnClickQuitButton()
     {

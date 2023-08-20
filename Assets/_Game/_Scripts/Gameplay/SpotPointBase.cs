@@ -37,7 +37,7 @@ public class SpotPointBase : MonoBehaviour
 
     public virtual void OnEnable()
     {
-        
+
         animalGraphicTransform.TryGetComponent(out animalGraphic);
     }
     public virtual void OnDisable()
@@ -145,7 +145,7 @@ public class SpotPointBase : MonoBehaviour
     }
     public virtual void OnClickSpotPoint()
     {
-
+        GlobalEventHandler.TriggerEvent(EventID.REQUEST_TO_PLAY_SFX, AudioID.AnimalClickSFX);
     }
     public Hashtable GetInfo()//selected point to move
     {

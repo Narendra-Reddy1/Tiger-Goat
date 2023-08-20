@@ -1,5 +1,7 @@
 using System;
 using SovereignStudios.Enums;
+using UnityEngine;
+
 namespace SovereignStudios
 {
     //ScreenManager
@@ -13,4 +15,7 @@ namespace SovereignStudios
     //SpriteManager
     [Serializable]
     public class ResourcesDictionary : SerializableDictionary<ResourceType, UnityEngine.Sprite> { }
+    
+    [Serializable]
+    public class AudioAssetsDictionary : SerializableDictionary<AudioID, AudioClip> { }
 }

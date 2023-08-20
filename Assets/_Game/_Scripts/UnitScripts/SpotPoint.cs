@@ -48,6 +48,7 @@ public class SpotPoint : SpotPointBase, IInitializer
     }
     public override void OnClickSpotPoint()
     {
+        base.OnClickSpotPoint();
         switch (GameplayManager.GetPlayerTurn())
         {
             case PlayerTurn.Goat:

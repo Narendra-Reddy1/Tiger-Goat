@@ -164,5 +164,11 @@ public class GenericAdsManager : MonoBehaviour, IInitializer
     {
         Callback_On_Show_AppOpenAd_Requested(null);
     }
+
+    [DebugButton("MediationDebugger")]
+    public void ShowMediationDebugger()
+    {
+        MaxSdk.ShowMediationDebugger();
+    }
     #endregion Debug
 }

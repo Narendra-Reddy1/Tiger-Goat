@@ -40,6 +40,7 @@ public class HeadPoint : SpotPointBase
         //    CheckForPossibleMoves(down3);
         //    GlobalEventHandler.TriggerEvent(EventID.EVENT_ON_SPOTPOINT_CLICKED, GetDetails());
         //}
+        base.OnClickSpotPoint();
         switch (GameplayManager.GetPlayerTurn())
         {
             case PlayerTurn.Goat:

@@ -8,13 +8,12 @@ using static System.DateTime;
 public class DebugPanelHandler : MonoBehaviour, IPointerClickHandler
 {
 
-    [SerializeField] private GameObject debugPanel;
     [SerializeField] private byte noOfTapsToOpenPanel = 2;
     private byte taps;
     private System.TimeSpan time;
     private void Awake()
     {
-#if UPLOAD_BUILD
+#if UPLOAD_BUILD ||!DEBUG_DEFINE
         Destroy(this);
 #endif
     }

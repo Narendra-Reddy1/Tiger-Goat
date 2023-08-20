@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6008117543883574122}
   - component: {fileID: 2623774118508781035}
   - component: {fileID: 816929875051919679}
+  - component: {fileID: 7475566488650727725}
   m_Layer: 5
   m_Name: Restart-btn
   m_TagString: Untagged
@@ -135,6 +136,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   clickAnimate: 1
+--- !u!114 &7475566488650727725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358885417777702434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9b100b0148b754cad10eb9a4e358b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_audioID: 1
 --- !u!1 &1998307923365004892
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +296,7 @@ GameObject:
   - component: {fileID: 1998307923452201366}
   - component: {fileID: 1998307923452201365}
   - component: {fileID: 1998307923452201364}
+  - component: {fileID: 6474023005371892806}
   m_Layer: 5
   m_Name: QuitBtn
   m_TagString: Untagged
@@ -405,6 +420,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   clickAnimate: 1
+--- !u!114 &6474023005371892806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998307923452201354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9b100b0148b754cad10eb9a4e358b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_audioID: 1
 --- !u!1 &1998307923542411833
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +445,7 @@ GameObject:
   - component: {fileID: 1998307923542411973}
   - component: {fileID: 1998307923542411972}
   - component: {fileID: 1998307923542411974}
+  - component: {fileID: 7953001150239780063}
   m_Layer: 5
   m_Name: closeBtn
   m_TagString: Untagged
@@ -539,6 +568,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   clickAnimate: 1
+--- !u!114 &7953001150239780063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998307923542411833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9b100b0148b754cad10eb9a4e358b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_audioID: 1
 --- !u!1 &1998307923611600572
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +854,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupPanel: {fileID: 1998307923611600573}
   transparentBGCanvasGroup: {fileID: 1652886639766690844}
+  m_audioToggle: {fileID: 9097184278961059071}
+  m_audioToggleImage: {fileID: 7901427999719750267}
+  m_spriteManager: {fileID: 11400000, guid: edb1fa91fe564b14eaee104550075ef0, type: 2}
 --- !u!1 &1998307925157642689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,7 +1423,7 @@ GameObject:
   - component: {fileID: 7901427998745053994}
   - component: {fileID: 7901427998745053999}
   - component: {fileID: 7901427998745053992}
-  - component: {fileID: 7901427998745053993}
+  - component: {fileID: 9097184278961059071}
   m_Layer: 5
   m_Name: Audio-btn
   m_TagString: Untagged
@@ -1445,7 +1490,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7901427998745053993
+--- !u!114 &9097184278961059071
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1454,7 +1499,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7901427998745053995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19fa38b64e14855498bc9c012be9b8df, type: 3}
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1486,22 +1531,13 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 7901427998745053992}
-  m_OnClick:
+  toggleTransition: 1
+  graphic: {fileID: 0}
+  m_Group: {fileID: 0}
+  onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7524267212803177503}
-        m_TargetAssemblyTypeName: SettingsScreen, Assembly-CSharp
-        m_MethodName: OnClickToggleAudioButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  clickAnimate: 1
+      m_Calls: []
+  m_IsOn: 1
 --- !u!1 &7901427999719750149
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,6 +29,7 @@ public class InitSceneInitializer : MonoBehaviour
                 {
                     this.mainSceneHandle = mainSceneHandle;
                     mainSceneInstance = mainSceneHandle.Result;
+                    GlobalEventHandler.TriggerEvent(EventID.REQUEST_TO_PLAY_BGM, AudioID.GameplayBGM);
                 };
         };
     }

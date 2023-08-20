@@ -111,6 +111,7 @@ namespace SovereignStudios
                     var c = (Canvas)currentAnimal.gameObject.AddComponent(typeof(Canvas));
                     c.overrideSorting = true;
                     c.sortingOrder = 40;
+                    //GlobalEventHandler.TriggerEvent(EventID.REQUEST_TO_PLAY_SFX, AudioID.AnimalMovedSFX);
                     currentAnimal.DOMove(targetPos, 1f, true).onComplete += () =>
                     {
                         if (isTiger) targetPoint.ShowAnimalGraphic(true);

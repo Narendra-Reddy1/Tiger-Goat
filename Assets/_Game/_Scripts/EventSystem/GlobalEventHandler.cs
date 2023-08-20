@@ -204,6 +204,11 @@ namespace SovereignStudios.EventSystem
 
         //SelectionScreen
         EVENT_ON_DIFFICULTY_LEVEL_SELECTED,
+
+        //Audio
+        EVENT_ON_AUDIO_TOGGLE_UPDATED,
+        REQUEST_TO_PLAY_SFX,
+        REQUEST_TO_PLAY_BGM,
     }
 }
 
